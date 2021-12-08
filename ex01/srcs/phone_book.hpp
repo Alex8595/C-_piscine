@@ -14,6 +14,7 @@
 # define PHONE_BOOK_HPP
 # include <unistd.h>
 # include <iostream>
+# include <iomanip>
 
 class	contact
 {
@@ -29,15 +30,16 @@ class	contact
 class	phone_book
 {
 	public:
-		phone_book() : current(0) {}
+		phone_book() : current(-1), total(0) {}
 		contact		ppl[8];
 		int			current;
+		int			total;
 };
 
 int			abs_memcmp(std::string arr1, std::string arr2);
 int			ft_error(std::string str);
 
-int			ft_add(std::string str, phone_book *pb);
-int			ft_search(std::string str);
+int			ft_add(phone_book *pb);
+int			ft_search(phone_book *pb);
 
 #endif
