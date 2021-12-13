@@ -14,11 +14,9 @@ NAME = GlobalBanksters
 
 all : $(NAME)
 
-CC = c++
+CXX = g++
 
-#CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
-CPPFLAGS = 
-
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/Account.cpp		\
 		srcs/tests.cpp
@@ -29,8 +27,7 @@ OBJS =	srcs/Account.o			\
 $(OBJS) : SRCS
 
 $(NAME) : $(OBJS)
-	$(CC) $(CPPFLAGS) $(OBJS) -o $@
-
+	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 
 
 # - - - - - - - - - - - - - - - - - #

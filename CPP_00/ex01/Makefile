@@ -14,7 +14,7 @@ NAME = PhoneBook
 
 all : $(NAME)
 
-CC = c++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
@@ -23,7 +23,7 @@ OBJS = srcs/phone_book.o
 $(OBJS) : srcs/phone_book.cpp
 
 $(NAME) : $(OBJS)
-	$(CC) $(CPPFLAGS) $< -o $@
+	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 
 
 
