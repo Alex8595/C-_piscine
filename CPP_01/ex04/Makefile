@@ -1,15 +1,16 @@
-
-NAME = brain
+NAME = replace
 
 all : $(NAME)
 
-CXX = g++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp
+SRCS =	srcs/main.cpp		\
+		srcs/replace.cpp
 
-OBJS =	srcs/main.o
+OBJS =	srcs/main.o			\
+		srcs/replace.o
 
 $(OBJS) : SRCS
 

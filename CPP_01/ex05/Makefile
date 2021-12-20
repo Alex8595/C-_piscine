@@ -1,15 +1,16 @@
-
-NAME = brain
+NAME = Karen
 
 all : $(NAME)
 
 CXX = g++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 # -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp
+SRCS =	srcs/main.cpp		\
+		srcs/Karen.cpp
 
-OBJS =	srcs/main.o
+OBJS =	srcs/main.o			\
+		srcs/Karen.o
 
 $(OBJS) : SRCS
 

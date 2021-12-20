@@ -1,15 +1,20 @@
-
-NAME = brain
+NAME = weapons
 
 all : $(NAME)
 
-CXX = g++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp
+SRCS =	srcs/main.cpp			\
+		srcs/Weapon.cpp			\
+		srcs/HumanA.cpp			\
+		srcs/HumanB.cpp
 
-OBJS =	srcs/main.o
+OBJS =	srcs/main.o				\
+		srcs/Weapon.o			\
+		srcs/HumanA.o			\
+		srcs/HumanB.o
 
 $(OBJS) : SRCS
 
