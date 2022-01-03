@@ -1,23 +1,38 @@
 #include "Karen.hpp"
 #include <iostream>
 
-/*
-void hi()
-{
-	std::cout << "hi" << std::endl;
-}
-*/
 
 int main()
 {
 	Karen	k1;
 
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("debug");
+	k1.complain("info");
+	k1.complain("info");
+	k1.complain("info");
+	k1.complain("info");
+	k1.complain("info");
 	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("warning");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
+	k1.complain("error");
 
-/*
-	void (*function)();
-	function = &hi;
-	function();
-*/
 	return (0);
 }

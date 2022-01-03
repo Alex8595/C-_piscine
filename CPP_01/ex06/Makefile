@@ -1,16 +1,16 @@
-NAME = Karen
+NAME = karenFilter
 
 all : $(NAME)
 
 CXX = g++
 
-CPPFLAGS = -std=c++98  -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp		\
-		srcs/Karen.cpp
+		srcs/karenFilter.cpp
 
 OBJS =	srcs/main.o			\
-		srcs/Karen.o
+		srcs/karenFilter.o
 
 $(OBJS) : SRCS
 

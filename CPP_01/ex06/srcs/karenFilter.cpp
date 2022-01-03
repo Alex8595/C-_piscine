@@ -25,15 +25,33 @@ void Karen::error( void )
 	std::cout << "This is unacceptable, I want to speak to the president now." << std::endl;
 }
 
+
+
+/*
+**	Complain
+*/
+
 void Karen::complain( std::string level )
 {
+	int				j;
 	std::string		states[4] = { "debug" , "info" , "warning", "error"};
-	void			(Karen::*function[4])() = { &Karen::debug, &Karen::info , &Karen::warning, &Karen::error };
+	void			(Karen::*ft_karen[4])() = { &Karen::debug, &Karen::info , &Karen::warning, &Karen::error };
 
 	for (int i = 0; i < 4; i++)
 	{
 		if (states[i] == level)
-			(*this.*function[i])();
+			j = i;
+	}
+	switch (j)
+	{
+		case 0:
+			(*this.*ft_karen[0])();
+		case 1:
+			(*this.*ft_karen[1])();
+		case 2:
+			(*this.*ft_karen[2])();
+		case 3:
+			(*this.*ft_karen[3])();
 	}
 }
 
