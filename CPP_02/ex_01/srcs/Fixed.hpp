@@ -14,6 +14,8 @@ class Fixed
 
 		Fixed();
 		Fixed( const Fixed &f1 );
+		Fixed( const int n );
+
 		~Fixed();
 };	
 

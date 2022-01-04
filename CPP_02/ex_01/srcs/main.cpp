@@ -3,15 +3,8 @@
 
 int main( void )
 {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+	int num = 42;
 
-
-	c = b;
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
-	
+	Fixed b( num );
 	return (0);
 }

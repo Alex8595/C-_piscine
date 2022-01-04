@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2021/11/30 14:40:43 by ahernand          #+#    #+#              #
-#    Updated: 2021/11/30 14:45:13 by ahernand         ###   ########.fr        #
+#    Created: 2022/01/04 17:43:43 by ahernand          #+#    #+#              #
+#    Updated: 2022/01/04 17:43:46 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ClapTrap
+NAME = Serena
 
 all : $(NAME)
 

@@ -32,14 +32,11 @@ Fixed::Fixed( const int i )
 	this->num = 0;
 }
 
-
 Fixed::Fixed( const Fixed &f1 )
 {
 	std::cout << "Copy constructor called" << std::endl;
 	Fixed::operator= (f1);
-	this->num = f1.num;
 }
-
 
 Fixed::~Fixed()
 {

@@ -31,7 +31,8 @@ Fixed::Fixed( const Fixed &f1 )
 
 Fixed::Fixed( const int n )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "Int constructor called" << std::endl;
+	std::cout << n << 100000000 << std::endl;
 }
 
 
