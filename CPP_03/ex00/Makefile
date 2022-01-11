@@ -14,7 +14,7 @@ NAME = ClapTrap
 
 all : $(NAME)
 
-CXX = c++ 
+CXX = g++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
@@ -35,8 +35,8 @@ $(NAME) : $(OBJS)
 # - - - - C L E A N I N G - - - - - #
 # - - - - - - - - - - - - - - - - - #
 
-make fclean:
-	@rm -f Megaphone
-	@rm -f srcs/Megaphone.o
+fclean:
+	@rm -f $(OBJS)
+	@rm -f $(NAME)
 
 re:	fclean all

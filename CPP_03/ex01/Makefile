@@ -14,15 +14,17 @@ NAME = Serena
 
 all : $(NAME)
 
-CXX = c++ 
+CXX = g++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp		\
-		srcs/ClapTrap.cpp
+		srcs/ClapTrap.cpp	\
+		srcs/ScavTrap.cpp
 
 OBJS =	srcs/main.o			\
-		srcs/ClapTrap.o
+		srcs/ClapTrap.o		\
+		srcs/ScavTrap.o
 
 $(OBJS) : SRCS
 
@@ -36,7 +38,7 @@ $(NAME) : $(OBJS)
 # - - - - - - - - - - - - - - - - - #
 
 make fclean:
-	@rm -f Megaphone
-	@rm -f srcs/Megaphone.o
+	@rm -f $(OBJS)
+	@rm -f $(NAME)
 
 re:	fclean all

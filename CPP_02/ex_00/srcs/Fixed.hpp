@@ -4,8 +4,8 @@
 class Fixed
 {
 	private:
-		int					num;
-		static const int	fb;
+		int					fixed_point;
+		static const int	fractionl_bits;
 
 	public:
 		void	operator= ( const Fixed &f1 );

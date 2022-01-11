@@ -1,10 +1,10 @@
-//#ifndef __CLAPTRAP_HPP__
-//# define __CLAPTRAP_HPP__
+#ifndef __CLAPTRAP_HPP__
+# define __CLAPTRAP_HPP__
 # include <iostream>
 
 class ClapTrap
 {
-	private:
+	protected:
 		std::string		name;
 		int				hitPoints;
 		int				energyPoints;
@@ -17,9 +17,10 @@ class ClapTrap
 
 		void 		operator = ( const ClapTrap &o_class );		
 
+		ClapTrap();
 		ClapTrap( const ClapTrap &ref_to_copy );
 		ClapTrap( const std::string par_name );
 		~ClapTrap();
 
 };
-//#endif
+#endif

@@ -24,8 +24,6 @@ void	ClapTrap::takeDamage(unsigned int amount)
 void	ClapTrap::beRepaired(unsigned int amount)
 {
 	this->hitPoints = amount;
-	if (this->hitPoints > 10)
-		this->hitPoints = 10;
 	std::cout << "ClapTrap " << this->name << " has been repared to completion and now has: " << this->hitPoints<< " hit points!" << std::endl;
 }
 
@@ -35,9 +33,18 @@ void	ClapTrap::beRepaired(unsigned int amount)
 **	 Default, Copy, assignation operator overload Constructor and destructor
 */
 
-ClapTrap::ClapTrap( const std::string par_name )
+ClapTrap::ClapTrap()
 {
 	std::cout << "Default constructor called" << std::endl;
+	this->name = "Default";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+}
+
+ClapTrap::ClapTrap( const std::string par_name )
+{
+	std::cout << "Parameterized constructor called" << std::endl;
 	this->name = par_name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;

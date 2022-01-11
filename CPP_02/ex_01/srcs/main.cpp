@@ -3,7 +3,7 @@
 
 int main( void )
 {
-	int num = 42;
+	float num = 123.456;
 
 	Fixed b( num );
 	return (0);
