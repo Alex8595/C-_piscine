@@ -17,7 +17,7 @@ class Fixed
 		Fixed();
 		Fixed( const Fixed &f1 );
 		Fixed( const int n );
-		Fixed( const float n );
+		Fixed( const float fl_nu );
 
 		~Fixed();
 };	

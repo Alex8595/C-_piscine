@@ -6,11 +6,11 @@
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/04 17:43:43 by ahernand          #+#    #+#              #
-#    Updated: 2022/01/13 16:55:14 by ahernand         ###   ########.fr        #
+#    Updated: 2022/01/13 18:17:13 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Serena
+NAME = FragTrap
 
 all : $(NAME)
 
@@ -20,11 +20,11 @@ CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp		\
 		srcs/ClapTrap.cpp	\
-		srcs/ScavTrap.cpp
+		srcs/FragTrap.cpp
 
 OBJS =	srcs/main.o			\
 		srcs/ClapTrap.o		\
-		srcs/ScavTrap.o
+		srcs/FragTrap.o
 
 $(OBJS) : $(SRCS)
 

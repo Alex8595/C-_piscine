@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 17:37:21 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/13 17:38:09 by ahernand         ###   ########.fr       */
+/*   Created: 2022/01/13 16:59:54 by ahernand          #+#    #+#             */
+/*   Updated: 2022/01/13 18:17:16 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	ClapTrap::beRepaired(unsigned int amount)
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "ClapTrap Default constructor called" << std::endl;
+	std::cout << "ClatTrap Default constructor called" << std::endl;
 	this->name = "Default";
 	this->hitPoints = 10;
 	this->energyPoints = 10;

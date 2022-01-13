@@ -17,36 +17,13 @@ void	Fixed::setRawBits( int const raw )
 
 float	Fixed::toFloat( void ) const
 {
-	int 	left;
-	int		right;
 	float	all;
 
-	left = this->fixed_point;
-	right = this->fixed_point;
-	for (int i = 1; i < 8; ++i)
-		left = left & ~(1 << (i - 1));
-	left = left >> this->fractionl_bits;
-	for (int i = 9; i <= 16; ++i)
-		left = left & ~(1 << (i - 1));
-
-	int		j = 0;
-	int 	right_copy;
-
-	
-	for (int i = 9; i <= 16; ++i)
-		right = right & ~(1 << (i - 1));
-	right_copy = right;
+	all = (float)this->fixed_point;
 
 
-	std::cout << right_copy << std::endl;
-	while (right % 10 != 0)
-	{
-		j++;
-		right /= 10;
-	}
 
-	std::cout << j << std::endl;
-	all = left;
+	std::cout << all << std::endl;
 	return(all);
 }
 
@@ -82,15 +59,14 @@ Fixed::Fixed( const int n )
 }
 
 //	Float Constructor
-Fixed::Fixed( const float n )
+Fixed::Fixed( const float fl_nu )
 {
+	//quiero convertir in float en un fixed point
 	std::cout << "Float constructor called" << std::endl;
 
-	std::cout << (n - (int)n) << std::endl;
+	this->fixed_point = roundf((1 << this->fractionl_bits) * fl_nu);
 	
-	this->fixed_point = (int)n << this->fractionl_bits;
-	
-	std::cout << n << std::endl;
+	std::cout <<  "Fixed point:    " << this->fixed_point << std::endl;
 }
 
 //	Copy Constructor

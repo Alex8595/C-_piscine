@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/13 17:37:02 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/13 17:37:06 by ahernand         ###   ########.fr       */
+/*   Created: 2022/01/13 17:11:53 by ahernand          #+#    #+#             */
+/*   Updated: 2022/01/13 17:13:41 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 # define __CLAPTRAP_HPP__
 # include <iostream>
 
-class ClapTrap
+class	ClapTrap
 {
-	private:
+	protected:
 		std::string		name;
 		int				hitPoints;
 		int				energyPoints;
@@ -24,10 +24,10 @@ class ClapTrap
 		
 	public:
 		void			attack(std::string const &target);
-		void			takeDamage(unsigned int amount);
 		void			beRepaired(unsigned int amount);
+		void			takeDamage(unsigned int amount);
 
-		void 			operator = ( const ClapTrap &o_class );		
+		void 		operator = ( const ClapTrap &o_class );		
 
 		ClapTrap();
 		ClapTrap( const ClapTrap &ref_to_copy );

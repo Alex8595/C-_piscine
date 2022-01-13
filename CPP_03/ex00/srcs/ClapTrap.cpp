@@ -1,7 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ClapTrap.cpp                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/01/13 17:36:37 by ahernand          #+#    #+#             */
+/*   Updated: 2022/01/13 17:36:53 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "ClapTrap.hpp"
-
-
 
 /*
 **		Member Functions
@@ -27,15 +37,13 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->name << " has been repared to completion and now has: " << this->hitPoints<< " hit points!" << std::endl;
 }
 
-
-
 /*
-**	 Default, Copy, assignation operator overload Constructor and destructor
+**	C & D
 */
 
 ClapTrap::ClapTrap()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "ClapTrap Default constructor called" << std::endl;
 	this->name = "Default";
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -44,7 +52,7 @@ ClapTrap::ClapTrap()
 
 ClapTrap::ClapTrap( const std::string par_name )
 {
-	std::cout << "Parameterized constructor called" << std::endl;
+	std::cout << "ClapTrap Parameterized constructor called" << std::endl;
 	this->name = par_name;
 	this->hitPoints = 10;
 	this->energyPoints = 10;
@@ -53,7 +61,7 @@ ClapTrap::ClapTrap( const std::string par_name )
 
 void 	ClapTrap::operator = ( const ClapTrap &o_class )
 {
-	std::cout << "Assignation operator overload called" << std::endl;
+	std::cout << "ClapTrap Assignation operator overload called" << std::endl;
 
 	this->name = o_class.name;
 	this->hitPoints = o_class.hitPoints;
@@ -63,11 +71,11 @@ void 	ClapTrap::operator = ( const ClapTrap &o_class )
 
 ClapTrap::ClapTrap( const ClapTrap &ref_to_copy )
 {
-	std::cout << "Copy constructor called" << std::endl;
+	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	ClapTrap::operator=(ref_to_copy);
 }
 
 ClapTrap::~ClapTrap()
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "ClapTrap Destructor called" << std::endl;
 }
