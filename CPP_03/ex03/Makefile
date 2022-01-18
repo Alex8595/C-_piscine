@@ -5,26 +5,30 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/04 17:43:43 by ahernand          #+#    #+#              #
-#    Updated: 2022/01/14 13:52:14 by ahernand         ###   ########.fr        #
+#    Created: 2022/01/14 13:54:56 by ahernand          #+#    #+#              #
+#    Updated: 2022/01/18 13:39:02 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 all : $(NAME)
 
 CXX = g++ 
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow
 
 SRCS =	srcs/main.cpp		\
 		srcs/ClapTrap.cpp	\
-		srcs/FragTrap.cpp
+		srcs/FragTrap.cpp	\
+		srcs/ScavTrap.cpp	\
+		srcs/DiamondTrap.cpp
 
 OBJS =	srcs/main.o			\
 		srcs/ClapTrap.o		\
-		srcs/FragTrap.o
+		srcs/ScavTrap.o		\
+		srcs/FragTrap.o		\
+		srcs/DiamondTrap.o
 
 $(OBJS) : $(SRCS)
 
@@ -42,3 +46,4 @@ make fclean:
 	@rm -f $(NAME)
 
 re:	fclean all
+

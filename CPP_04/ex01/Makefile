@@ -5,26 +5,31 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/01/04 17:43:43 by ahernand          #+#    #+#              #
-#    Updated: 2022/01/14 13:52:14 by ahernand         ###   ########.fr        #
+#    Created: 2022/01/17 17:25:04 by ahernand          #+#    #+#              #
+#    Updated: 2022/01/17 17:40:55 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = FragTrap
+NAME = Brain
 
 all : $(NAME)
 
-CXX = g++ 
+CXX = g++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp		\
-		srcs/ClapTrap.cpp	\
-		srcs/FragTrap.cpp
+SRCS =	srcs/main.cpp	\
+		srcs/Cat.cpp	\
+		srcs/Dog.cpp	\
+		srcs/Brain.cpp	\
+		srcs/Animal.cpp
 
-OBJS =	srcs/main.o			\
-		srcs/ClapTrap.o		\
-		srcs/FragTrap.o
+OBJS = srcs/main.o	\
+	   srcs/Cat.o	\
+	   srcs/Dog.o	\
+	   srcs/Brain.o	\
+	   srcs/Animal.o
+
 
 $(OBJS) : $(SRCS)
 
@@ -32,13 +37,12 @@ $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 
 
-
-# - - - - - - - - - - - - - - - - - #
-# - - - - C L E A N I N G - - - - - #
-# - - - - - - - - - - - - - - - - - #
+# - - - - - - - - - - - - - - - #
+# - - - - C L E A N I N G - - - #
+# - - - - - - - - - - - - - - - #
 
 make fclean:
 	@rm -f $(OBJS)
 	@rm -f $(NAME)
 
-re:	fclean all
+re: fclean all
