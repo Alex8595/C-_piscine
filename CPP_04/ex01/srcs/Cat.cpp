@@ -6,11 +6,12 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:16:12 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/17 17:08:11 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/19 14:53:29 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
+#include "Brain.hpp"
 
 std::string		Cat::getType() const
 {
@@ -25,7 +26,9 @@ void			Cat::makeSound() const
 void 			Cat::operator= (const Cat &ref)
 {
 	std::cout << "Cat Assignation operator Called" << std::endl;
+	(*this->my_brain) = ref.my_brain;
 	this->type = ref.type;
+
 }
 
 /*
@@ -35,16 +38,19 @@ void 			Cat::operator= (const Cat &ref)
 Cat::Cat(const Cat &ref)
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
+	this->my_brain = ref.my_brain;
 	this->type = ref.type;
 }
 
 Cat::Cat()
 {
 	std::cout << "Cat Constructor Called" << std::endl;
+	this->my_brain = new Brain();
 	this->type = "Cat";
 }
 
 Cat::~Cat()
 {
 	std::cout << "Cat Destruct Called" << std::endl;
+	delete this->my_brain;
 }

@@ -24,7 +24,7 @@ void	Animal::makeSound() const
 
 void	Animal::operator = (const Animal &ref)
 {
-	std::cout << "Assignation operator called" << std::endl;
+	std::cout << "Animal Assignation operator called" << std::endl;
 	this->type = ref.type;
 }
 

@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:15:16 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/17 17:08:12 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/19 16:15:05 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,17 @@
 # define __CAT_HPP__
 # include <iostream>
 # include "Animal.hpp"
+# include "Brain.hpp"
 
 class Cat : public Animal
 {
 	private:
 		
 	public:
+		Brain						*my_brain;
 		virtual std::string			getType() const;
 		virtual void		 		makeSound() const;
-		void						operator=(const Cat &ref);
+		virtual void				operator=(const Cat &ref);
 
 		Cat(const Cat &ref);
 		Cat();
