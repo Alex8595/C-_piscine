@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:36:13 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/17 17:08:16 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:03:47 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,16 @@ std::string	Animal::getType() const
 void	Animal::makeSound() const
 {
 	std::cout << "*Generic Animal Sound*" << std::endl;
+}
+
+std::string	Animal::getIdea(int num)
+{
+	return ("Animal getidea, thus, error");
+}
+
+void		Animal::setIdea(std::string idea, int num)
+{
+	std::cout << "Error: can't set idea in animal class" << std::endl;
 }
 
 void	Animal::operator = (const Animal &ref)

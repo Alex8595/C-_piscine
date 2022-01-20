@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:16:12 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/19 14:53:29 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:02:09 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,16 @@ void 			Cat::operator= (const Cat &ref)
 	(*this->my_brain) = ref.my_brain;
 	this->type = ref.type;
 
+}
+
+std::string		Cat::getIdea(int num)
+{
+	return (this->my_brain->ideas[num]);
+}
+
+void			Cat::setIdea(std::string idea, int num)
+{
+	this->my_brain->ideas[num] = idea;
 }
 
 /*

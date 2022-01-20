@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:36:12 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/19 15:00:27 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/20 16:02:41 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ class Animal
 	public:
 		std::string					getType() const;
 		virtual void				makeSound() const;
+		virtual std::string			getIdea(int num);
+		virtual void				setIdea(std::string idea, int num);
 		virtual void				operator = (const Animal &ref);
 
 		Animal(const Animal &ref);
