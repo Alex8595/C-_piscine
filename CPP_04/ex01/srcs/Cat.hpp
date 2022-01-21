@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 13:15:16 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/20 16:01:05 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/21 16:20:08 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Cat : public Animal
 		virtual void				setIdea(std::string idea, int num);
 		virtual std::string			getType() const;
 		virtual void		 		makeSound() const;
-		virtual void				operator=(const Cat &ref);
+		void						operator=(Animal &ref);
 
-		Cat(const Cat &ref);
+		Cat(Cat &ref);
 		Cat();
 		~Cat();
 };

@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:36:13 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/20 16:03:47 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:54:33 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void		Animal::setIdea(std::string idea, int num)
 	std::cout << "Error: can't set idea in animal class" << std::endl;
 }
 
-void	Animal::operator = (const Animal &ref)
+void	Animal::operator = (Animal &ref)
 {
 	std::cout << "Animal Assignation operator called" << std::endl;
 	this->type = ref.type;

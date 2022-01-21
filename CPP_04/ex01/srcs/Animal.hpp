@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/14 17:36:12 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/20 16:02:41 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/21 15:54:26 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Animal
 		virtual void				makeSound() const;
 		virtual std::string			getIdea(int num);
 		virtual void				setIdea(std::string idea, int num);
-		virtual void				operator = (const Animal &ref);
+		virtual void				operator = (Animal &ref);
 
 		Animal(const Animal &ref);
 		Animal();

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Dog.hpp"
+#include "Brain.hpp"
 
 std::string		Dog::getType() const
 {
@@ -22,17 +23,29 @@ void			Dog::makeSound() const
 	std::cout << "*Guau*" << std::endl;
 }
 
-void			Dog::operator= (const Dog &ref)
+std::string		Dog::getIdea(int num)
+{
+	return (this->my_brain->ideas[num]);
+}
+
+void			Dog::setIdea(std::string idea, int num)
+{
+	this->my_brain->ideas[num] = idea;
+}
+
+void			Dog::operator= (Animal &ref)
 {
 	std::cout << "Dog Assignation Operator called" << std::endl;
-	this->type = ref.type;
+	Dog	*newDog = dynamic_cast<Dog*>(&ref);
+	for (int i = 0; i < 100; i++)
+		this->setIdea(newDog->getIdea(i), i);
 }
 
 /*
 **	C & D
 */
 
-Dog::Dog(const Dog &ref)
+Dog::Dog(Dog &ref)
 {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
 	this->type = ref.type;
