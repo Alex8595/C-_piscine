@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/17 13:16:12 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/24 14:48:33 by ahernand         ###   ########.fr       */
+/*   Created: 2022/01/17 16:12:33 by ahernand          #+#    #+#             */
+/*   Updated: 2022/01/24 14:48:51 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,34 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-std::string		Cat::getType() const
+std::string		Dog::getType() const
 {
 	return (this->type);
 }
 
-void			Cat::makeSound() const
+void			Dog::makeSound() const
 {
-	std::cout << "*Meow*" << std::endl;
+	std::cout << "*Guau*" << std::endl;
 }
 
-std::string		Cat::getIdea(int num)
+std::string		Dog::getIdea(int num)
 {
 	return (this->my_brain->ideas[num]);
 }
 
-void			Cat::setIdea(std::string idea, int num)
+void			Dog::setIdea(std::string idea, int num)
 {
 	this->my_brain->ideas[num] = idea;
 }
 
-void 			Cat::operator= (Animal &ref)
+void			Dog::operator= (AAnimal &ref)
 {
-	std::cout << "Cat Assignation Operator Called" << std::endl;
-	if (ref.getType() == "Cat")
+	std::cout << "Dog Assignation Operator Called" << std::endl;
+	if (ref.getType() == "Dog")
 	{
-		Cat	*newCat = dynamic_cast<Cat*>(&ref);
+		Dog	*newDog = dynamic_cast<Dog*>(&ref);
 		for (int i = 0; i < 100; i++)
-			this->setIdea(newCat->getIdea(i), i);
+			this->setIdea(newDog->getIdea(i), i);
 	}
 }
 
@@ -49,24 +49,24 @@ void 			Cat::operator= (Animal &ref)
 **	C & D
 */
 
-Cat::Cat(Cat &ref)
+Dog::Dog(Dog &ref)
 {
-	std::cout << "Cat Copy Constructor Called" << std::endl;
+	std::cout << "Dog Copy Constructor Called" << std::endl;
 	this->my_brain = new Brain();
 	for (int i = 0; i < 100; i++)
 		this->setIdea(ref.getIdea(i), i);
 	this->type = ref.type;
 }
 
-Cat::Cat()
+Dog::Dog()
 {
-	std::cout << "Cat Constructor Called" << std::endl;
+	std::cout << "Dog Constructor Called" << std::endl;
 	this->my_brain = new Brain();
-	this->type = "Cat";
+	this->type = "Dog";
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat Destruct Called" << std::endl;
+	std::cout << "Dog Destruct Called" << std::endl;
 	delete this->my_brain;
 }

@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include <iostream>
-#include "Animal.hpp"
+#include "AAnimal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
@@ -23,7 +23,9 @@ void ft_leaks()
 
 int main()
 {
-	Animal	*animals[4];
+	//AAnimal instantiated_class_aanimal;
+	
+	AAnimal	*animals[4];
 
 	for (int i = 0; i < 4; i++)
 	{

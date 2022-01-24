@@ -34,7 +34,7 @@ void			Cat::setIdea(std::string idea, int num)
 	this->my_brain->ideas[num] = idea;
 }
 
-void 			Cat::operator= (Animal &ref)
+void 			Cat::operator= (AAnimal &ref)
 {
 	std::cout << "Cat Assignation Operator Called" << std::endl;
 	if (ref.getType() == "Cat")

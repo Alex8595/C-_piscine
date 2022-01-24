@@ -6,10 +6,11 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 16:12:33 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/17 17:08:13 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/01/24 14:48:51 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "Cat.hpp"
 #include "Dog.hpp"
 #include "Brain.hpp"
 
@@ -35,10 +36,13 @@ void			Dog::setIdea(std::string idea, int num)
 
 void			Dog::operator= (Animal &ref)
 {
-	std::cout << "Dog Assignation Operator called" << std::endl;
-	Dog	*newDog = dynamic_cast<Dog*>(&ref);
-	for (int i = 0; i < 100; i++)
-		this->setIdea(newDog->getIdea(i), i);
+	std::cout << "Dog Assignation Operator Called" << std::endl;
+	if (ref.getType() == "Dog")
+	{
+		Dog	*newDog = dynamic_cast<Dog*>(&ref);
+		for (int i = 0; i < 100; i++)
+			this->setIdea(newDog->getIdea(i), i);
+	}
 }
 
 /*
@@ -48,16 +52,21 @@ void			Dog::operator= (Animal &ref)
 Dog::Dog(Dog &ref)
 {
 	std::cout << "Dog Copy Constructor Called" << std::endl;
+	this->my_brain = new Brain();
+	for (int i = 0; i < 100; i++)
+		this->setIdea(ref.getIdea(i), i);
 	this->type = ref.type;
 }
 
 Dog::Dog()
 {
 	std::cout << "Dog Constructor Called" << std::endl;
+	this->my_brain = new Brain();
 	this->type = "Dog";
 }
 
 Dog::~Dog()
 {
 	std::cout << "Dog Destruct Called" << std::endl;
+	delete this->my_brain;
 }
