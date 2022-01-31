@@ -6,7 +6,7 @@
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:46:01 by ahernand          #+#    #+#              #
-#    Updated: 2022/01/24 16:06:50 by ahernand         ###   ########.fr        #
+#    Updated: 2022/01/28 18:08:02 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,11 +16,19 @@ all : $(NAME)
 
 CXX = g++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98# -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp
+SRCS =	srcs/main.cpp			\
+		srcs/AMateria.cpp		\
+		srcs/Ice.cpp			\
+		srcs/MateriaSource.cpp	\
+		srcs/Character.cpp
 
-OBJS =	srcs/main.o
+OBJS =	srcs/main.o				\
+		srcs/AMateria.o			\
+		srcs/Ice.o				\
+		srcs/MateriaSource.o	\
+		srcs/Character.o
 
 $(OBJS) : $(SRCS)
 

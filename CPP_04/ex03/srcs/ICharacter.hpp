@@ -1,46 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   AMateria.cpp                                       :+:      :+:    :+:   */
+/*   ICharacter.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 14:52:38 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/28 16:31:13 by ahernand         ###   ########.fr       */
+/*   Created: 2022/01/28 17:13:01 by ahernand          #+#    #+#             */
+/*   Updated: 2022/01/28 18:05:07 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "AMateria.hpp"
+#ifndef __ICHARACTER_HPP__
+# define __ICHARACTER_HPP__
+# include <iostream>
+# include "AMateria.hpp"
 
-std::string const &AMateria::getType() const
+class ICharacter
 {
-	return (this->type);
-}
+	public:
+		virtual ~ICharacter() {		}
+		virtual std::string const & getName() const = 0;
+		virtual void equip(AMateria* m) = 0;
+		virtual void unequip(int idx) = 0;
+		virtual void use(int idx, ICharacter& target) = 0;
+};
 
-/*
-**	C & D
-*/
-
-void	AMateria::operator=(const AMateria &ref)
-{
-	this->type = ref.type;
-}
-
-AMateria::AMateria(const AMateria &ref)
-{
-	this->type = ref.type;
-}
-
-AMateria::AMateria(std::string const &type)
-{
-	this->type = type;
-}
-
-AMateria::AMateria()
-{
-	this->type = "Default";
-}
-
-AMateria::~AMateria()
-{
-}
+#endif
