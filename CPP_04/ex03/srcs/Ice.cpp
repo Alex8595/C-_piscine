@@ -6,23 +6,17 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 16:40:49 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/31 18:58:15 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:10:28 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
-/*
+
 AMateria*		Ice::clone() const
 {
-//	Ice	*new_ice = new Ice();
-	return (NULL);
+	AMateria	*new_ice = new Ice();
+	return (new_ice);
 }
-
-void			Ice::use(ICharacter& target)
-{ 
-   	std::cout << "* shoots an ice bolt at ";		//<< target.name <<  " *" << std::end;
-}
-*/
 
 /*
 **	C & D

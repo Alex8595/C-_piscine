@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/27 16:32:21 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/31 18:42:01 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:09:51 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define __IMATERIASOURCE__
 # include <iostream>
 # include "AMateria.hpp"
+# include "Ice.hpp"
 
 class IMateriaSource
 {

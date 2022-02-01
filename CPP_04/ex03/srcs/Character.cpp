@@ -6,29 +6,29 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:09:50 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/31 18:07:01 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:10:32 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-std::string const		&Character::getName() const
+std::string const	&Character::getName() const
 {
 	return (this->name);
 }
 
-void					Character::equip(AMateria* m)
+void				Character::equip(AMateria* m)
 {
 
 }
 
 
-void					Character::unequip(int idx)
+void				Character::unequip(int idx)
 {
 
 }
 
-void					Character::use(int idx, ICharacter& target)
+void				Character::use(int idx, ICharacter& target)
 {
 
 }

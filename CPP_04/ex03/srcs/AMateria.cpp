@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/25 14:52:38 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/28 16:31:13 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:12:06 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ std::string const &AMateria::getType() const
 {
 	return (this->type);
 }
+
+/*void	AMateria::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::end;
+}
+*/
 
 /*
 **	C & D

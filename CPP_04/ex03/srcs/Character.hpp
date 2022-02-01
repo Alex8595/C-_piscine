@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/28 17:09:56 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/31 18:02:46 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/02/01 19:10:41 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	Character : public ICharacter
 
 	public:
 		virtual std::string const		&getName() const;
-		virtual void					equip(AMateria* m);
+		virtual void 					equip(AMateria* m);
 		virtual void					unequip(int idx);
 		virtual void					use(int idx, ICharacter& target);
 		
