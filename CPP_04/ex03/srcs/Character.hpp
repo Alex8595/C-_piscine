@@ -13,6 +13,9 @@
 #ifndef __CHARACTER_HPP__
 # define __CHARACTER_HPP__
 # include "ICharacter.hpp"
+# include "MateriaSource.hpp"
+
+class	AMateria;
 
 class	Character : public ICharacter
 {

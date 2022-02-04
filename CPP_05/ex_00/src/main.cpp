@@ -1,29 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:40:48 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/01 19:11:17 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/02 14:49:27 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/02 14:49:28 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICE_HPP__
-# define __ICE_HPP__
-# include "IMateriaSource.hpp"
+#include "Bureaucrat.hpp"
 
-class IMateriaSource;
-
-class	Ice : public AMateria
+int main(int argc, char **argv)
 {
-	public:
-		virtual AMateria*				clone() const;
 
-		Ice(std::string const &type);
-		Ice();
-		~Ice();
-};
 
-#endif
+
+	return (0);
+}

@@ -16,6 +16,8 @@
 # include "AMateria.hpp"
 # include "Ice.hpp"
 
+class	AMateria;
+
 class IMateriaSource
 {
 	protected:

@@ -13,7 +13,9 @@
 #ifndef __ICHARACTER_HPP__
 # define __ICHARACTER_HPP__
 # include <iostream>
-# include "AMateria.hpp"
+# include "IMateriaSource.hpp"
+
+class	AMateria;
 
 class ICharacter
 {

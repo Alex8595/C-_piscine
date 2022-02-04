@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.hpp                                            :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/25 16:40:48 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/01 19:11:17 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/02 14:52:33 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/02 14:52:34 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICE_HPP__
-# define __ICE_HPP__
-# include "IMateriaSource.hpp"
+#include "Bureaucrat.hpp"
 
-class IMateriaSource;
+/*
+**		C & D
+*/
 
-class	Ice : public AMateria
+Bureaucrat::Bureaucrat(int grade)
 {
-	public:
-		virtual AMateria*				clone() const;
+	try
+	{
+		if (grade > 150)
+			throw ();
+		if (grade < 1)
+			throw ( );
+	}
+	catch ()
+	{
 
-		Ice(std::string const &type);
-		Ice();
-		~Ice();
-};
 
-#endif
+	}
+}
+
+Bureaucrat::~Bureaucrat()
+{
+	
+}
