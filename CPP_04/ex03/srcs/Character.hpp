@@ -13,15 +13,13 @@
 #ifndef __CHARACTER_HPP__
 # define __CHARACTER_HPP__
 # include "ICharacter.hpp"
-# include "MateriaSource.hpp"
-
-class	AMateria;
+# include "AMateria.hpp"
 
 class	Character : public ICharacter
 {
 	private:
-		int								n_filled;
 		std::string						name;
+		int								n_filled;
 		AMateria						*inv_materias[4];
 
 	public:
@@ -30,8 +28,9 @@ class	Character : public ICharacter
 		virtual void					unequip(int idx);
 		virtual void					use(int idx, ICharacter& target);
 		
-	//	void 	operator=(const Character &ref);
-	//	Character(const Character &ref);
+		void 	operator=(const Character &ref);
+		Character(const Character &ref);
+		Character(const std::string &ref);
 		Character();
 		~Character();
 };

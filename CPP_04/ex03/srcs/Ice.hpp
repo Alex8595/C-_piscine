@@ -12,16 +12,16 @@
 
 #ifndef __ICE_HPP__
 # define __ICE_HPP__
-# include "IMateriaSource.hpp"
-
-class IMateriaSource;
+# include <iostream>
+# include "AMateria.hpp"
 
 class	Ice : public AMateria
 {
 	public:
 		virtual AMateria*				clone() const;
 
-		Ice(std::string const &type);
+		void							operator=(const Ice &ref);
+		Ice(const Ice &ref);
 		Ice();
 		~Ice();
 };

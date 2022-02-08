@@ -12,7 +12,7 @@
 
 #include "Ice.hpp"
 
-AMateria*		Ice::clone() const
+AMateria		*Ice::clone() const
 {
 	AMateria	*new_ice = new Ice();
 	return (new_ice);
@@ -22,11 +22,20 @@ AMateria*		Ice::clone() const
 **	C & D
 */
 
+void				Ice::operator=(const Ice &ref)
+{
+	this->type = ref.type;
+}
+
+Ice::Ice(const Ice &ref)
+{
+	this->type = ref.type;
+}
+
 Ice::Ice()
 {
 	this->type = "ice";
 }
-
 
 Ice::~Ice()
 {

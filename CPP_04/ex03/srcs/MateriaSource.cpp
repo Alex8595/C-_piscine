@@ -15,9 +15,7 @@
 void			MateriaSource::learnMateria(AMateria *mat)
 {
 	if (this->idx_learned > 3)
-	{
 		std::cout << "This Materia Source is full, can't learn more Materia." << std::endl;
-	}
 	else
 	{
 		this->inv_materias[idx_learned] = mat;
@@ -32,21 +30,20 @@ AMateria*		MateriaSource::createMateria(std::string const &type)
 	{
 		if (this->inv_materias[i]->getType() == type)
 		{
-			std::cout << "created" << std::endl;
+			std::cout << "Materia " << type << " created" << std::endl;
 			if (type == "ice")
 			{
 				AMateria	*materia = new Ice;
 				materia = this->inv_materias[i];
 				return (materia);
 			}
-			/*
 			if (type == "cure")
 			{
 				AMateria	*materia = new Cure;
 				materia = this->inv_materias[i];
 				return (materia);
 			}
-			  */
+			
 		}
 	}
 	std::cout << "This materia hasn't been leant" << std::endl;

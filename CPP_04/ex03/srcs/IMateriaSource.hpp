@@ -13,10 +13,10 @@
 #ifndef __IMATERIASOURCE__
 # define __IMATERIASOURCE__
 # include <iostream>
+# include "ICharacter.hpp"
 # include "AMateria.hpp"
 # include "Ice.hpp"
-
-class	AMateria;
+# include "Cure.hpp"
 
 class IMateriaSource
 {

@@ -17,11 +17,13 @@ std::string const &AMateria::getType() const
 	return (this->type);
 }
 
-/*void	AMateria::use(ICharacter& target)
+void	AMateria::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::end;
+	if (getType() == "ice")
+		std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
+	if (getType() == "cure")
+		std::cout << "* heals " << target.getName() <<  "'s wounds *" << std::endl;
 }
-*/
 
 /*
 **	C & D

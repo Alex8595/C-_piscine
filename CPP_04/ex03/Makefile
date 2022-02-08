@@ -16,17 +16,19 @@ all : $(NAME)
 
 CXX = g++
 
-CPPFLAGS = -std=c++98# -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp			\
 		srcs/AMateria.cpp		\
 		srcs/Ice.cpp			\
+		srcs/Cure.cpp			\
 		srcs/MateriaSource.cpp	\
 		srcs/Character.cpp
 
 OBJS =	srcs/main.o				\
 		srcs/AMateria.o			\
 		srcs/Ice.o				\
+		srcs/Cure.o				\
 		srcs/MateriaSource.o	\
 		srcs/Character.o
 

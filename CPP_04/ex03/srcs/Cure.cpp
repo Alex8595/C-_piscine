@@ -1,29 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ICharacter.hpp                                     :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/01/28 17:13:01 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/01 19:10:39 by ahernand         ###   ########.fr       */
+/*   Created: 2022/01/25 16:40:49 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/01 19:10:28 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __ICHARACTER_HPP__
-# define __ICHARACTER_HPP__
-# include <iostream>
+#include "Cure.hpp"
 
-class AMateria;
-
-class ICharacter
+AMateria		*Cure::clone() const
 {
-	public:
-		virtual ~ICharacter() {		}
-		virtual std::string const & getName() const = 0;
-		virtual void equip(AMateria* m) = 0;
-		virtual void unequip(int idx) = 0;
-		virtual void use(int idx, ICharacter& target) = 0;
-};
+	AMateria	*new_cure = new Cure();
+	return (new_cure);
+}
 
-#endif
+/*
+**	C & D
+*/
+
+void				Cure::operator=(const Cure &ref)
+{
+	this->type = ref.type;
+}
+
+Cure::Cure(const Cure &ref)
+{
+	this->type = ref.type;
+}
+
+Cure::Cure()
+{
+	this->type = "cure";
+}
+
+Cure::~Cure()
+{
+
+}
