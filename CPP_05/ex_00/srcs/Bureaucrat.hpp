@@ -17,12 +17,41 @@
 class	Bureaucrat
 {
 	protected:
-		const std::string		name;
-		int						grade;
+		std::string		name;	
+		int						grade;	//1 to 150 (ranking like)
 
 	public:
-		Bureaucrat();
-		~Bureaucrat();
-};
+		std::string				getName();
+		int						getGrade();
+		void					incrementGrade();
+		void					decrementGrade();
 
+		void					operator=(Bureaucrat &ref);
+		friend std::ostream&	operator<<(std::ostream& os, Bureaucrat &ref);
+
+		Bureaucrat();
+		Bureaucrat(int grade_given);
+		Bureaucrat(Bureaucrat &ref);
+		Bureaucrat(std::string name_given, int grade_given);
+		~Bureaucrat();
+
+
+		class GradeTooHighException : public std::exception
+		{
+			public:
+				GradeTooHighException()
+				{
+					std::cout << "Grade Too High!" << std::endl;					
+				};
+		};
+
+		class GradeTooLowException : public std::exception
+		{
+			public:
+				GradeTooLowException()
+				{
+					std::cout << "Grade Too Low!" << std::endl;					
+				};
+		};
+};
 #endif

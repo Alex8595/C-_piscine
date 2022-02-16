@@ -1,21 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Forms.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/02 14:49:27 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/02 14:49:28 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/16 17:52:32 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/16 17:52:32 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Forms.hpp"
 
-int main(int argc, char **argv)
+Forms::Forms(std::string g_name, int gr_sign, int gr_exec) : name(g_name), grade_req_sign(gr_sign), grade_req_exec(gr_exec)
 {
-
-
-
-	return (0);
+    is_signed = false;
 }
