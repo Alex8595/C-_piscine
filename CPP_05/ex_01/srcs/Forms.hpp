@@ -27,18 +27,12 @@ class Forms
 	class GradeTooHighException : public std::exception
 	{
 		public:
-			GradeTooHighException()
-			{
-				std::cout << "Grade Too High!" << std::endl;					
-			};
+			GradeTooHighException();
 	};
 
 	class GradeTooLowException : public std::exception
 	{
 		public:
-			GradeTooLowException()
-			{
-				std::cout << "Grade Too Low!" << std::endl;					
-			};
+			GradeTooLowException();
 	};		
 };

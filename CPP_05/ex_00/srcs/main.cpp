@@ -49,5 +49,8 @@ int main(void)
 	std::cout << Bu_4.getName() << "'s grade from constructor:	" << Bu_4.getGrade() << std::endl;
 	std::cout << std::endl;
 
+	std::cout << Bu_3 << std::endl;
+	std::cout << Bu_4 << std::endl;
+
 	return (0);
 }
