@@ -16,8 +16,8 @@
 
 class	Bureaucrat
 {
-	protected:
-		std::string		name;	
+	private:
+		std::string				name;	
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
@@ -27,9 +27,6 @@ class	Bureaucrat
 		void					decrementGrade();
 
 		void					operator=(Bureaucrat &ref);
-		//std::ostream			&operator<<(std::ostream &stream);
-	    friend std::ostream		&operator<<(std::ostream& os, const Bureaucrat& ref);
-
 
 		Bureaucrat();
 		Bureaucrat(int grade_given);
@@ -50,4 +47,7 @@ class	Bureaucrat
 				GradeTooLowException();
 		};
 };
+
+std::ostream &operator<<(std::ostream &stream, Bureaucrat &object);
+
 #endif

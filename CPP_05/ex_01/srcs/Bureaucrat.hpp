@@ -13,23 +13,24 @@
 #ifndef __BUREAUCRAT_HPP_
 # define __BUREAUCRAT_HPP_
 # include <iostream>
+# include "Forms.hpp"
 
 class	Bureaucrat
 {
-	protected:
-		std::string		name;	
+	private:
+		std::string				name;	
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
+		void					signForm(Forms &ref);
+
+
 		std::string				getName();
 		int						getGrade();
 		void					incrementGrade();
 		void					decrementGrade();
 
 		void					operator=(Bureaucrat &ref);
-		//std::ostream			&operator<<(std::ostream &stream);
-	    friend std::ostream		&operator<<(std::ostream& os, const Bureaucrat& ref);
-
 
 		Bureaucrat();
 		Bureaucrat(int grade_given);
@@ -50,4 +51,7 @@ class	Bureaucrat
 				GradeTooLowException();
 		};
 };
+
+std::ostream &operator<<(std::ostream &stream, Bureaucrat &object);
+
 #endif

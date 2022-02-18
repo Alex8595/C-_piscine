@@ -13,18 +13,18 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		For Construct in bounds
+**		G & S
 */
 
-Bureaucrat::GradeTooHighException::GradeTooHighException()
+std::string				Bureaucrat::getName()
 {
-	std::cout << "Grade Too High!" << std::endl;					
-};
+	return (name);
+}
 
-Bureaucrat::GradeTooLowException::GradeTooLowException()
+int						Bureaucrat::getGrade()
 {
-	std::cout << "Grade Too Low!" << std::endl;					
-};
+	return (grade);
+}
 
 /*
 **		Increment & Decrement
@@ -44,7 +44,6 @@ void						Bureaucrat::incrementGrade()
 	}
 }
 
-
 void						Bureaucrat::decrementGrade()
 {
 	try
@@ -60,18 +59,18 @@ void						Bureaucrat::decrementGrade()
 }
 
 /*
-**		G & S
+**		For Construct in bounds
 */
 
-std::string				Bureaucrat::getName()
+Bureaucrat::GradeTooHighException::GradeTooHighException()
 {
-	return (name);
-}
+	std::cout << "Grade Too High!" << std::endl;					
+};
 
-int						Bureaucrat::getGrade()
+Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
-	return (grade);
-}
+	std::cout << "Grade Too Low!" << std::endl;					
+};
 
 /*
 **		Op
@@ -83,11 +82,10 @@ void					Bureaucrat::operator=(Bureaucrat &ref)
 	this->grade = ref.getGrade();
 }
 
-//std::ostream&			Bureaucrat::operator<<(std::ostream &stream)
-std::ostream			&operator<<(std::ostream& os, const Bureaucrat& ref)
+std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 {
-    os << ref.name << ", bureaucrat grade " << ref.grade << ".";
-    return os;
+    stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
+	return(stream);
 }
 
 /*

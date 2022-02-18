@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#ifndef __FORMS_HPP_
+# define __FORMS_HPP_
+# include <iostream>
+
+class Bureaucrat;
 
 class Forms
 {
@@ -21,7 +25,17 @@ class Forms
 		bool					is_signed;
 
 	public:
+		void					beSigned(Bureaucrat &ref);
+
+		std::string				getName();
+		int						getGradeReqSign();
+		int						getGradeReqExec();
+		bool					getIsSigned();
+
+		void					operator=(Forms &ref);
 		Forms(std::string g_name, int gr_sign, int gr_exec);
+		Forms(const Forms &ref);
+		Forms();
 		~Forms();
 
 	class GradeTooHighException : public std::exception
@@ -34,5 +48,10 @@ class Forms
 	{
 		public:
 			GradeTooLowException();
-	};		
+	};
+
 };
+
+std::ostream &operator<<(std::ostream &stream, Forms &ref);
+
+#endif

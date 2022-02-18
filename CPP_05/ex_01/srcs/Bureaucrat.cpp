@@ -13,53 +13,6 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		For Construct in bounds
-*/
-
-Bureaucrat::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Grade Too High!" << std::endl;					
-};
-
-Bureaucrat::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Grade Too Low!" << std::endl;					
-};
-
-/*
-**		Increment & Decrement
-*/
-
-void						Bureaucrat::incrementGrade()
-{
-	try
-	{
-		if (grade - 1 < 1)
-			throw (Bureaucrat::GradeTooHighException());
-		else
-			grade--;
-	}
-	catch (std::exception &exception)
-	{
-	}
-}
-
-
-void						Bureaucrat::decrementGrade()
-{
-	try
-	{
-		if (grade + 1 > 150)
-			throw (Bureaucrat::GradeTooHighException());
-		else
-			grade++;
-	}
-	catch (std::exception &exception)
-	{
-	}
-}
-
-/*
 **		G & S
 */
 
@@ -74,6 +27,68 @@ int						Bureaucrat::getGrade()
 }
 
 /*
+**		ex_01 NEW function
+*/
+
+void					Bureaucrat::signForm(Forms &ref)
+{
+		if (grade <= ref.getGradeReqSign())
+		{
+			ref.beSigned(*this);
+			std::cout << "Buraucrat " << getName() << ", signs form " << ref.getName() << "." << std::endl;
+		}
+		else
+			std::cout << "Buraucrat " << getName() << ", cannot sign " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
+
+}
+
+/*
+**		Increment & Decrement
+*/
+
+void					Bureaucrat::incrementGrade()
+{
+	try
+	{
+		if (grade - 1 < 1)
+			throw (Bureaucrat::GradeTooHighException());
+		else
+			grade--;
+	}
+	catch (std::exception &exception)
+	{
+	}
+}
+
+void					Bureaucrat::decrementGrade()
+{
+	try
+	{
+		if (grade + 1 > 150)
+			throw (Bureaucrat::GradeTooHighException());
+		else
+			grade++;
+	}
+	catch (std::exception &exception)
+	{
+	}
+}
+
+/*
+**		For Construct in bounds
+*/
+
+Bureaucrat::GradeTooHighException::GradeTooHighException()
+{
+	std::cout << "Grade Too High!" << std::endl;					
+};
+
+Bureaucrat::GradeTooLowException::GradeTooLowException()
+{
+	std::cout << "Grade Too Low!" << std::endl;					
+};
+
+/*
 **		Op
 */
 
@@ -83,11 +98,10 @@ void					Bureaucrat::operator=(Bureaucrat &ref)
 	this->grade = ref.getGrade();
 }
 
-//std::ostream&			Bureaucrat::operator<<(std::ostream &stream)
-std::ostream			&operator<<(std::ostream& os, const Bureaucrat& ref)
+std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 {
-    os << ref.name << ", bureaucrat grade " << ref.grade << ".";
-    return os;
+    stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
+	return(stream);
 }
 
 /*
