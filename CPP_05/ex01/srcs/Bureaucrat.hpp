@@ -13,7 +13,7 @@
 #ifndef __BUREAUCRAT_HPP_
 # define __BUREAUCRAT_HPP_
 # include <iostream>
-# include "Forms.hpp"
+# include "Form.hpp"
 
 class	Bureaucrat
 {
@@ -22,7 +22,7 @@ class	Bureaucrat
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
-		void					signForm(Forms &ref);
+		void					signForm(Form &ref);
 
 
 		std::string				getName();

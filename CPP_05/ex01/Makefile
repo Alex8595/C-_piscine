@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Forms
+NAME = Form
 
 all : $(NAME)
 
@@ -19,11 +19,11 @@ CXX = g++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp			\
-		srcs/Forms.cpp			\
+		srcs/Form.cpp			\
 		srcs/Bureaucrat.cpp
 
 OBJS = srcs/main.o				\
-		srcs/Forms.o			\
+		srcs/Form.o				\
 		srcs/Bureaucrat.o
 
 

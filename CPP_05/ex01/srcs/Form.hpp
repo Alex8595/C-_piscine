@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Forms.hpp                                          :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/16 17:52:36 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/16 17:52:37 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/19 13:45:22 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/19 13:45:24 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __FORMS_HPP_
-# define __FORMS_HPP_
+#ifndef __FORM_HPP_
+# define __FORM_HPP_
 # include <iostream>
 
 class Bureaucrat;
 
-class Forms
+class Form
 {
 	private:
 		const std::string		name;
@@ -32,11 +32,11 @@ class Forms
 		int						getGradeReqExec();
 		bool					getIsSigned();
 
-		void					operator=(Forms &ref);
-		Forms(std::string g_name, int gr_sign, int gr_exec);
-		Forms(const Forms &ref);
-		Forms();
-		~Forms();
+		void					operator=(Form &ref);
+		Form(std::string g_name, int gr_sign, int gr_exec);
+		Form(const Form &ref);
+		Form();
+		~Form();
 
 	class GradeTooHighException : public std::exception
 	{
@@ -52,6 +52,6 @@ class Forms
 
 };
 
-std::ostream &operator<<(std::ostream &stream, Forms &ref);
+std::ostream &operator<<(std::ostream &stream, Form &ref);
 
 #endif

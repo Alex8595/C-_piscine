@@ -1,11 +1,11 @@
 #include <iostream>
-#include "Forms.hpp"
+#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 int main(void)
 {
-	Forms		f1("Road 6", 50, 31);
-	Forms		f2("Monument", 10, 20);
+	Form		f1("Main Road", 50, 31);
+	Form		f2("Monument", 10, 20);
 
 	Bureaucrat	b1("Samantha", 1);
 	Bureaucrat	b2("Paola", 99);

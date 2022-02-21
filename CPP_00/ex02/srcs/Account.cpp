@@ -4,8 +4,6 @@
 
 #include "Account.hpp"
 
-
-
 void	Account::_displayTimestamp( void )
 {
 	time_t		rawtime;
@@ -56,7 +54,7 @@ void	Account::displayAccountsInfos( void )
 	std::cout << "accounts:"	<<		getNbAccounts()		<< ";";
 	std::cout << "total:"		<< 		getTotalAmount()	<< ";";
 	std::cout << "deposits:"	<< 		getNbDeposits()		<< ";";
-	std::cout << "withdrawals:"	<< 		getNbWithdrawals()	<< ";";
+	std::cout << "withdrawals:"	<< 		getNbWithdrawals();
 	std::cout << std::endl;
 }
 
@@ -77,7 +75,7 @@ void	Account::makeDeposit( int deposit )
 		this->_amount += deposit;
 		_totalAmount += deposit;
 		std::cout << "amount:"		<< this->_amount		<< ";";
-		std::cout << "nb_deposits:"	<< this->_nbDeposits	<< ";";
+		std::cout << "nb_deposits:"	<< this->_nbDeposits;
 		std::cout << std::endl;
 	}
 	else
@@ -97,12 +95,12 @@ bool	Account::makeWithdrawal( int withdrawal )
 		_totalNbWithdrawals++;
 		std::cout << "withdrawal:"		<< withdrawal			<< ";";
 		std::cout << "amount:"			<< this->_amount		<< ";";
-		std::cout << "nb_withdrawals:"	<< this->_nbWithdrawals	<< ";";
+		std::cout << "nb_withdrawals:"	<< this->_nbWithdrawals;
 		std::cout << std::endl;
 		return (true);
 	}
 	else
-		std::cout << "withdrawal:refused"	<< ";";
+		std::cout << "withdrawal:refused";
 	std::cout << std::endl;
 	return (false);
 }
@@ -119,7 +117,7 @@ void	Account::displayStatus( void ) const
 	std::cout << "index:"		<< this->_accountIndex			<< ";";
 	std::cout << "amount:"		<< this->_amount				<< ";";
 	std::cout << "deposits:"	<< this->_nbDeposits			<< ";";
-	std::cout << "withdrawals:"	<< this->_nbWithdrawals			<< ";";
+	std::cout << "withdrawals:"	<< this->_nbWithdrawals;
 	std::cout << std::endl;
 }
 

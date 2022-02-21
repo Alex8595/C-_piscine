@@ -30,7 +30,7 @@ int						Bureaucrat::getGrade()
 **		ex_01 NEW function
 */
 
-void					Bureaucrat::signForm(Forms &ref)
+void					Bureaucrat::signForm(Form &ref)
 {
 		if (grade <= ref.getGradeReqSign())
 		{

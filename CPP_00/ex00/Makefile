@@ -10,21 +10,22 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Megaphone
+NAME = megaphone
 
 all : $(NAME)
 
-CC = c++ 
+CXX = c++ 
 
-CPPFLAGS = -std=c++98
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-OBJS = srcs/Megaphone.o
+SRCS = srcs/megaphone.cpp
 
-$(OBJS) : srcs/Megaphone.cpp
+OBJS = srcs/megaphone.o
+
+$(OBJS) : $(SRCS)
 
 $(NAME) : $(OBJS)
-	$(CC) $(CPPFLAGS) $< -o $@
-
+	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
 
 
 # - - - - - - - - - - - - - - - - - #
@@ -33,7 +34,7 @@ $(NAME) : $(OBJS)
 
 
 make fclean:
-	@rm -f Megaphone
-	@rm -f srcs/Megaphone.o
+	@rm -f $(NAME)
+	@rm -f $(OBJS)
 
 re:	fclean all
