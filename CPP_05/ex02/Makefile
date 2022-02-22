@@ -14,7 +14,7 @@ NAME = MoreForms
 
 all : $(NAME)
 
-CXX = g++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Werror -Wextra
 
@@ -39,12 +39,14 @@ OBJS =	srcs/Form.o						\
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@ 
 
+
 # - - - - - - - - - - - - - - - #
 # - - - - C L E A N I N G - - - #
 # - - - - - - - - - - - - - - - #
 
 make fclean:
-	@rm -f $(OBJS)
-	@rm -f $(NAME)
+	rm -f $(OBJS)
+	rm -f $(NAME)
+	find . -name "*_shrubbery" -type f -delete
 
 re: fclean all

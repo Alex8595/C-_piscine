@@ -1,18 +1,30 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/22 16:27:50 by ahernand          #+#    #+#              #
+#    Updated: 2022/02/22 16:27:51 by ahernand         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = karenFilter
 
 all : $(NAME)
 
-CXX = g++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp		\
-		srcs/karenFilter.cpp
+SRCS =	srcs/karen.cpp		\
+		srcs/main.cpp
 
-OBJS =	srcs/main.o			\
-		srcs/karenFilter.o
+OBJS =	srcs/karen.o		\
+		srcs/main.o
 
-$(OBJS) : SRCS
+$(OBJS) : $(SRCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@

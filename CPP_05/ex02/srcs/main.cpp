@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 18:38:02 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/22 18:38:03 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
@@ -5,9 +17,17 @@
 
 int main(void)
 {
-	ShrubberyCreationForm s1("Casa_de_Campo");
+	Bureaucrat              b1("Samantha", 1);
+	ShrubberyCreationForm   s1("Garden");
 
-	
+	//              Execute Action ShrubberyCreationForm
+	std::cout << "_ Execute Action ShrubberyCreationForm"<< std::endl;
 
-    return (0);
+	s1.beSigned(b1);
+	s1.execute(b1);
+	std::cout << s1 << std::endl;
+	std::cout << std::endl;
+
+
+	return (0);
 }

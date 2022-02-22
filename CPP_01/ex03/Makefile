@@ -28,7 +28,7 @@ OBJS =	srcs/main.o				\
 		srcs/HumanA.o			\
 		srcs/HumanB.o
 
-$(OBJS) : SRCS
+$(OBJS) : $(SRCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
@@ -42,6 +42,5 @@ $(NAME) : $(OBJS)
 make fclean:
 	@rm -f $(NAME)
 	@rm -f $(OBJS)
-
 
 re:	fclean all

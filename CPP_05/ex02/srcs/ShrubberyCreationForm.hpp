@@ -13,20 +13,18 @@
 #ifndef _SHRUBBERYCREATIONFORM_HPP_
 # define _SHRUBBERYCREATIONFORM_HPP_
 # include <fstream>  
-# include <iostream>
 # include "Form.hpp"
 
-
-class ShrubberyCreationForm : Form
+class ShrubberyCreationForm : public Form
 {
-    public:
-		virtual void		execute(Bureaucrat const &executor) const = 0;
+	public:
+		void		execute(Bureaucrat const &executor) const;
 
-        void                operator=(ShrubberyCreationForm &ref);
-        ShrubberyCreationForm(std::string target);
-        ShrubberyCreationForm(ShrubberyCreationForm &ref);
-        ShrubberyCreationForm();
-        ~ShrubberyCreationForm();
+		void				operator=(ShrubberyCreationForm &ref);
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm &ref);
+		ShrubberyCreationForm();
+		~ShrubberyCreationForm();
 };
 
 #endif

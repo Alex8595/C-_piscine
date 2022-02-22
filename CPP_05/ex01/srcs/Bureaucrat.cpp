@@ -13,21 +13,7 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		G & S
-*/
-
-std::string				Bureaucrat::getName()
-{
-	return (name);
-}
-
-int						Bureaucrat::getGrade()
-{
-	return (grade);
-}
-
-/*
-**		ex_01 NEW function
+**						ex_01 NEW function
 */
 
 void					Bureaucrat::signForm(Form &ref)
@@ -43,7 +29,21 @@ void					Bureaucrat::signForm(Form &ref)
 }
 
 /*
-**		Increment & Decrement
+**		G & S
+*/
+
+std::string				Bureaucrat::getName()
+{
+	return (name);
+}
+
+int						Bureaucrat::getGrade()
+{
+	return (grade);
+}
+
+/*
+**						Increment & Decrement
 */
 
 void					Bureaucrat::incrementGrade()
@@ -75,7 +75,7 @@ void					Bureaucrat::decrementGrade()
 }
 
 /*
-**		For Construct in bounds
+**			For Construct in bounds
 */
 
 Bureaucrat::GradeTooHighException::GradeTooHighException()
@@ -89,7 +89,7 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 };
 
 /*
-**		Op
+**			Op
 */
 
 void					Bureaucrat::operator=(Bureaucrat &ref)
@@ -101,11 +101,11 @@ void					Bureaucrat::operator=(Bureaucrat &ref)
 std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 {
     stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
-	return(stream);
+	return (stream);
 }
 
 /*
-**		C & D
+**			Con & Des
 */
 
 Bureaucrat::Bureaucrat(void)
@@ -125,6 +125,7 @@ Bureaucrat::Bureaucrat(int grade_given)
 	try
 	{
 		name = "Default";
+		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)
@@ -146,6 +147,7 @@ Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
 	try
 	{
 		name = name_given;
+		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)

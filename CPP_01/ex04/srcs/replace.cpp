@@ -1,5 +1,16 @@
-#include "replace.hpp"
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   replace.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 15:29:53 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/22 15:29:53 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
+#include "replace.hpp"
 
 int		replace(std::string infile, std::string s1, std::string s2)
 {
@@ -26,10 +37,11 @@ int		replace(std::string infile, std::string s1, std::string s2)
 	while (getline(if_stream, content))
 	{
 		position = content.find(s1);
-		if (position >= 0)
+		while (position >= 0)
 		{
 			content.erase(position, s1.length());
 			content.insert(position, s2);
+			position = content.find(s1);
 		}
 		of_stream << content << std::endl;
 	}

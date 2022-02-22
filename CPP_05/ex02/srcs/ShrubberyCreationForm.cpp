@@ -13,30 +13,66 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
-/*
-**      C & S
-*/
-
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form(target, 145, 137)
-{
-
-}
-
 void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	try
 	{
-		if (executor.getGrade() < 0)
+		//	Sam = 100			grade = 50
+		if (executor.getGrade() > this->getGradeReqExec())
 			throw (Bureaucrat::GradeTooLowException());
+		if (this->getIsSigned() == false)
+			throw (Form::NotSignedException());
 	}
 	catch(const std::exception& exception)
 	{
 
 	}
 		
-	std::ofstream outfile ("test.txt");
+	std::ofstream outfile(getName() + "_shrubbery");
 
-	outfile << "my text here!" << std::endl;
+	outfile << "      |" << std::endl;
+	outfile << "    \\|/|/" << std::endl;
+	outfile << "  \\|\\|//|/" << std::endl;
+	outfile << "   \\|\\|/|/" << std::endl;
+	outfile << "    \\|//" << std::endl;
+	outfile << "     \\|/" << std::endl;
+	outfile << "     \\|/" << std::endl;
+	outfile << "      |" << std::endl;
+	outfile << "_\\|/__|_\\|/____\\|/_" << std::endl;
 
 	outfile.close();
+}
+
+
+/*
+**		Operators
+*/
+
+void				ShrubberyCreationForm::operator=(ShrubberyCreationForm &ref)
+{
+	this->is_signed = ref.is_signed;
+}
+
+/*
+**      Con & Des
+*/
+
+ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &ref) : Form(ref.getName(), 145, 137)
+{
+
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : Form(target, 145, 137)
+{
+
+}
+
+ShrubberyCreationForm::ShrubberyCreationForm() : Form("target", 145, 137)
+{
+
+}
+
+ShrubberyCreationForm::~ShrubberyCreationForm()
+{
+
 }

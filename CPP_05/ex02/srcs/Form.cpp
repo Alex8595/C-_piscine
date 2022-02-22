@@ -13,6 +13,10 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
+/*
+**			01 function sign
+*/
+
 void					Form::beSigned(Bureaucrat &ref)
 {
 	try
@@ -31,22 +35,22 @@ void					Form::beSigned(Bureaucrat &ref)
 **		G & S
 */
 
-std::string				Form::getName()
+std::string				Form::getName() const
 {
 	return (name);
 }
 
-int						Form::getGradeReqSign()
+int						Form::getGradeReqSign() const
 {
 	return (grade_req_sign);
 }
 
-int						Form::getGradeReqExec()
+int						Form::getGradeReqExec() const
 {
 	return (grade_req_exec);
 }
 
-bool					Form::getIsSigned()
+bool					Form::getIsSigned() const
 {
 	return (is_signed);	
 }
@@ -87,6 +91,11 @@ Form::GradeTooHighException::GradeTooHighException()
 Form::GradeTooLowException::GradeTooLowException()
 {
 	std::cout << "Grade Too Low!" << std::endl;					
+}
+
+Form::NotSignedException::NotSignedException()
+{
+	std::cout << "Not signed!" << std::endl;					
 }
 
 /*

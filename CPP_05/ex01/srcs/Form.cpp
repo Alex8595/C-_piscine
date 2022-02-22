@@ -61,15 +61,17 @@ int						ft_inbound(int g_grade)
 	{
 		if (g_grade > 150)
 		{
+			g_grade = 150;
 			throw (Form::GradeTooLowException());
 		}
 		else if (g_grade < 1)
 		{
+			g_grade = 150;
 			throw (Form::GradeTooHighException());
 		}
 		else
 		{
-			return(g_grade);
+			return (g_grade);
 		}
 	}
 	catch (std::exception &exception)
@@ -96,6 +98,7 @@ Form::GradeTooLowException::GradeTooLowException()
 std::ostream			&operator<<(std::ostream &stream, Form &ref)
 {
     stream << ref.getName() << ", Grade Requiered to sign it is " << ref.getGradeReqSign() << ", to execute it is " << ref.getGradeReqExec();
+	
 	if (ref.getIsSigned() == true)
 		stream << ", and currently it's signed.";
 	else

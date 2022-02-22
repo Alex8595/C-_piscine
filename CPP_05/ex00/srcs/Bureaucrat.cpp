@@ -109,6 +109,7 @@ Bureaucrat::Bureaucrat(int grade_given)
 	try
 	{
 		name = "Default";
+		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)
@@ -130,6 +131,7 @@ Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
 	try
 	{
 		name = name_given;
+		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)
