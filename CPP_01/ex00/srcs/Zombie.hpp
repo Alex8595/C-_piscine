@@ -5,14 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 14:19:56 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/22 14:19:57 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/22 13:56:25 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/22 13:56:26 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <iostream>
+#include <iostream>
 
 // ************************************************************************** //
 //                               Zombie  Class                                //
@@ -33,5 +31,3 @@ class Zombie
 		Zombie( void );
 		~Zombie( void );
 };
-
-#endif

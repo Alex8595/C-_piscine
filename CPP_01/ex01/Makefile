@@ -1,17 +1,32 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/02/22 14:16:30 by ahernand          #+#    #+#              #
+#    Updated: 2022/02/22 14:17:09 by ahernand         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-NAME = zombie_hrde
+NAME = ZombieHorde
 
 all : $(NAME)
 
-CXX = g++
+CXX = c++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/main.cpp
+SRCS =	srcs/Zombie.cpp			\
+		srcs/ZombieHorde.cpp	\
+		srcs/main.cpp
 
-OBJS =	srcs/main.o
+OBJS =	srcs/Zombie.o			\
+		srcs/ZombieHorde.o		\
+		srcs/main.o
 
-$(OBJS) : SRCS
+$(OBJS) : $(SRCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
@@ -21,10 +36,8 @@ $(NAME) : $(OBJS)
 # - - - - C L E A N I N G - - - - - #
 # - - - - - - - - - - - - - - - - - #
 
-
 make fclean:
 	@rm -f $(NAME)
 	@rm -f $(OBJS)
-
 
 re:	fclean all

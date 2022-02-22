@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/22 13:32:50 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/22 13:33:00 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 #include "contact.hpp"
@@ -6,6 +17,12 @@
 **		Add, search
 **		_ _ _ _ _ _ 
 */
+
+void clear_in()
+{
+	std::cin.clear();
+	std::cin.ignore(10000, '\n');
+}
 
 int			ft_add(PhoneBook *pb)
 {
@@ -19,18 +36,23 @@ int			ft_add(PhoneBook *pb)
 		pb->current = 0;
 	std::cout << "Please input the first name" << std::endl;
 	std::cin >> pb->ppl[pb->current].first_name;
+	clear_in();
 
 	std::cout << "Please input the last name" << std::endl;
 	std::cin >> pb->ppl[pb->current].last_name;
+	clear_in();
 
 	std::cout << "Please input the nickname" << std::endl;
 	std::cin >> pb->ppl[pb->current].nickname;
+	clear_in();
 
 	std::cout << "Please input the darkest secret" << std::endl;
 	std::cin >> pb->ppl[pb->current].darkest_secret;
+	clear_in();
 
 	std::cout << "Please input the phone number" << std::endl;
 	std::cin >> pb->ppl[pb->current].phone_number;
+	clear_in();
 
 	std::cout << "Everything is correct, thank you" << std::endl;
 	std::cout << "Welcome to Phone Book!" << std::endl;
@@ -73,9 +95,7 @@ int			ft_search(PhoneBook *pb)
 	{
 		std::cout << "Which contact would you like to see? 0 to exit" << std::endl;
 		std::cin >> i;
-	//	if (!(i = stoi(aux)))
-	//	if (!(atoi(aux.c_str())))
-	//		std::cout << "This number doesn't exist" << std::endl;
+		clear_in();
 		if (i - 1 <= pb->current && i > 0)
 		{
 			std::cout << std::setw(20) << std::left << "First name: "		<< pb->ppl[i - 1].first_name		<< std::endl;
@@ -114,6 +134,7 @@ int			ft_error(std::string str)
 		std::cout << "ADD\t SEARCH \t EXIT" << std::endl;
 		return (-1);
 	}
+
 }
 
 /*
@@ -131,8 +152,9 @@ int		main (int argc, char **argv)
 		return (-1);
 	}
 	std::cout << "Welcome to Phone Book!" << std::endl;
-	//std::cin >> buff;
-	std::getline(std::cin, buff);
+	std::cout << "ADD\t SEARCH \t EXIT" << std::endl;
+	std::cin >> buff;
+	clear_in();
 	while (ft_error(buff) && !(buff == "EXIT"))
 	{
 		if (buff == "ADD")
@@ -140,6 +162,7 @@ int		main (int argc, char **argv)
 		if (buff == "SEARCH")
 			ft_search(&pb);
 		std::cin >> buff;
+		clear_in();
 	}
 	return(0);
 }
