@@ -22,7 +22,6 @@ class	HumanA
 		
 	public:
 		void			attack( void );
-
 		void			setName( std::string c_name );
 		std::string		getName( void );
 

@@ -26,7 +26,6 @@ class	HumanB
 		std::string		getName( void );
 		void			setWeapon( Weapon &c_weapon );
 
-
 		HumanB( std::string c_name );
 		~HumanB( void );
 };

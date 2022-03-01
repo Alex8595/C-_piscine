@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 13:32:24 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/22 13:32:25 by ahernand         ###   ########.fr       */
+/*   Created: 2022/03/01 14:53:42 by ahernand          #+#    #+#             */
+/*   Updated: 2022/03/01 14:53:43 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
-# include "contact.hpp"
+#include "Fixed.hpp"
 
-class	PhoneBook
+int main( void )
 {
-	private:
-		int			current;
-		int			total;
-	
-	public:
-		contact		ppl[8];
+	Fixed a;
+	Fixed const b = 10;
+//	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
 
-		int			getCurrent();
-		int			getTotal();
-
-		void		setCurrent(int);
-		void		setTotal(int);
+	std::cout << (b > 1) << std::endl;
 
 
-		PhoneBook();
-		~PhoneBook();
-};
-
-#endif
+/*
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
+	std::cout << b << std::endl;
+	std::cout << Fixed::max( a, b ) << std::endl;
+*/
+	return (0);
+}

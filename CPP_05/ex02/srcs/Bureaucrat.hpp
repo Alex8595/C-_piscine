@@ -23,6 +23,7 @@ class	Bureaucrat
 
 	public:
 		void					signForm(Form &ref);
+		void					executeForm(const Form &ref);
 
 
 		std::string				getName() const;

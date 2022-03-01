@@ -22,17 +22,17 @@ int		replace(std::string infile, std::string s1, std::string s2)
 
 	if (s1.empty() || s2.empty())
 	{
-		return(ft_error(1));
+		return (ft_error(1));
 	}
 	if_stream.open(infile);
 	if (if_stream.fail())
 	{
-		return(ft_error(2));
+		return (ft_error(2));
 	}
 	of_stream.open(infile + ".replace");
 	if (of_stream.fail())
 	{
-		return(ft_error(3));
+		return (ft_error(3));
 	}
 	while (getline(if_stream, content))
 	{
@@ -59,5 +59,5 @@ int		ft_error(int code)
 		std::cout << "Error: couldn't open the file!" << std::endl;
 	if (code == 3)
 		std::cout << "Error: couldn't create the file!" << std::endl;
-	return(1);
+	return (1);
 }

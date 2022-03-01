@@ -21,20 +21,18 @@ CPPFLAGS = -std=c++98 -Wall -Werror -Wextra
 SRCS =	srcs/Form.cpp					\
 		srcs/Bureaucrat.cpp				\
 		srcs/ShrubberyCreationForm.cpp	\
-		srcs/main.cpp
-
-#		srcs/RobotomyRequestForm.cpp	\
+		srcs/RobotomyRequestForm.cpp	\
 		srcs/PresidentialPardonForm.cpp	\
 		srcs/main.cpp
+
 
 OBJS =	srcs/Form.o						\
 		srcs/Bureaucrat.o				\
 		srcs/ShrubberyCreationForm.o	\
-		srcs/main.o
-
-#		srcs/RobotomyRequestForm.o		\
+		srcs/RobotomyRequestForm.o		\
 		srcs/PresidentialPardonForm.o	\
 		srcs/main.o
+
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@ 

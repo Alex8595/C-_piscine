@@ -17,32 +17,32 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	try
 	{
-		//	Sam = 100			grade = 50
+		//	Sam = 100			grade = 101
 		if (executor.getGrade() > this->getGradeReqExec())
 			throw (Bureaucrat::GradeTooLowException());
 		if (this->getIsSigned() == false)
 			throw (Form::NotSignedException());
+		else
+		{
+			std::ofstream outfile(getName() + "_shrubbery");
+
+			outfile << "      |" << std::endl;
+			outfile << "    \\|/|/" << std::endl;
+			outfile << "  \\|\\|//|/" << std::endl;
+			outfile << "   \\|\\|/|/" << std::endl;
+			outfile << "    \\|//" << std::endl;
+			outfile << "     \\|/" << std::endl;
+			outfile << "     \\|/" << std::endl;
+			outfile << "      |" << std::endl;
+			outfile << "_\\|/__|_\\|/____\\|/_" << std::endl;
+			outfile.close();
+		}
 	}
 	catch(const std::exception& exception)
 	{
 
 	}
-		
-	std::ofstream outfile(getName() + "_shrubbery");
-
-	outfile << "      |" << std::endl;
-	outfile << "    \\|/|/" << std::endl;
-	outfile << "  \\|\\|//|/" << std::endl;
-	outfile << "   \\|\\|/|/" << std::endl;
-	outfile << "    \\|//" << std::endl;
-	outfile << "     \\|/" << std::endl;
-	outfile << "     \\|/" << std::endl;
-	outfile << "      |" << std::endl;
-	outfile << "_\\|/__|_\\|/____\\|/_" << std::endl;
-
-	outfile.close();
 }
-
 
 /*
 **		Operators
@@ -50,7 +50,11 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 
 void				ShrubberyCreationForm::operator=(ShrubberyCreationForm &ref)
 {
-	this->is_signed = ref.is_signed;
+	if (ref.getIsSigned())
+	{
+		Bureaucrat tmp("tmp", 1);
+		this->beSigned(tmp);
+	}	
 }
 
 /*

@@ -1,5 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/01 14:53:38 by ahernand          #+#    #+#             */
+/*   Updated: 2022/03/01 14:53:39 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef __FIXED_HPP__
 # define __FIXED_HPP__
+# include <iostream>
+# include <cmath>
 
 class Fixed
 {
@@ -21,5 +35,7 @@ class Fixed
 
 		~Fixed();
 };	
+
+std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num);
 
 #endif

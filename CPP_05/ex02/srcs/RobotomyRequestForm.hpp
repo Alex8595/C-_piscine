@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 13:32:24 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/22 13:32:25 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/23 15:03:27 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/23 15:03:28 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
-# include "contact.hpp"
+#ifndef _ROBOTOMYREQUESTFORM_HPP_
+# define _ROBOTOMYREQUESTFORM_HPP_
+# include "Form.hpp"
 
-class	PhoneBook
+class RobotomyRequestForm : public Form
 {
-	private:
-		int			current;
-		int			total;
-	
 	public:
-		contact		ppl[8];
+		void		execute(Bureaucrat const &executor) const;
 
-		int			getCurrent();
-		int			getTotal();
-
-		void		setCurrent(int);
-		void		setTotal(int);
-
-
-		PhoneBook();
-		~PhoneBook();
+		void				operator=(RobotomyRequestForm &ref);
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm &ref);
+		RobotomyRequestForm();
+		~RobotomyRequestForm();
 };
 
 #endif

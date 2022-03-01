@@ -26,7 +26,26 @@ int						Bureaucrat::getGrade() const
 	return (grade);
 }
 
+
 /*
+**		Execute
+**		ex_02 NEW function
+*/
+
+void					Bureaucrat::executeForm(const Form &ref)
+{
+		if (grade <= ref.getGradeReqExec())
+		{
+			std::cout << "Buraucrat " << getName() << ", executes form " << ref.getName() << "." << std::endl;
+		}
+		else
+			std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
+
+}
+
+
+/*
+**		Sign
 **		ex_01 NEW function
 */
 

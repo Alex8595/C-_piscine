@@ -38,11 +38,9 @@ Weapon::Weapon( std::string c_str )
 
 Weapon::Weapon( void )
 {
-
 	setType("Default");
 }
 
 Weapon::~Weapon( void )
 {
-
 }

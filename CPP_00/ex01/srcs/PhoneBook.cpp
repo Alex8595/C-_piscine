@@ -12,8 +12,41 @@
 
 #include "PhoneBook.hpp"
 
+/*
+**      Get & Set
+*/
+
+void		PhoneBook::setCurrent(int g)
+{
+    this->current = g;
+}
+
+void		PhoneBook::setTotal(int g)
+{
+    this->total = g;
+}
+
+int			PhoneBook::getCurrent()
+{
+    return (this->current);
+}
+
+int			PhoneBook::getTotal()
+{
+    return (this->total);
+}
+
+/*
+**      Con & Des
+*/
+
 PhoneBook::PhoneBook()
 {
     this->current = -1;
     this->total = 0;
-    }
+}
+
+PhoneBook::~PhoneBook()
+{
+
+}

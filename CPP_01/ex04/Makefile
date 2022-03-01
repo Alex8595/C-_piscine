@@ -38,5 +38,6 @@ $(NAME) : $(OBJS)
 make fclean:
 	@rm -f $(NAME)
 	@rm -f $(OBJS)
+	@rm -f *.replace
 
 re:	fclean all

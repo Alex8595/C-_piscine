@@ -1,37 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/02/22 13:32:24 by ahernand          #+#    #+#             */
-/*   Updated: 2022/02/22 13:32:25 by ahernand         ###   ########.fr       */
+/*   Created: 2022/02/23 16:00:31 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/23 16:00:31 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONE_BOOK_HPP
-# define PHONE_BOOK_HPP
-# include "contact.hpp"
+#ifndef _PRESIDENTIALPARDONFORM_HPP_
+# define _PRESIDENTIALPARDONFORM_HPP_
+# include "Form.hpp"
 
-class	PhoneBook
+class PresidentialPardonForm : public Form
 {
-	private:
-		int			current;
-		int			total;
-	
 	public:
-		contact		ppl[8];
+		void		execute(Bureaucrat const &executor) const;
 
-		int			getCurrent();
-		int			getTotal();
-
-		void		setCurrent(int);
-		void		setTotal(int);
-
-
-		PhoneBook();
-		~PhoneBook();
+		void				operator=(PresidentialPardonForm &ref);
+		PresidentialPardonForm(std::string target);
+		PresidentialPardonForm(PresidentialPardonForm &ref);
+		PresidentialPardonForm();
+		~PresidentialPardonForm();
 };
 
 #endif

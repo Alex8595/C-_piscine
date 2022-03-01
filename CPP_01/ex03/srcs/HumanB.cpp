@@ -18,8 +18,9 @@ void		HumanB::attack()
 }
 
 /*
-**                                 Get & Set
+**			Get & Set
 */
+
 std::string		HumanB::getName( void )
 {
 	return (this->_name);
@@ -36,7 +37,7 @@ void			HumanB::setWeapon( Weapon &c_weapon )
 }
 
 /*
-**							Con & Des
+**			Con & Des
 */
 
 HumanB::HumanB( std::string c_name )
@@ -44,4 +45,7 @@ HumanB::HumanB( std::string c_name )
 	this->setName(c_name);
 }
 
-HumanB::~HumanB( void )	{	}
+HumanB::~HumanB( void )
+{
+	
+}

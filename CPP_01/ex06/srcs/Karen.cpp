@@ -46,8 +46,8 @@ void Karen::complain( std::string level )
 {
 	int				j;
 	std::string		states[4] = { "DEBUG" , "INFO" , "WARNING", "ERROR"};
-	void			(Karen::*ft_karen[4])() = { &Karen::debug, &Karen::info , &Karen::warning, &Karen::error };
 
+	void(Karen::*ft_karen[4])() = { &Karen::debug, &Karen::info , &Karen::warning, &Karen::error };
 	j = -1;
 	for (int i = 0; i < 4; i++)
 	{

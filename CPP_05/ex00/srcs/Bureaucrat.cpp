@@ -58,6 +58,9 @@ void						Bureaucrat::decrementGrade()
 	}
 }
 
+
+
+
 /*
 **		For Construct in bounds
 */
@@ -71,6 +74,9 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
 	std::cout << "Grade Too Low!" << std::endl;					
 };
+
+
+
 
 /*
 **		Op
@@ -87,6 +93,9 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
     stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
 	return(stream);
 }
+
+
+
 
 /*
 **		C & D

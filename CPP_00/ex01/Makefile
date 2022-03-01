@@ -19,9 +19,11 @@ CXX = c++
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/PhoneBook.cpp	\
+		srcs/contact.cpp	\
 		srcs/main.cpp
 
 OBJS =	srcs/PhoneBook.o	\
+		srcs/contact.o	\
 		srcs/main.o
 
 $(OBJS) : $(SRCS)

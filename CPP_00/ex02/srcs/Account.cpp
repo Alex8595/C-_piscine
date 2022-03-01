@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Account.cpp                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/02/25 16:12:41 by ahernand          #+#    #+#             */
+/*   Updated: 2022/02/25 16:12:44 by ahernand         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <iostream>
 #include <iomanip>
 #include <ctime>
@@ -40,7 +52,6 @@ int	Account::getNbDeposits( void )
 {
 	return (_totalNbDeposits);
 }
-
 
 int	Account::getNbWithdrawals( void )
 {
