@@ -11,11 +11,9 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+#include <iostream>
 
 const int	Fixed::fractionl_bits = 8;
-
-
-
 
 /*
 **		Conversions
@@ -79,9 +77,131 @@ std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num)
 
 bool	Fixed::operator> ( const Fixed &f1 ) const
 {
-	if (this->fixed_point > f1.fixed_point)
+	if (this->getRawBits() > f1.getRawBits())
 		return (1);
 	return (0);
+}
+
+bool	Fixed::operator< ( const Fixed &f1 ) const
+{
+	if (this->getRawBits() < f1.getRawBits())
+		return (1);
+	return (0);
+}
+
+bool	Fixed::operator>= ( const Fixed &f1 ) const
+{
+	if (this->getRawBits() >= f1.getRawBits())
+		return (1);
+	return (0);
+}
+
+bool	Fixed::operator<= ( const Fixed &f1 ) const
+{
+	if (this->getRawBits() <= f1.getRawBits())
+		return (1);
+	return (0);
+}
+
+bool	Fixed::operator== ( const Fixed &f1 ) const
+{
+	if (this->getRawBits() == f1.getRawBits())
+		return (1);
+	return (0);
+}
+
+bool	Fixed::operator!= ( const Fixed &f1 ) const
+{
+	if (this->getRawBits() != f1.getRawBits())
+		return (1);
+	return (0);
+}
+
+//+, -, *, and /
+
+Fixed	Fixed::operator+ ( const Fixed &f1 ) const
+{
+	Fixed res;
+
+	res = toFloat() + f1.toFloat();
+	return (res);
+}
+
+Fixed	Fixed::operator- ( const Fixed &f1 ) const
+{
+	Fixed res;
+
+	res = toFloat() - f1.toFloat();
+	return (res);
+}
+
+Fixed	Fixed::operator* ( const Fixed &f1 ) const
+{
+	Fixed res;
+
+	res = toFloat() * f1.toFloat();
+	return (res);
+}
+
+Fixed	Fixed::operator/ ( const Fixed &f1 ) const
+{
+	Fixed res;
+	res = 0;
+	if (f1.getRawBits() != 0)
+		res = toFloat() / f1.toFloat();
+	return (res);
+}
+
+//++x, x++, --x and x--
+
+
+Fixed	&Fixed::operator++()
+{
+	this->fixed_point++;
+	return (*this);
+}
+
+float	Fixed::operator++(int)
+{
+	float res;
+
+	res = toFloat();
+	this->fixed_point++;
+	return (res);
+}
+
+
+Fixed	&Fixed::operator--()
+{
+	this->fixed_point--;
+	return (*this);
+}
+
+float	Fixed::operator--(int)
+{
+	float res;
+
+	res = toFloat();
+	this->fixed_point--;
+	return (res);
+}
+
+//Max _ Min
+
+Fixed	&Fixed::max(Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (b);
+	else
+		return (a);
+}
+
+Fixed	&Fixed::min(Fixed &a, Fixed &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (a);
+	else
+		return (b);
 }
 
 /*

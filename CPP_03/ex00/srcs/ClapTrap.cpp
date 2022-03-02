@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 
 /*
@@ -25,6 +24,7 @@ void	ClapTrap::attack(std::string const &target)
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	this->hitPoints -= amount;
+	
 	std::cout << "ClapTrap " << this->name << " takes " << amount << " damage points!" << std::endl;
 
 	if (this->hitPoints <= 0)
@@ -33,33 +33,19 @@ void	ClapTrap::takeDamage(unsigned int amount)
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	this->hitPoints = amount;
-	std::cout << "ClapTrap " << this->name << " has been repared to completion and now has: " << this->hitPoints<< " hit points!" << std::endl;
+	this->hitPoints += amount;
+
+	if (hitPoints > 10)
+		hitPoints = 10;
+
+	std::cout << "ClapTrap " << this->name << " has been repared and now has: " << this->hitPoints<< " hit points!" << std::endl;
 }
 
 /*
-**	C & D
+**	Con & Des
 */
 
-ClapTrap::ClapTrap()
-{
-	std::cout << "ClapTrap Default constructor called" << std::endl;
-	this->name = "Default";
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
-}
-
-ClapTrap::ClapTrap( const std::string par_name )
-{
-	std::cout << "ClapTrap Parameterized constructor called" << std::endl;
-	this->name = par_name;
-	this->hitPoints = 10;
-	this->energyPoints = 10;
-	this->attackDamage = 0;
-}
-
-void 	ClapTrap::operator = ( const ClapTrap &o_class )
+void 	ClapTrap::operator=( const ClapTrap &o_class )
 {
 	std::cout << "ClapTrap Assignation operator overload called" << std::endl;
 
@@ -73,6 +59,24 @@ ClapTrap::ClapTrap( const ClapTrap &ref_to_copy )
 {
 	std::cout << "ClapTrap Copy constructor called" << std::endl;
 	ClapTrap::operator=(ref_to_copy);
+}
+
+ClapTrap::ClapTrap( const std::string par_name )
+{
+	std::cout << "ClapTrap Parameterized constructor called" << std::endl;
+	this->name = par_name;
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
+}
+
+ClapTrap::ClapTrap()
+{
+	std::cout << "ClapTrap Default constructor called" << std::endl;
+	this->name = "Default";
+	this->hitPoints = 10;
+	this->energyPoints = 10;
+	this->attackDamage = 0;
 }
 
 ClapTrap::~ClapTrap()

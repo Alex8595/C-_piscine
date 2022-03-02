@@ -29,9 +29,9 @@ class	ClapTrap
 
 		void 		operator = ( const ClapTrap &o_class );		
 
-		ClapTrap();
 		ClapTrap( const ClapTrap &ref_to_copy );
 		ClapTrap( const std::string par_name );
+		ClapTrap();
 		~ClapTrap();
 
 };

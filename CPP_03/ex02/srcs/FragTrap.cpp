@@ -12,39 +12,17 @@
 
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
-#include <iostream>
 
-
-void        highFivesGuys(void)
+void        FragTrap::highFivesGuys(void)
 {
-	std::cout << "FragTrap request a positive highs fives"  << std::endl;
+	std::cout << "FragTrap " << this->name << " request a positive highs fives."  << std::endl;
 }
 
 /*
 **	C & D
 */
 
-FragTrap::FragTrap()
-{
-	std::cout << "FragTrap Default constructor called" << std::endl;
-
-	this->name = "Default";
-	this->hitPoints = 100;
-	this->energyPoints = 100;
-	this->attackDamage = 30;
-}
-
-FragTrap::FragTrap(const std::string name)
-{
-	std::cout << "FragTrap constructor called" << std::endl;
-
-	this->name = name;
-	this->hitPoints = 100;
-	this->energyPoints = 100;
-	this->attackDamage = 30;
-}
-
-void    FragTrap::operator = ( const FragTrap &o_class )
+void	FragTrap::operator=( const FragTrap &o_class )
 {
 	std::cout << "FragTrap Assignation operator overload called" << std::endl;
 
@@ -58,6 +36,26 @@ FragTrap::FragTrap( const FragTrap &ref_to_copy )
 {
 	std::cout << "FragTrap Copy constructor called" << std::endl;
 	FragTrap::operator=(ref_to_copy);
+}
+
+FragTrap::FragTrap( const std::string name )
+{
+	std::cout << "FragTrap constructor called" << std::endl;
+
+	this->name = name;
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
+}
+
+FragTrap::FragTrap()
+{
+	std::cout << "FragTrap Default constructor called" << std::endl;
+
+	this->name = "Default";
+	this->hitPoints = 100;
+	this->energyPoints = 100;
+	this->attackDamage = 30;
 }
 
 FragTrap::~FragTrap()

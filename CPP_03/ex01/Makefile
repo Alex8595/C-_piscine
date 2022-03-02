@@ -14,7 +14,7 @@ NAME = Serena
 
 all : $(NAME)
 
-CXX = g++ 
+CXX = c++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
@@ -30,7 +30,6 @@ $(OBJS) : $(SRCS)
 
 $(NAME) : $(OBJS)
 	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
-
 
 
 # - - - - - - - - - - - - - - - - - #

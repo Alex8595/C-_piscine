@@ -10,15 +10,21 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 int main()
 {
+	std::cout << std::endl << "_________ Constructors _________" << std::endl;
 	FragTrap Sonia("Sonia");
 
-	Sonia.attack("enemy_132");
-	std::cout << std::endl;
+
+
+	std::cout << std::endl << "_________ New Function _________" << std::endl;
+	Sonia.highFivesGuys();
+
+
+
+	std::cout << std::endl << "_________ Destructors __________" << std::endl;
 	return (0);
 }

@@ -27,10 +27,31 @@ class Fixed
 		int		toInt( void ) const;
 		float	toFloat( void ) const;
 		
-		//>, <, >=, <=, == and !=.
 		void	operator= ( const Fixed &f1 );
 		
+		//>, <, >=, <=, == and !=.
 		bool	operator> ( const Fixed &f1 ) const;
+		bool	operator< ( const Fixed &f1 ) const;
+		bool	operator>= ( const Fixed &f1 ) const;
+		bool	operator<= ( const Fixed &f1 ) const;
+		bool	operator== ( const Fixed &f1 ) const;
+		bool	operator!= ( const Fixed &f1 ) const;
+
+		//+, -, *, and /
+		Fixed	operator+ ( const Fixed &f1 ) const;
+		Fixed	operator- ( const Fixed &f1 ) const;
+		Fixed	operator* ( const Fixed &f1 ) const;
+		Fixed	operator/ ( const Fixed &f1 ) const;
+
+		//++x, x++, --x and x--
+		Fixed	&operator++();
+		float	operator++(int);
+
+		Fixed	&operator--();
+		float	operator--(int);
+
+		static Fixed	&max(Fixed &a, Fixed &b);
+		static Fixed	&min(Fixed &a, Fixed &b);
 
 
 		Fixed();

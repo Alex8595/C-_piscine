@@ -14,7 +14,7 @@ NAME = ClapTrap
 
 all : $(NAME)
 
-CXX = g++ 
+CXX = c++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
