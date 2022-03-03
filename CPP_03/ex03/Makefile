@@ -14,7 +14,7 @@ NAME = DiamondTrap
 
 all : $(NAME)
 
-CXX = g++ 
+CXX = c++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow
 

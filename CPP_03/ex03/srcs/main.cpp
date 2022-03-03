@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
@@ -18,11 +17,13 @@
 
 int main()
 {
-	DiamondTrap Mao("Mao");
+	DiamondTrap Mao("Muchen");
 
 	std::cout << std::endl;
 
 	Mao.whoAmI();
+	Mao.seeStats();
+
 	Mao.attack("Evil Frog");
 
 	std::cout << std::endl;

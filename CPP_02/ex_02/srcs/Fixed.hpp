@@ -49,9 +49,11 @@ class Fixed
 
 		Fixed	&operator--();
 		float	operator--(int);
+		
+		static const Fixed		&max(Fixed const &a, Fixed const &b);
+		static  Fixed			&max(Fixed &a, Fixed &b);
 
-		static Fixed	&max(Fixed &a, Fixed &b);
-		static Fixed	&min(Fixed &a, Fixed &b);
+		static  Fixed			&min(Fixed &a, Fixed &b);
 
 
 		Fixed();
@@ -62,6 +64,6 @@ class Fixed
 		~Fixed();
 };	
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num);
+std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num);
 
 #endif

@@ -49,12 +49,6 @@ Fixed::Fixed( const Fixed &f1 )
 	Fixed::operator= (f1);
 }
 
-Fixed::Fixed( const int i )
-{
-	std::cout << "integer constructor called" << std::endl;
-	this->fixed_point = i;
-}
-
 Fixed::Fixed( void )
 {
 	std::cout << "Default constructor called" << std::endl;

@@ -12,8 +12,6 @@
 
 #ifndef __DIAMONDTRAP_HPP__
 # define __DIAMONDTRAP_HPP__
-# include <iostream>
-# include "ClapTrap.hpp"
 # include "ScavTrap.hpp"
 # include "FragTrap.hpp"
 
@@ -23,9 +21,14 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		std::string		name;
 
 		void			whoAmI();
+		void			seeStats();
+		std::string		getDiamondClapName();
 
-		DiamondTrap(void);
+		void			operator=( DiamondTrap &o_class );
+
+		DiamondTrap( DiamondTrap &ref_to_copy );
 		DiamondTrap(std::string name_par);
+		DiamondTrap(void);
 		~DiamondTrap();
 };
 #endif

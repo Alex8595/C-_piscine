@@ -14,9 +14,6 @@
 
 const int	Fixed::fractionl_bits = 8;
 
-
-
-
 /*
 **		Conversions
 */
@@ -46,7 +43,6 @@ int Fixed::toInt( void ) const
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point);
 }
 
@@ -68,7 +64,7 @@ void Fixed::operator= ( const Fixed &f1 )
 	this->fixed_point = f1.getRawBits(); 
 }
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num)
+std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num)
 {
     stream << fix_num.toFloat();
 	return (stream);

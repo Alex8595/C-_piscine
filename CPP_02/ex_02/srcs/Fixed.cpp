@@ -44,7 +44,6 @@ int Fixed::toInt( void ) const
 
 int		Fixed::getRawBits( void ) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
 	return (this->fixed_point);
 }
 
@@ -66,11 +65,13 @@ void Fixed::operator= ( const Fixed &f1 )
 	this->fixed_point = f1.getRawBits(); 
 }
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num)
+std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num)
 {
     stream << fix_num.toFloat();
 	return (stream);
 }
+
+
 
 
 //>, <, >=, <=, == and !=.
@@ -116,6 +117,9 @@ bool	Fixed::operator!= ( const Fixed &f1 ) const
 		return (1);
 	return (0);
 }
+
+
+
 
 //+, -, *, and /
 
@@ -186,7 +190,18 @@ float	Fixed::operator--(int)
 	return (res);
 }
 
+
+
+
 //Max _ Min
+
+const Fixed		&max(Fixed const &a, Fixed const &b)
+{
+	if (a.getRawBits() < b.getRawBits())
+		return (b);
+	else
+		return (a);
+}
 
 Fixed	&Fixed::max(Fixed &a, Fixed &b)
 {
@@ -195,6 +210,12 @@ Fixed	&Fixed::max(Fixed &a, Fixed &b)
 	else
 		return (a);
 }
+
+
+
+
+//Max _ Min
+
 
 Fixed	&Fixed::min(Fixed &a, Fixed &b)
 {

@@ -12,14 +12,13 @@
 
 #ifndef __FRAGTRAP_HPP__
 # define __FRAGTRAP_HPP__
-# include <iostream>
 # include "ClapTrap.hpp"
 
 class	FragTrap  : virtual public ClapTrap
 {
 	public:
-		void		operator = ( const FragTrap &o_class );
 		void		highFivesGuys(void);
+		void		operator=( const FragTrap &o_class );
 
 		FragTrap( const FragTrap &ref_to_copy );
 		FragTrap(std::string name);

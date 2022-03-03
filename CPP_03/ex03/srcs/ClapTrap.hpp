@@ -27,11 +27,11 @@ class	ClapTrap
 		void			beRepaired(unsigned int amount);
 		void			takeDamage(unsigned int amount);
 
-		void 		operator = ( const ClapTrap &o_class );		
+		void 			operator = ( const ClapTrap &o_class );		
 
-		ClapTrap();
 		ClapTrap( const ClapTrap &ref_to_copy );
 		ClapTrap( const std::string par_name );
+		ClapTrap();
 		~ClapTrap();
 
 };

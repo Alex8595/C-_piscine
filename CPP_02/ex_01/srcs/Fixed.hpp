@@ -36,6 +36,6 @@ class Fixed
 		~Fixed();
 };	
 
-std::ostream	&operator<<(std::ostream &stream, Fixed &fix_num);
+std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num);
 
 #endif

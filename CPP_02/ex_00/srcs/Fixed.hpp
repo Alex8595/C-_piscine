@@ -26,7 +26,6 @@ class Fixed
 		void	setRawBits( int const raw );
 
 		Fixed();
-		Fixed (const int i);
 		Fixed( const Fixed &f1 );
 		~Fixed();
 };	

@@ -10,10 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-# include <iostream>
-# include "ClapTrap.hpp"
-# include "ScavTrap.hpp"
-# include "FragTrap.hpp"
 # include "DiamondTrap.hpp"
 
 void		DiamondTrap::whoAmI()
@@ -21,18 +17,55 @@ void		DiamondTrap::whoAmI()
 	std::cout << "Hello! my name is " << DiamondTrap::name << ", and my Claptrap name is " << ClapTrap::name << std::endl;
 }
 
+std::string	DiamondTrap::getDiamondClapName()
+{
+	return(ClapTrap::name);
+}
+
 /*
 **	C & D
 */
 
-DiamondTrap::DiamondTrap(void)
+void			DiamondTrap::operator=( DiamondTrap &o_class )
+{
+	DiamondTrap::name = o_class.name;
+	ClapTrap::name = o_class.getDiamondClapName();
+	this->hitPoints = o_class.hitPoints;
+	this->energyPoints = o_class.energyPoints;
+	this->attackDamage = o_class.attackDamage;
+}
+
+DiamondTrap::DiamondTrap( DiamondTrap &ref_to_copy )
+{
+	std::cout << "DiamondTrap Copy constructor called" << std::endl;
+	DiamondTrap::operator=(ref_to_copy);
+}
+
+DiamondTrap::DiamondTrap(std::string g_name)
+{
+	std::cout << "DiamondTrap Default Constructor called" << std::endl;
+	DiamondTrap::name = g_name;
+	ClapTrap::name = g_name + "_clap_name";
+	this->hitPoints = FragTrap::hitPoints;
+	this->energyPoints = 50;
+	this->attackDamage = FragTrap::attackDamage;
+}
+
+DiamondTrap::DiamondTrap()
 {
 	std::cout << "DiamondTrap Default Constructor called" << std::endl;
 	DiamondTrap::name = "Default";
 	ClapTrap::name = DiamondTrap::name + "_clap_name";
 	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = 50;
-	this->attackDamage = FragTrap::attackDamage ;
+	this->energyPoints = ScavTrap::energyPoints;
+	this->attackDamage = FragTrap::attackDamage;
+}
+
+void		DiamondTrap::seeStats()
+{
+	std::cout << "Hit Points   : " << this->hitPoints    << "." << std::endl;
+	std::cout << "Energy Points: " << this->energyPoints << "." << std::endl;
+	std::cout << "Attack Damage: " << this->attackDamage << "." << std::endl;
 }
 
 DiamondTrap::~DiamondTrap()
