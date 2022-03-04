@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/02/19 13:13:37 by ahernand          #+#    #+#              #
-#    Updated: 2022/02/19 13:13:38 by ahernand         ###   ########.fr        #
+#    Created: 2022/03/04 19:53:57 by ahernand          #+#    #+#              #
+#    Updated: 2022/03/04 19:53:58 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRCS =	srcs/Form.cpp					\
 		srcs/ShrubberyCreationForm.cpp	\
 		srcs/RobotomyRequestForm.cpp	\
 		srcs/PresidentialPardonForm.cpp	\
+		srcs/Intern.cpp					\
 		srcs/main.cpp
 
 
@@ -31,6 +32,7 @@ OBJS =	srcs/Form.o						\
 		srcs/ShrubberyCreationForm.o	\
 		srcs/RobotomyRequestForm.o		\
 		srcs/PresidentialPardonForm.o	\
+		srcs/Intern.o					\
 		srcs/main.o
 
 

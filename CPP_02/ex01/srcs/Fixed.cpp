@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 const int	Fixed::fractionl_bits = 8;
 
@@ -65,7 +64,7 @@ void Fixed::operator= ( const Fixed &f1 )
 	this->fixed_point = f1.getRawBits(); 
 }
 
-std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num)
+std::ostream	&operator<<(std::ostream &stream, const Fixed &fix_num)
 {
     stream << fix_num.toFloat();
 	return (stream);
@@ -73,157 +72,6 @@ std::ostream	&operator<<(std::ostream &stream, Fixed const &fix_num)
 
 
 
-
-//>, <, >=, <=, == and !=.
-
-bool	Fixed::operator> ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() > f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-bool	Fixed::operator< ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() < f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-bool	Fixed::operator>= ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() >= f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-bool	Fixed::operator<= ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() <= f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-bool	Fixed::operator== ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() == f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-bool	Fixed::operator!= ( const Fixed &f1 ) const
-{
-	if (this->getRawBits() != f1.getRawBits())
-		return (1);
-	return (0);
-}
-
-
-
-
-//+, -, *, and /
-
-Fixed	Fixed::operator+ ( const Fixed &f1 ) const
-{
-	Fixed res;
-
-	res = toFloat() + f1.toFloat();
-	return (res);
-}
-
-Fixed	Fixed::operator- ( const Fixed &f1 ) const
-{
-	Fixed res;
-
-	res = toFloat() - f1.toFloat();
-	return (res);
-}
-
-Fixed	Fixed::operator* ( const Fixed &f1 ) const
-{
-	Fixed res;
-
-	res = toFloat() * f1.toFloat();
-	return (res);
-}
-
-Fixed	Fixed::operator/ ( const Fixed &f1 ) const
-{
-	Fixed res;
-	res = 0;
-	if (f1.getRawBits() != 0)
-		res = toFloat() / f1.toFloat();
-	return (res);
-}
-
-//++x, x++, --x and x--
-
-
-Fixed	&Fixed::operator++()
-{
-	this->fixed_point++;
-	return (*this);
-}
-
-float	Fixed::operator++(int)
-{
-	float res;
-
-	res = toFloat();
-	this->fixed_point++;
-	return (res);
-}
-
-
-Fixed	&Fixed::operator--()
-{
-	this->fixed_point--;
-	return (*this);
-}
-
-float	Fixed::operator--(int)
-{
-	float res;
-
-	res = toFloat();
-	this->fixed_point--;
-	return (res);
-}
-
-
-
-
-//Max _ Min
-
-const Fixed		&max(Fixed const &a, Fixed const &b)
-{
-	if (a.getRawBits() < b.getRawBits())
-		return (b);
-	else
-		return (a);
-}
-
-Fixed	&Fixed::max(Fixed &a, Fixed &b)
-{
-	if (a.getRawBits() < b.getRawBits())
-		return (b);
-	else
-		return (a);
-}
-
-
-
-
-//Max _ Min
-
-
-Fixed	&Fixed::min(Fixed &a, Fixed &b)
-{
-	if (a.getRawBits() < b.getRawBits())
-		return (a);
-	else
-		return (b);
-}
 
 /*
 **		Con & Des	_	_	Diff Variables

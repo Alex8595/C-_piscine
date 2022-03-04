@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/01 13:45:58 by ahernand          #+#    #+#              #
-#    Updated: 2022/03/01 13:45:59 by ahernand         ###   ########.fr        #
+#    Created: 2022/03/01 13:45:46 by ahernand          #+#    #+#              #
+#    Updated: 2022/03/01 13:45:48 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = fixed
 
 all : $(NAME)
 
-CXX = c++
+CXX = clang++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
@@ -38,6 +38,5 @@ $(NAME) : $(OBJS)
 make fclean:
 	@rm -f $(NAME)
 	@rm -f $(OBJS)
-
 
 re:	fclean all

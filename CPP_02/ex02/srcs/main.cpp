@@ -11,18 +11,17 @@
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
-#include <iostream>
 
 int main( void )
 {
-	/*
+/*
 	Fixed a;
 	Fixed b(10);
 	Fixed aux;
 
 	a = 5;
 	std::cout << std::endl;
-
+	std::cout << std::endl;
 
 
 
@@ -41,7 +40,6 @@ int main( void )
 	std::cout << "A is equal than b?             : " << std::endl << (a == b) << std::endl << std::endl;
 
 	std::cout << "A is different than b?         : " << std::endl << (a != b) << std::endl << std::endl;
-
 
 
 
@@ -84,7 +82,7 @@ int main( void )
 
 	std::cout << Fixed::max( a, b ) << std::endl;
 	std::cout << Fixed::min( a, b ) << std::endl;
-*/
+	*/
 
 	Fixed a;
 	Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
