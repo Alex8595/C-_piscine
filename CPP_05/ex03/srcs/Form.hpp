@@ -39,7 +39,7 @@ class Form
 		Form(std::string g_name, int gr_sign, int gr_exec);
 		Form(const Form &ref);
 		Form();
-		~Form();
+		virtual ~Form();
 
 	class GradeTooHighException : public std::exception
 	{

@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
@@ -18,7 +19,34 @@
 
 int main(void)
 {
+	Intern		in;
+	Bureaucrat	Samantha("Samantha", 1);
+
+	Form		*a;
+	Form		*b;
+	Form		*c;
+	Form		*d;
 	
+	a = in.makeForm("shrubbery creation", "Office_building");
+	b = in.makeForm("robotomy request", "Elon");
+	c = in.makeForm("presidential pardon", "Sam");
+	d = in.makeForm("nothing", "Office_building");
+
+	std::cout << std::endl;
+	Samantha.signForm(*a);
+	(*a).execute(Samantha);
+
+	std::cout << std::endl;
+	Samantha.signForm(*b);
+	(*b).execute(Samantha);
+
+	std::cout << std::endl;
+	Samantha.signForm(*c);
+	(*c).execute(Samantha);
+
+	delete a;
+	delete b;
+	delete c;
 
 	return (0);
 }

@@ -11,14 +11,19 @@
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Bureaucrat.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "RobotomyRequestForm.hpp"
+#include "PresidentialPardonForm.hpp"
 
 class Intern
 {   
-	private:
-
 	public:
-		Form		*makeForm(std::string form_name , std::string form_target);
+		Form				*makeForm(std::string form_name , std::string form_target);
 
+		void				operator=(const Intern &ref);
+		
+		Intern(const Intern &ref);
 		Intern( void );
 		~Intern();
 };

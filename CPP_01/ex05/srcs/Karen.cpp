@@ -39,8 +39,7 @@ void Karen::error( void )
 
 void Karen::complain( std::string level )
 {
-	std::string		states[4] = { "DEBUG" , "INFO" , "WARNING", "ERROR"};
-
+ww
 	void(Karen::*function[4])() = { &Karen::debug, &Karen::info , &Karen::warning, &Karen::error };
 
 	for (int i = 0; i < 4; i++)

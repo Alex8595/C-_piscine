@@ -12,6 +12,7 @@
 
 #include "Zombie.hpp"
 
+
 Zombie* ZombieHorde( int N, std::string name )
 {
 	Zombie	*horde;

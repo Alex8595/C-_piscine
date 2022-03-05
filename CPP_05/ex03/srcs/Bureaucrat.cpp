@@ -34,12 +34,12 @@ int						Bureaucrat::getGrade() const
 
 void					Bureaucrat::executeForm(const Form &ref)
 {
-		if (grade <= ref.getGradeReqExec())
-		{
-			std::cout << "Buraucrat " << getName() << ", executes form " << ref.getName() << "." << std::endl;
-		}
-		else
-			std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
+	if (grade <= ref.getGradeReqExec())
+	{
+		std::cout << "Buraucrat " << getName() << ", executes form " << ref.getName() << "." << std::endl;
+	}
+	else
+		std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
 
 }
 
@@ -51,14 +51,13 @@ void					Bureaucrat::executeForm(const Form &ref)
 
 void					Bureaucrat::signForm(Form &ref)
 {
-		if (grade <= ref.getGradeReqSign())
-		{
-			ref.beSigned(*this);
-			std::cout << "Buraucrat " << getName() << ", signs form " << ref.getName() << "." << std::endl;
-		}
-		else
-			std::cout << "Buraucrat " << getName() << ", cannot sign " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
-
+	if (grade <= ref.getGradeReqSign())
+	{
+		ref.beSigned(*this);
+		std::cout << "Buraucrat " << getName() << ", signs form " << ref.getName() << "." << std::endl;
+	}
+	else
+		std::cout << "Buraucrat " << getName() << ", cannot sign " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
 }
 
 /*
