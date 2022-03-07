@@ -12,6 +12,10 @@
 
 #include "Animal.hpp"
 
+/*
+**		Member Functions
+*/
+
 std::string	Animal::getType() const 
 {
 	return (this->type);
@@ -22,14 +26,24 @@ void	Animal::makeSound() const
 	std::cout << "*Generic Animal Sound*" << std::endl;
 }
 
+
+
+
+/*
+**		Operators
+*/
+
 void	Animal::operator = (const Animal &ref)
 {
 	std::cout << "Assignation operator called" << std::endl;
 	this->type = ref.type;
 }
 
+
+
+
 /*
-**	C & D
+**		Con & Des
 */
 
 Animal::Animal(const Animal &ref)

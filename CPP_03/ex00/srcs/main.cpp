@@ -37,18 +37,17 @@ int main()
 
 
 	std::cout << std::endl << "_________ Attack ______________" << std::endl;
-	bot_b.attack("Penny");
+	bot_a.attack("Penny");
 	
 
 
 	std::cout << std::endl << "_________ Take Damage _________" << std::endl;
-	bot_b.takeDamage(23);
+	bot_a.takeDamage(5);
 	
 
 
 	std::cout << std::endl << "_________ Be Repaired _________" << std::endl;
-	bot_b.takeDamage(9);
-	bot_b.beRepaired(20);
+	bot_a.beRepaired(3);
 	
 
 

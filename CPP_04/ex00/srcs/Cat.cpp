@@ -12,6 +12,10 @@
 
 #include "Cat.hpp"
 
+/*
+**		Member Functions
+*/
+
 std::string		Cat::getType() const
 {
 	return (this->type);
@@ -22,14 +26,24 @@ void			Cat::makeSound() const
 	std::cout << "*Meow*" << std::endl;
 }
 
+
+
+
+/*
+**		Operators
+*/
+
 void 			Cat::operator= (const Cat &ref)
 {
 	std::cout << "Cat Assignation operator Called" << std::endl;
 	this->type = ref.type;
 }
 
+
+
+
 /*
-**	C & D
+**	Con & Des
 */
 
 Cat::Cat(const Cat &ref)

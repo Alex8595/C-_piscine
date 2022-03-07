@@ -40,6 +40,9 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->name << " has been repared to completion and now has: " << this->hitPoints<< " hit points!" << std::endl;
 }
 
+
+
+
 /*
 **	 C & D
 */

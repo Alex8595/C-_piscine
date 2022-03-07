@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 /*
@@ -26,6 +25,9 @@ void	ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << this->name << " has entered in ... GATE KEEPER MODE ! ! !" << std::endl;
 }
+
+
+
 
 /*
 **	Con & Des

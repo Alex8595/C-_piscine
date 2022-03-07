@@ -14,8 +14,7 @@ NAME = Animals
 
 all : $(NAME)
 
-
-CXX = g++
+CXX = clang++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 

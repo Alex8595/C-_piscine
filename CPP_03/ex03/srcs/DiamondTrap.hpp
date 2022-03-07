@@ -23,6 +23,7 @@ class DiamondTrap : public ScavTrap, public FragTrap
 		void			whoAmI();
 		void			seeStats();
 		std::string		getDiamondClapName();
+		void            attack(std::string const &target);
 
 		void			operator=( DiamondTrap &o_class );
 

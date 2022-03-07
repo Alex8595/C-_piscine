@@ -10,14 +10,13 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 /*
 **		Member Functions
 */
 
-void        highFivesGuys(void)
+void        FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap request a positive highs fives"  << std::endl;
 }

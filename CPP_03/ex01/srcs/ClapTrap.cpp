@@ -40,11 +40,14 @@ void	ClapTrap::beRepaired(unsigned int amount)
 	std::cout << "ClapTrap " << this->name << " has been repared to completion and now has: " << this->hitPoints<< " hit points!" << std::endl;
 }
 
+
+
+
 /*
 **	 Con & Des
 */
 
-void 	ClapTrap::operator = ( const ClapTrap &o_class )
+void 	ClapTrap::operator=( const ClapTrap &o_class )
 {
 	std::cout << "ClapTrap Assignation operator overload called" << std::endl;
 

@@ -14,7 +14,7 @@ NAME = FragTrap
 
 all : $(NAME)
 
-CXX = c++ 
+CXX = clang++ 
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 

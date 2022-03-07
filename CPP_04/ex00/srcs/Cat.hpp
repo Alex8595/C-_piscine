@@ -12,16 +12,13 @@
 
 #ifndef __CAT_HPP__
 # define __CAT_HPP__
-# include <iostream>
 # include "Animal.hpp"
 
 class Cat : public Animal
 {
-	private:
-		
 	public:
-		virtual std::string			getType() const;
-		virtual void		 		makeSound() const;
+		std::string					getType() const;
+		void		 				makeSound() const;
 		void						operator=(const Cat &ref);
 
 		Cat(const Cat &ref);

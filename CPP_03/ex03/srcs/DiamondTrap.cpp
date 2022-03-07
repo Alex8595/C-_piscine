@@ -19,8 +19,16 @@ void		DiamondTrap::whoAmI()
 
 std::string	DiamondTrap::getDiamondClapName()
 {
-	return(ClapTrap::name);
+	return (ClapTrap::name);
 }
+
+void	DiamondTrap::attack(std::string const &target)
+{
+	ScavTrap::attack(target);
+}
+
+
+
 
 /*
 **	C & D
@@ -47,7 +55,7 @@ DiamondTrap::DiamondTrap(std::string g_name)
 	DiamondTrap::name = g_name;
 	ClapTrap::name = g_name + "_clap_name";
 	this->hitPoints = FragTrap::hitPoints;
-	this->energyPoints = 50;
+	this->energyPoints = ScavTrap::energyPoints;
 	this->attackDamage = FragTrap::attackDamage;
 }
 

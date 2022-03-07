@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 
 /*
@@ -27,11 +26,14 @@ void	ScavTrap::guardGate()
 	std::cout << "ScavTrap " << this->name << " has entered in ... GATE KEEPER MODE ! ! !" << std::endl;
 }
 
+
+
+
 /*
 **	Con & Des
 */
 
-void    ScavTrap::operator = ( const ScavTrap &o_class )
+void    ScavTrap::operator=( const ScavTrap &o_class )
 {
 	std::cout << "ScavTrap Assignation operator overload called" << std::endl;
 

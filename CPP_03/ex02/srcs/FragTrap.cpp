@@ -10,13 +10,15 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 
 void        FragTrap::highFivesGuys(void)
 {
 	std::cout << "FragTrap " << this->name << " request a positive highs fives."  << std::endl;
 }
+
+
+
 
 /*
 **	C & D

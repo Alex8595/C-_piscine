@@ -26,6 +26,10 @@ int main()
 
 	Mao.attack("Evil Frog");
 
+	Mao.highFivesGuys();
+	
+	Mao.guardGate();
+
 	std::cout << std::endl;
 	return (0);
 }

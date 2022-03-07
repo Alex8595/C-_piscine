@@ -14,9 +14,9 @@ NAME = DiamondTrap
 
 all : $(NAME)
 
-CXX = c++ 
+CXX = clang++ 
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror -Wshadow -Wno-shadow
 
 SRCS =	srcs/main.cpp		\
 		srcs/ClapTrap.cpp	\

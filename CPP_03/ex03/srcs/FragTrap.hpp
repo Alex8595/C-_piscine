@@ -23,7 +23,7 @@ class	FragTrap  : virtual public ClapTrap
 		FragTrap( const FragTrap &ref_to_copy );
 		FragTrap(std::string name);
 		FragTrap();
-		~FragTrap();
+		virtual ~FragTrap();
 };
 
 #endif

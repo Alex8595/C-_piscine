@@ -10,12 +10,9 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 #include "WrongCat.hpp"
-#include "WrongAnimal.hpp"
 
 void ft_leaks()
 {
@@ -29,10 +26,11 @@ int main()
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
 
-	std::cout << std::endl;
+	std::cout << std::endl << "_______ Cat and Dog ________" << std::endl << std::endl;
 
 	std::cout << j->getType() << " " << std::endl;
 	std::cout << i->getType() << " " << std::endl;
+
 	i->makeSound(); //will output the cat sound!
 	j->makeSound();
 	meta->makeSound();
@@ -43,6 +41,7 @@ int main()
 	delete i;
 
 	std::cout << std::endl << "_______Wrong Cat________" << std::endl << std::endl;
+	
 	const WrongAnimal* wcat = new WrongCat();
 	
 	std::cout << std::endl;

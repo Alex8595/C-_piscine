@@ -17,11 +17,15 @@ int main()
 {
 	std::cout << std::endl << "_________ Constructors _________" << std::endl;
 	FragTrap Sonia("Sonia");
-
-
+	FragTrap Carlo("Carlo");
+	FragTrap Copy("Sonia");
 
 	std::cout << std::endl << "_________ New Function _________" << std::endl;
-	Sonia.highFivesGuys();
+	Copy.highFivesGuys();
+	
+	std::cout << std::endl << "_________ Assig Operator _________" << std::endl;
+	Copy = Carlo;
+	Copy.highFivesGuys();
 
 
 
