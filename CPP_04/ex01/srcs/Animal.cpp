@@ -12,6 +12,32 @@
 
 #include "Animal.hpp"
 
+/*
+**		New Member functions
+*/
+
+std::string	Animal::getIdea(int num)
+{
+	if (num)
+		;
+	return ("Animal getidea, thus, error");
+}
+
+void		Animal::setIdea(std::string idea, int num)
+{
+	if (num && idea.empty())
+		;
+	std::cout << "Error: can't set idea in animal class" << std::endl;
+}
+
+
+
+
+/*
+**		Old Member functions
+*/
+
+
 std::string	Animal::getType() const 
 {
 	return (this->type);
@@ -22,15 +48,12 @@ void	Animal::makeSound() const
 	std::cout << "*Generic Animal Sound*" << std::endl;
 }
 
-std::string	Animal::getIdea(int num)
-{
-	return ("Animal getidea, thus, error");
-}
 
-void		Animal::setIdea(std::string idea, int num)
-{
-	std::cout << "Error: can't set idea in animal class" << std::endl;
-}
+
+
+/*
+**		Operator
+*/
 
 void	Animal::operator = (Animal &ref)
 {
@@ -38,8 +61,11 @@ void	Animal::operator = (Animal &ref)
 	this->type = ref.type;
 }
 
+
+
+
 /*
-**	C & D
+**		Con & Des
 */
 
 Animal::Animal(const Animal &ref)

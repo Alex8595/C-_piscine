@@ -19,7 +19,6 @@ class WrongCat : public WrongAnimal
 	private:
 		
 	public:
-		std::string			getType() const;
 		void		 		makeSound() const;
 		void				operator=(const WrongCat &ref);
 

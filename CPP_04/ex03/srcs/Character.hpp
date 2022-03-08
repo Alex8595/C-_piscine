@@ -12,23 +12,24 @@
 
 #ifndef __CHARACTER_HPP__
 # define __CHARACTER_HPP__
-# include "ICharacter.hpp"
 # include "AMateria.hpp"
 
 class	Character : public ICharacter
 {
 	private:
-		std::string						name;
-		int								n_filled;
 		AMateria						*inv_materias[4];
+		std::string						name;
+		int								idk_filled;
 
 	public:
-		virtual std::string const		&getName() const;
 		virtual void 					equip(AMateria* m);
 		virtual void					unequip(int idx);
 		virtual void					use(int idx, ICharacter& target);
+
+		virtual std::string const		&getName() const;
 		
-		void 	operator=(const Character &ref);
+		void							operator=(const Character &ref);
+
 		Character(const Character &ref);
 		Character(const std::string &ref);
 		Character();

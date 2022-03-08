@@ -14,9 +14,9 @@ NAME = Pure
 
 all : $(NAME)
 
-CXX = g++
+CXX = clang++
 
-CPPFLAGS = -std=c++98#  -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp			\
 		srcs/WrongAnimal.cpp	\

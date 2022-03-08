@@ -14,25 +14,41 @@
 #include "Dog.hpp"
 #include "Brain.hpp"
 
-std::string		Cat::getType() const
+/*
+**		New Member Functions 
+*/
+
+std::string		Cat::getIdea(int num)
 {
-	return (this->type);
+	return (my_brain->getIdea(num));
 }
+
+void			Cat::setIdea(std::string idea, int num)
+{
+	my_brain->setIdea(idea, num);
+}
+
+
+
+
+/*
+**		Old Member Functions 
+*/
 
 void			Cat::makeSound() const
 {
 	std::cout << "*Meow*" << std::endl;
 }
 
-std::string		Cat::getIdea(int num)
+std::string		Cat::getType() const 
 {
-	return (this->my_brain->ideas[num]);
+	return (this->type);
 }
 
-void			Cat::setIdea(std::string idea, int num)
-{
-	this->my_brain->ideas[num] = idea;
-}
+
+/*
+**	Operators
+*/
 
 void 			Cat::operator= (AAnimal &ref)
 {
@@ -45,16 +61,22 @@ void 			Cat::operator= (AAnimal &ref)
 	}
 }
 
+
+
+
 /*
-**	C & D
+**	Con & Des
 */
 
 Cat::Cat(Cat &ref)
 {
 	std::cout << "Cat Copy Constructor Called" << std::endl;
+
 	this->my_brain = new Brain();
+
 	for (int i = 0; i < 100; i++)
 		this->setIdea(ref.getIdea(i), i);
+
 	this->type = ref.type;
 }
 
@@ -68,5 +90,5 @@ Cat::Cat()
 Cat::~Cat()
 {
 	std::cout << "Cat Destruct Called" << std::endl;
-	delete this->my_brain;
+	delete my_brain;
 }

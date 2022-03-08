@@ -12,14 +12,21 @@
 
 #include "AAnimal.hpp"
 
-void	AAnimal::operator = (AAnimal &ref)
+/*
+**	Operators
+*/
+
+void	AAnimal::operator=(AAnimal &ref)
 {
 	std::cout << "Animal Assignation operator called" << std::endl;
 	this->type = ref.type;
 }
 
+
+
+
 /*
-**	C & D
+**	Con & Des
 */
 
 AAnimal::AAnimal(const AAnimal &ref)

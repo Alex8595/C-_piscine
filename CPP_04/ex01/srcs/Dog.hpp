@@ -12,7 +12,6 @@
 
 #ifndef __DOG_HPP__
 # define __DOG_HPP__
-# include <iostream>
 # include "Animal.hpp"
 # include "Brain.hpp"
 
@@ -24,10 +23,10 @@ class Dog : public Animal
 	public:
 		virtual std::string			getIdea(int num);
 		virtual void				setIdea(std::string idea, int num);
-		virtual std::string			getType() const;
-		virtual void				makeSound() const;
-		void						operator=(Animal &ref);
 
+		virtual void				makeSound() const;
+
+		void						operator=(Animal &ref);
 		Dog(Dog &ref);
 		Dog();
 		~Dog();

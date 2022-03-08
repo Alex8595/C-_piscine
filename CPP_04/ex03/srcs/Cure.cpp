@@ -12,24 +12,31 @@
 
 #include "Cure.hpp"
 
+/*
+**	Member Functions
+*/
+
 AMateria		*Cure::clone() const
 {
 	AMateria	*new_cure = new Cure();
 	return (new_cure);
 }
 
+
+
+
 /*
-**	C & D
+**	Con & Des
 */
 
 void				Cure::operator=(const Cure &ref)
 {
-	this->type = ref.type;
+	this->type = ref.getType();
 }
 
 Cure::Cure(const Cure &ref)
 {
-	this->type = ref.type;
+	this->type = ref.getType();
 }
 
 Cure::Cure()

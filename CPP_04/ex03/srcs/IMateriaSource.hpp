@@ -12,19 +12,14 @@
 
 #ifndef __IMATERIASOURCE__
 # define __IMATERIASOURCE__
-# include <iostream>
-# include "ICharacter.hpp"
 # include "AMateria.hpp"
 # include "Ice.hpp"
 # include "Cure.hpp"
 
 class IMateriaSource
 {
-	protected:
-		int		test;
-
 	public:
-		virtual ~IMateriaSource() {		}
+		virtual ~IMateriaSource() {}
 		virtual void learnMateria(AMateria *mat) = 0;
 		virtual AMateria* createMateria(std::string const &type) = 0;
 };

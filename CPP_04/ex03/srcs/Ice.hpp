@@ -12,7 +12,6 @@
 
 #ifndef __ICE_HPP__
 # define __ICE_HPP__
-# include <iostream>
 # include "AMateria.hpp"
 
 class	Ice : public AMateria

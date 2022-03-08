@@ -12,27 +12,48 @@
 
 #include "AMateria.hpp"
 
-std::string const &AMateria::getType() const
-{
-	return (this->type);
-}
+/*
+**	Member functions 
+*/
 
 void	AMateria::use(ICharacter& target)
 {
 	if (getType() == "ice")
 		std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
-	if (getType() == "cure")
+	else if (getType() == "cure")
 		std::cout << "* heals " << target.getName() <<  "'s wounds *" << std::endl;
 }
 
+
+
+
 /*
-**	C & D
+**	Get & Set
+*/
+
+std::string const &AMateria::getType() const
+{
+	return (this->type);
+}
+
+
+
+
+/*
+**	Operators
 */
 
 void	AMateria::operator=(const AMateria &ref)
 {
 	this->type = ref.type;
 }
+
+
+
+
+/*
+**	Con & Des
+*/
 
 AMateria::AMateria(const AMateria &ref)
 {
@@ -51,4 +72,5 @@ AMateria::AMateria()
 
 AMateria::~AMateria()
 {
+
 }

@@ -12,6 +12,10 @@
 
 #include "Brain.hpp"
 
+/*
+**		Member Functions
+*/
+
 void	Brain::ft_init_ideas()
 {
 	for	(int i = 0; i < 100; i++)
@@ -23,6 +27,30 @@ void	Brain::ft_init_ideas()
 	}
 }
 
+
+
+
+/*
+**		Get & Set
+*/
+
+std::string		Brain::getIdea(int num)
+{
+	return (this->ideas[num]);
+}
+
+void			Brain::setIdea(std::string idea, int num)
+{
+	this->ideas[num] = idea;
+}
+
+
+
+
+/*
+**		Operators
+*/
+
 void	Brain::operator=(const Brain *ref)
 {
 	std::cout << "Brain Assignation operator Called" << std::endl;
@@ -32,8 +60,11 @@ void	Brain::operator=(const Brain *ref)
 	}
 }
 
+
+
+
 /*
-**		C & D
+**		Con & Des
 */
 
 Brain::Brain(const Brain &ref)

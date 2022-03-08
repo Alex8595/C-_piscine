@@ -12,24 +12,31 @@
 
 #include "Ice.hpp"
 
+/*
+**	Member Functions
+*/
+
 AMateria		*Ice::clone() const
 {
 	AMateria	*new_ice = new Ice();
 	return (new_ice);
 }
 
+
+
+
 /*
-**	C & D
+**	Con & Des
 */
 
 void				Ice::operator=(const Ice &ref)
 {
-	this->type = ref.type;
+	this->type = ref.getType();
 }
 
 Ice::Ice(const Ice &ref)
 {
-	this->type = ref.type;
+	this->type = ref.getType();
 }
 
 Ice::Ice()

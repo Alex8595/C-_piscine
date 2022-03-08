@@ -20,11 +20,12 @@ class  AAnimal
 		std::string type;
 
 	public:
-		virtual std::string			getType() const = 0;
-		virtual void				makeSound() const = 0;
 		virtual std::string			getIdea(int num) = 0;
+		virtual std::string			getType() const = 0;
+		
+		virtual void				makeSound() const = 0;
 		virtual void				setIdea(std::string idea, int num) = 0;
-		virtual void				operator = (AAnimal &ref);
+		virtual void				operator=(AAnimal &ref);
 
 		AAnimal(const AAnimal &ref);
 		AAnimal();

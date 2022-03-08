@@ -12,40 +12,46 @@
 
 #include "Character.hpp"
 
-std::string const	&Character::getName() const
-{
-	return (this->name);
-}
+/*
+**		Member Functions
+*/
 
 void				Character::equip(AMateria* m)
 {
-	if (n_filled > 3)
+	if (m == NULL)
+	{
+		std::cout << "NULL materia passed as reference." << std::endl;
+	}
+	else if (idk_filled > 3)
+	{
 		std::cout << getName() << "'s Materia inventary is full, can't equip more Materia." << std::endl;
+	}
 	else
 	{
-		inv_materias[n_filled] = m;
-		std::cout << "HELLOOOOOOOO"<< inv_materias[n_filled]->getType() << std::endl ;
-		std::cout << "Materia equiped." << std::endl;
-		n_filled++;
+		inv_materias[idk_filled] = m->clone();
+		std::cout << this->getName() << " equipped the " << inv_materias[idk_filled]->getType() << " materia!" << std::endl ;
+		idk_filled++;
 	}
 }
 
-
 void				Character::unequip(int idx)
 {
-	if (idx < 0 || idx > n_filled)
+	if (idx < 0 || idx > idk_filled)
+	{
 		std::cout << "No Materia Found at that index" << std::endl;
+	}
 	else
 	{
-		inv_materias[n_filled] = NULL;
+		inv_materias[idk_filled] = NULL;
+		// ASOIDJOIA SJDOIJ SAOIDJ ASPRIBLE HERE YOU AHVE TO REORDER THE SHIT HOLE IDIOT 
 		std::cout << "Materia unequiped." << std::endl;
-		n_filled--;
+		idk_filled--;
 	}
 }
 
 void				Character::use(int idx, ICharacter& target)
 {
-	if (idx < 0 || idx > n_filled)
+	if (idx < 0 || idx > idk_filled)
 		std::cout << "No Materia Found at that index" << std::endl;
 	else
 	{
@@ -53,34 +59,64 @@ void				Character::use(int idx, ICharacter& target)
 	}
 }
 
+
+
+
 /*
-**			C & D
+**		Get & Set
+*/
+
+std::string const	&Character::getName() const
+{
+	return (this->name);
+}
+
+
+
+
+/*
+**		Operators
 */
 
 void	Character::operator=(const Character &ref)
 {
 	name = ref.name;
-	n_filled = ref.n_filled;
+
+	idk_filled = ref.idk_filled;
+	
 	for	(int i = 0; i < 4 ; i++)
 		inv_materias[i] = NULL;
-	for (int j = 0; j < ref.n_filled; j++)
+	
+	for (int j = 0; j < ref.idk_filled; j++)
 		inv_materias[j] = ref.inv_materias[j];
 }
+
+
+
+
+/*
+**		Con & Des
+*/
 
 Character::Character(const Character &ref)
 {
 	name = ref.name;
-	n_filled = ref.n_filled;
+
+	idk_filled = ref.idk_filled;
+
 	for (int i = 0 ; i < 4; i++)
 		inv_materias[i] = NULL;
-	for (int j = 0; j < ref.n_filled; j++)
+
+	for (int j = 0; j < ref.idk_filled; j++)
 		inv_materias[j] = ref.inv_materias[j];
 }
 
 Character::Character(const std::string &ref)
 {
 	name = ref;
-	n_filled = 0;
+
+	idk_filled = 0;
+
 	for (int i = 0 ; i < 4; i++)
 		inv_materias[i] = NULL;
 }
@@ -88,17 +124,17 @@ Character::Character(const std::string &ref)
 Character::Character()
 {
 	name = "Default";
-	n_filled = 0;
+
+	idk_filled = 0;
+
 	for (int i = 0 ; i < 4; i++)
 		inv_materias[i] = NULL;
 }
 
 Character::~Character()
 {
-	for	(int i = 0; i < n_filled; i++)
-	{
-		std::cout << "Deleating number " << i << std::endl;
+	for	(int i = 0; i < idk_filled; i++)
 		delete inv_materias[i];
-	}
-	std::cout << "Deleation ended" << std::endl;
+
+	std::cout << "Materias stored in Character deleted" << std::endl; 
 }

@@ -12,7 +12,6 @@
 
 #ifndef __CAT_HPP__
 # define __CAT_HPP__
-# include <iostream>
 # include "AAnimal.hpp"
 # include "Brain.hpp"
 
@@ -24,10 +23,11 @@ class Cat : public AAnimal
 	public:
 		virtual std::string			getIdea(int num);
 		virtual void				setIdea(std::string idea, int num);
-		virtual std::string			getType() const;
-		virtual void		 		makeSound() const;
-		void						operator=(AAnimal &ref);
 
+		virtual void		 		makeSound() const;
+		std::string					getType() const;
+
+		void						operator=(AAnimal &ref);
 		Cat(Cat &ref);
 		Cat();
 		~Cat();

@@ -12,11 +12,6 @@
 
 #include "WrongCat.hpp"
 
-std::string		WrongCat::getType() const
-{
-	return (this->type);
-}
-
 void			WrongCat::makeSound() const
 {
 	std::cout << "*Meow from WrongCat*" << std::endl;

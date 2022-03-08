@@ -10,22 +10,25 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "Animal.hpp"
 #include "Cat.hpp"
 #include "Dog.hpp"
 
+/*
 void ft_leaks()
 {
 	system("leaks Brain");
 	atexit(ft_leaks);
 }
+*/
 
 int main()
 {
-	Animal	*animals[4];
+	int		n_an = 4;
+	Animal	*animals[n_an];
 
-	for (int i = 0; i < 4; i++)
+	std::cout << std::endl << "_____        Constructor        _____" << std::endl << std::endl;
+	for (int i = 0; i < n_an; i++)
 	{
 		if (i % 2)
 			animals[i] = new Dog(); 
@@ -33,26 +36,43 @@ int main()
 			animals[i] = new Cat();
 	}
 
-	std::cout << "_____ Test assignation operator _____" << std::endl;
 
 
-	for (int i = 0; i < 2; i++)
+
+	std::cout << std::endl << "_____     Test Assignation op   _____" << std::endl;
+	std::cout << std::endl << "_____           Before          _____" << std::endl << std::endl;
+
+	for (int i = 0; i < 5; i++)
 		std::cout << animals[3]->getIdea(i) << std::endl;
 
-	for (int i = 0; i < 2; i++)
+
+
+
+	std::cout << std::endl << "_____         Changed          _____" << std::endl << std::endl;
+
+	for (int i = 0; i < 5; i++)
 	{
 		animals[3]->setIdea("ZZZ zzz ...", i);
 		std::cout << animals[3]->getIdea(i) << std::endl;
 	}
 
-	*(animals[1]) = *(animals[3]);
-
-	for (int i = 0; i < 3; i++)
-		std::cout << animals[1]->getIdea(i) << std::endl;
 
 
-	std::cout << std::endl;
-	std::cout << "_____        Destructors        _____" << std::endl;
-	for (int i = 0; i < 2; i++)
+
+	std::cout << std::endl << "_____         Deep copy        _____" << std::endl << std::endl;
+
+	*(animals[3]) = *(animals[1]);
+
+	for (int i = 0; i < 5; i++)
+		std::cout << animals[3]->getIdea(i) << std::endl;
+
+
+
+
+	std::cout << std::endl << "_____        Destructors        _____" << std::endl << std::endl;
+
+	for (int i = 0; i < n_an; i++)
 		delete animals[i];
+	
+	return (0);
 }

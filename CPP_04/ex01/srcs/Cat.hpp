@@ -12,7 +12,6 @@
 
 #ifndef __CAT_HPP__
 # define __CAT_HPP__
-# include <iostream>
 # include "Animal.hpp"
 # include "Brain.hpp"
 
@@ -20,14 +19,14 @@ class Cat : public Animal
 {
 	private:
 		Brain						*my_brain;
-		
+
 	public:
 		virtual std::string			getIdea(int num);
 		virtual void				setIdea(std::string idea, int num);
-		virtual std::string			getType() const;
+		
 		virtual void		 		makeSound() const;
-		void						operator=(Animal &ref);
 
+		void						operator=(Animal &ref);
 		Cat(Cat &ref);
 		Cat();
 		~Cat();

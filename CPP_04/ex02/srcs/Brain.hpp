@@ -12,13 +12,18 @@
 
 #ifndef __BRAIN_HPP__
 # define __BRAIN_HPP__
-# include "iostream"
+# include <iostream>
 
 class Brain
 {
-	public:
+	protected:
 		std::string				ideas[100];
-		void    				ft_init_ideas();
+
+	public:
+		std::string				getIdea(int num);
+		void					setIdea(std::string idea, int num);
+
+		void					ft_init_ideas();
 		void 					operator=(const Brain *ref);
 
 		Brain(const Brain &ref);
