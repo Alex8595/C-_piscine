@@ -29,10 +29,10 @@ SRCS =	srcs/main.cpp			\
 OBJS = srcs/main.o				\
 		srcs/WrongAnimal.o		\
 		srcs/WrongCat.o			\
-	   srcs/Cat.o				\
-	   srcs/Dog.o				\
-	   srcs/Brain.o				\
-	   srcs/Animal.o
+		srcs/Cat.o				\
+		srcs/Dog.o				\
+		srcs/Brain.o			\
+		srcs/Animal.o
 
 
 $(OBJS) : $(SRCS)

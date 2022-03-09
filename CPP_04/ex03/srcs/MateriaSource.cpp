@@ -61,11 +61,15 @@ AMateria*		MateriaSource::createMateria(std::string const &type)
 
 void			MateriaSource::operator=(const MateriaSource &src)
 {
+	this->idx_learned = src.idx_learned;
+
 	for	(int i = 0; i < 4 ; i++)
 		this->inv_materias[i] = NULL;
 		
 	for (int j = 0; j < src.idx_learned; j++)
-		this->inv_materias[j] = src.inv_materias[j];
+	{
+		this->inv_materias[j] = src.inv_materias[j]->clone();
+	}
 }
 
 
@@ -83,7 +87,7 @@ MateriaSource::MateriaSource(const MateriaSource &src)
 		this->inv_materias[i] = NULL;
 
 	for	(int i = 0; i < this->idx_learned; i++)
-		this->inv_materias[i] = src.inv_materias[i];
+		this->inv_materias[i] = src.inv_materias[i]->clone();
 }
 
 MateriaSource::MateriaSource()

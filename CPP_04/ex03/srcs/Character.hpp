@@ -19,7 +19,7 @@ class	Character : public ICharacter
 	private:
 		AMateria						*inv_materias[4];
 		std::string						name;
-		int								idk_filled;
+		int								idx_filled;
 
 	public:
 		virtual void 					equip(AMateria* m);

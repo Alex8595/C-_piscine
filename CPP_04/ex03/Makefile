@@ -16,7 +16,7 @@ all : $(NAME)
 
 CXX = clang++
 
-CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 #-Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp			\
 		srcs/AMateria.cpp		\

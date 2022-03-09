@@ -17,7 +17,7 @@
 /*
 void ft_leaks()
 {
-	system("leaks Pure");
+	system("leaks Abstracct");
 	atexit(ft_leaks);
 }
 */

@@ -18,10 +18,16 @@
 
 void	AMateria::use(ICharacter& target)
 {
-	if (getType() == "ice")
-		std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
-	else if (getType() == "cure")
-		std::cout << "* heals " << target.getName() <<  "'s wounds *" << std::endl;
+	ICharacter	*aux;
+
+	aux = NULL;
+	if (aux != &target)
+	{
+		if (getType() == "ice")
+			std::cout << "* shoots an ice bolt at " << target.getName() <<  " *" << std::endl;
+		else if (getType() == "cure")
+			std::cout << "* heals " << target.getName() <<  "'s wounds *" << std::endl;
+	}
 }
 
 

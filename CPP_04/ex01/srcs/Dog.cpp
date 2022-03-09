@@ -12,7 +12,6 @@
 
 #include "Cat.hpp"
 #include "Dog.hpp"
-#include "Brain.hpp"
 
 /*
 **		New Member Functions 

@@ -20,18 +20,16 @@ class AMateria
 		std::string				type;
 
 	public:
-		virtual AMateria*		clone() const = 0;
-
-		virtual void			use(ICharacter& target);
+		AMateria(std::string const &type);
+		AMateria(const AMateria &ref);
+		AMateria();
+		virtual ~AMateria();
+		void operator=(const AMateria &ref);
 
 		std::string				const &getType() const;
 
-		void					operator=(const AMateria &ref);
-
-		AMateria(const AMateria &ref);
-		AMateria(std::string const &type);
-		AMateria();
-		virtual ~AMateria();
+		virtual AMateria*		clone() const = 0;
+		virtual void			use(ICharacter& target);
 };
 
 #endif
