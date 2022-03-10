@@ -29,9 +29,11 @@ void		PresidentialPardonForm::execute(Bureaucrat const &executor) const
 	}
 	catch(const std::exception& exception)
 	{
-
 	}
 }
+
+
+
 
 /*
 **		Operators
@@ -46,8 +48,11 @@ void				PresidentialPardonForm::operator=(PresidentialPardonForm &ref)
 	}	
 }
 
+
+
+
 /*
-**      Con & Des
+**      C & D
 */
 
 PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &ref) : Form(ref.getName(), 25, 5)

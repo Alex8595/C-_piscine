@@ -27,10 +27,10 @@ class Form
 	public:
 		void					beSigned(Bureaucrat &ref);
 
-		std::string				getName();
-		int						getGradeReqSign();
-		int						getGradeReqExec();
-		bool					getIsSigned();
+		std::string				getName() const;
+		int						getGradeReqSign() const;
+		int						getGradeReqExec() const;
+		bool					getIsSigned() const;
 
 		void					operator=(Form &ref);
 		Form(std::string g_name, int gr_sign, int gr_exec);

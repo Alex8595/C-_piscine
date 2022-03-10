@@ -6,7 +6,7 @@
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 17:24:40 by ahernand          #+#    #+#             */
-/*   Updated: 2022/01/24 14:50:36 by ahernand         ###   ########.fr       */
+/*   Updated: 2022/03/10 14:04:36 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 /*
 void ft_leaks()
 {
-	system("leaks Abstracct");
+	system("leaks Abstract");
 	atexit(ft_leaks);
 }
 */

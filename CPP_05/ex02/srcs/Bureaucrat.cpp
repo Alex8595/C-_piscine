@@ -13,21 +13,6 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		G & S
-*/
-
-std::string				Bureaucrat::getName() const
-{
-	return (name);
-}
-
-int						Bureaucrat::getGrade() const
-{
-	return (grade);
-}
-
-
-/*
 **		Execute
 **		ex_02 NEW function
 */
@@ -44,9 +29,11 @@ void					Bureaucrat::executeForm(const Form &ref)
 }
 
 
+
+
 /*
-**		Sign
-**		ex_01 NEW function
+**		SignForm
+**		ex_01 New function
 */
 
 void					Bureaucrat::signForm(Form &ref)
@@ -60,6 +47,9 @@ void					Bureaucrat::signForm(Form &ref)
 			std::cout << "Buraucrat " << getName() << ", cannot sign " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
 
 }
+
+
+
 
 /*
 **		Increment & Decrement
@@ -93,6 +83,9 @@ void					Bureaucrat::decrementGrade()
 	}
 }
 
+
+
+
 /*
 **		For Construct in bounds
 */
@@ -106,6 +99,26 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
 	std::cout << "Grade Too Low!" << std::endl;					
 };
+
+
+
+
+/*
+**		G & S
+*/
+
+std::string				Bureaucrat::getName() const
+{
+	return (name);
+}
+
+int						Bureaucrat::getGrade() const
+{
+	return (grade);
+}
+
+
+
 
 /*
 **		Op
@@ -122,6 +135,9 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
     stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
 	return(stream);
 }
+
+
+
 
 /*
 **		C & D

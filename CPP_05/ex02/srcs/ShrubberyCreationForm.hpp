@@ -18,11 +18,11 @@
 class ShrubberyCreationForm : public Form
 {
 	public:
-		void		execute(Bureaucrat const &executor) const;
+		void				execute(Bureaucrat const &executor) const;
 
 		void				operator=(ShrubberyCreationForm &ref);
-		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm &ref);
+		ShrubberyCreationForm(std::string target);
 		ShrubberyCreationForm();
 		~ShrubberyCreationForm();
 };

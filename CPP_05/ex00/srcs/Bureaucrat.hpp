@@ -21,17 +21,17 @@ class	Bureaucrat
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
-		std::string				getName();
-		int						getGrade();
+		std::string				getName() const;
+		int						getGrade() const;
 		void					incrementGrade();
 		void					decrementGrade();
 
 		void					operator=(Bureaucrat &ref);
 
-		Bureaucrat();
-		Bureaucrat(int grade_given);
 		Bureaucrat(Bureaucrat &ref);
 		Bureaucrat(std::string name_given, int grade_given);
+		Bureaucrat(int grade_given);
+		Bureaucrat();
 		~Bureaucrat();
 
 

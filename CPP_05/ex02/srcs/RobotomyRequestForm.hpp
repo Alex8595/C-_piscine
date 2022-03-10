@@ -17,11 +17,11 @@
 class RobotomyRequestForm : public Form
 {
 	public:
-		void		execute(Bureaucrat const &executor) const;
+		void				execute(Bureaucrat const &executor) const;
 
 		void				operator=(RobotomyRequestForm &ref);
-		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm &ref);
+		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm();
 		~RobotomyRequestForm();
 };

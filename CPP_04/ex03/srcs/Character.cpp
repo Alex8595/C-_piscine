@@ -149,7 +149,10 @@ Character::Character()
 Character::~Character()
 {
 	for	(int i = 0; i < idx_filled; i++)
-		delete inv_materias[i];
+	{
+		if (inv_materias[i] != NULL)
+			delete inv_materias[i];
+	}
 
 	std::cout << "Materias stored in Character deleted" << std::endl; 
 }

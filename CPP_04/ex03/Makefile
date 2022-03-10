@@ -6,7 +6,7 @@
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/01/24 15:46:01 by ahernand          #+#    #+#              #
-#    Updated: 2022/01/28 18:08:02 by ahernand         ###   ########.fr        #
+#    Updated: 2022/03/10 14:00:36 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ all : $(NAME)
 
 CXX = clang++
 
-CPPFLAGS = -std=c++98 #-Wall -Wextra -Werror
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 SRCS =	srcs/main.cpp			\
 		srcs/AMateria.cpp		\

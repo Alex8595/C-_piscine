@@ -13,6 +13,10 @@
 #include "ShrubberyCreationForm.hpp"
 #include "Bureaucrat.hpp"
 
+/*
+**		Execute
+*/
+
 void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 {
 	try
@@ -38,11 +42,13 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 			outfile.close();
 		}
 	}
-	catch(const std::exception& exception)
+	catch (const std::exception& exception)
 	{
-
 	}
 }
+
+
+
 
 /*
 **		Operators
@@ -57,8 +63,11 @@ void				ShrubberyCreationForm::operator=(ShrubberyCreationForm &ref)
 	}	
 }
 
+
+
+
 /*
-**      Con & Des
+**      C & D
 */
 
 ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm &ref) : Form(ref.getName(), 145, 137)

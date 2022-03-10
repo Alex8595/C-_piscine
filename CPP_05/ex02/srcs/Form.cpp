@@ -10,11 +10,10 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 /*
-**			01 function sign
+**		01 function sign
 */
 
 void					Form::beSigned(Bureaucrat &ref)
@@ -30,6 +29,31 @@ void					Form::beSigned(Bureaucrat &ref)
 	{
 	}
 }
+
+
+
+
+/*
+**		Exceptions
+*/
+
+Form::GradeTooHighException::GradeTooHighException()
+{
+	std::cout << "Grade Too High!" << std::endl;					
+}
+
+Form::GradeTooLowException::GradeTooLowException()
+{
+	std::cout << "Grade Too Low!" << std::endl;					
+}
+
+Form::NotSignedException::NotSignedException()
+{
+	std::cout << "Not signed!" << std::endl;					
+}
+
+
+
 
 /*
 **		G & S
@@ -55,48 +79,8 @@ bool					Form::getIsSigned() const
 	return (is_signed);	
 }
 
-/*
-**		For Construct in bounds
-*/
 
-int						ft_inbound(int g_grade)
-{
-	try
-	{
-		if (g_grade > 150)
-		{
-			throw (Form::GradeTooLowException());
-		}
-		else if (g_grade < 1)
-		{
-			throw (Form::GradeTooHighException());
-		}
-		else
-		{
-			return(g_grade);
-		}
-	}
-	catch (std::exception &exception)
-	{
 
-	}
-	return (42);
-}
-
-Form::GradeTooHighException::GradeTooHighException()
-{
-	std::cout << "Grade Too High!" << std::endl;					
-}
-
-Form::GradeTooLowException::GradeTooLowException()
-{
-	std::cout << "Grade Too Low!" << std::endl;					
-}
-
-Form::NotSignedException::NotSignedException()
-{
-	std::cout << "Not signed!" << std::endl;					
-}
 
 /*
 **		Operators
@@ -117,9 +101,42 @@ void					Form::operator=(Form &ref)
 	this->is_signed = ref.is_signed;
 }
 
+
+
+
+/*
+**		For Construct in bounds
+*/
+
+int						ft_inbound(int g_grade)
+{
+	try
+	{
+		if (g_grade > 150)
+			throw (Form::GradeTooLowException());
+		else if (g_grade < 1)
+			throw (Form::GradeTooHighException());
+		else
+			return (g_grade);
+	}
+	catch (std::exception &exception)
+	{
+	}
+	return (42);
+}
+
+
+
+
 /*
 **		C & D
 */
+
+Form::Form(const Form &ref) :
+	name(ref.getName()), grade_req_sign(ref.getGradeReqSign()), grade_req_exec(ref.getGradeReqExec()), is_signed(ref.getIsSigned())
+{
+
+}
 
 Form::Form(std::string g_name, int gr_sign, int gr_exec) : 
 	name(g_name), grade_req_sign(ft_inbound(gr_sign)), grade_req_exec(ft_inbound(gr_exec))
@@ -130,12 +147,6 @@ Form::Form(std::string g_name, int gr_sign, int gr_exec) :
 Form::Form() : name("Default"), grade_req_sign(42), grade_req_exec(21)
 {
 	is_signed = false;
-}
-
-Form::Form(const Form &ref) :
-	name(ref.name), grade_req_sign(ref.grade_req_sign), grade_req_exec(ref.grade_req_exec), is_signed(ref.is_signed)
-{
-
 }
 
 Form::~Form()

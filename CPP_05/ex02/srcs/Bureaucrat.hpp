@@ -12,7 +12,6 @@
 
 #ifndef __BUREAUCRAT_HPP_
 # define __BUREAUCRAT_HPP_
-# include <iostream>
 # include "Form.hpp"
 
 class	Bureaucrat
@@ -33,10 +32,10 @@ class	Bureaucrat
 
 		void					operator=(Bureaucrat &ref);
 
-		Bureaucrat();
-		Bureaucrat(int grade_given);
 		Bureaucrat(Bureaucrat &ref);
 		Bureaucrat(std::string name_given, int grade_given);
+		Bureaucrat(int grade_given);
+		Bureaucrat();
 		~Bureaucrat();
 
 

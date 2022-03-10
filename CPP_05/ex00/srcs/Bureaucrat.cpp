@@ -13,20 +13,6 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		G & S
-*/
-
-std::string				Bureaucrat::getName()
-{
-	return (name);
-}
-
-int						Bureaucrat::getGrade()
-{
-	return (grade);
-}
-
-/*
 **		Increment & Decrement
 */
 
@@ -79,7 +65,24 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 
 
 /*
-**		Op
+**		Get & Set
+*/
+
+std::string				Bureaucrat::getName() const
+{
+	return (name);
+}
+
+int						Bureaucrat::getGrade() const
+{
+	return (grade);
+}
+
+
+
+
+/*
+**		Operators
 */
 
 void					Bureaucrat::operator=(Bureaucrat &ref)
@@ -91,7 +94,7 @@ void					Bureaucrat::operator=(Bureaucrat &ref)
 std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 {
     stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
-	return(stream);
+	return (stream);
 }
 
 
@@ -101,16 +104,32 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 **		C & D
 */
 
-Bureaucrat::Bureaucrat(void)
-{
-	name = "Default";
-	grade = 42;
-}
-
 Bureaucrat::Bureaucrat(Bureaucrat &ref)
 {
 	this->name = ref.getName();
 	this->grade = ref.getGrade();
+}
+
+Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
+{
+	try
+	{
+		name = name_given;
+		grade = 150;
+		if (grade_given > 150)
+			throw (Bureaucrat::GradeTooLowException());
+		else if (grade_given < 1)
+		{
+			throw (Bureaucrat::GradeTooHighException());
+		}
+		else
+		{
+			grade = grade_given;
+		}
+	}
+	catch (std::exception &exception)
+	{
+	}
 }
 
 Bureaucrat::Bureaucrat(int grade_given)
@@ -135,26 +154,10 @@ Bureaucrat::Bureaucrat(int grade_given)
 	}
 }
 
-Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
+Bureaucrat::Bureaucrat(void)
 {
-	try
-	{
-		name = name_given;
-		grade = 150;
-		if (grade_given > 150)
-			throw (Bureaucrat::GradeTooLowException());
-		else if (grade_given < 1)
-		{
-			throw (Bureaucrat::GradeTooHighException());
-		}
-		else
-		{
-			grade = grade_given;
-		}
-	}
-	catch (std::exception &exception)
-	{
-	}
+	name = "Default";
+	grade = 42;
 }
 
 Bureaucrat::~Bureaucrat()

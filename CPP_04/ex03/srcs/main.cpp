@@ -73,6 +73,13 @@ int main(void)
 
 
 
+	/*
+	** _______________________________________________ my tests ahead_______________________________________________
+	*/
+
+
+
+
 	std::cout << std::endl << "_____ Test deep copy Materia Src _____" << std::endl << std::endl;
 
 	MateriaSource* _src = new MateriaSource();

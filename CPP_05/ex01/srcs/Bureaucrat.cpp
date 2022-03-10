@@ -28,19 +28,8 @@ void					Bureaucrat::signForm(Form &ref)
 
 }
 
-/*
-**		G & S
-*/
 
-std::string				Bureaucrat::getName()
-{
-	return (name);
-}
 
-int						Bureaucrat::getGrade()
-{
-	return (grade);
-}
 
 /*
 **						Increment & Decrement
@@ -74,6 +63,9 @@ void					Bureaucrat::decrementGrade()
 	}
 }
 
+
+
+
 /*
 **			For Construct in bounds
 */
@@ -87,6 +79,26 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 {
 	std::cout << "Grade Too Low!" << std::endl;					
 };
+
+
+
+
+/*
+**		G & S
+*/
+
+std::string				Bureaucrat::getName()
+{
+	return (name);
+}
+
+int						Bureaucrat::getGrade()
+{
+	return (grade);
+}
+
+
+
 
 /*
 **			Op
@@ -103,6 +115,9 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
     stream << ref.getName() << ", bureaucrat grade " << ref.getGrade() << ".";
 	return (stream);
 }
+
+
+
 
 /*
 **			Con & Des
@@ -166,5 +181,5 @@ Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
 
 Bureaucrat::~Bureaucrat()
 {
-	
+
 }
