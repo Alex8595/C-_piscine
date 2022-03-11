@@ -25,7 +25,7 @@ int main(void)
 	std::cout << std::endl << "_________ Correct range grade __________" << std::endl << std::endl;
 
 	Bureaucrat	Bu_3("Jean", 1);
-	Bureaucrat	Bu_4("Sall",150);
+	Bureaucrat	Bu_4("Sall", 150);
 
 	std::cout << Bu_3.getName() << "'s grade from:              " << Bu_3.getGrade() << std::endl;
 	std::cout << Bu_4.getName() << "'s grade from:              " << Bu_4.getGrade() << std::endl;

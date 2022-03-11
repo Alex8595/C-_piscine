@@ -54,7 +54,7 @@ void					Bureaucrat::decrementGrade()
 	try
 	{
 		if (grade + 1 > 150)
-			throw (Bureaucrat::GradeTooHighException());
+			throw (Bureaucrat::GradeTooLowException());
 		else
 			grade++;
 	}
@@ -87,12 +87,12 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 **		G & S
 */
 
-std::string				Bureaucrat::getName()
+std::string				Bureaucrat::getName() const
 {
 	return (name);
 }
 
-int						Bureaucrat::getGrade()
+int						Bureaucrat::getGrade() const
 {
 	return (grade);
 }
@@ -106,7 +106,6 @@ int						Bureaucrat::getGrade()
 
 void					Bureaucrat::operator=(Bureaucrat &ref)
 {
-	this->name = ref.getName();
 	this->grade = ref.getGrade();
 }
 
@@ -120,26 +119,19 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 
 
 /*
-**			Con & Des
+**			C & D
 */
-
-Bureaucrat::Bureaucrat(void)
-{
-	name = "Default";
-	grade = 42;
-}
 
 Bureaucrat::Bureaucrat(Bureaucrat &ref)
 {
-	this->name = ref.getName();
 	this->grade = ref.getGrade();
 }
 
-Bureaucrat::Bureaucrat(int grade_given)
+
+Bureaucrat::Bureaucrat(std::string name_given, int grade_given) : name(name_given)
 {
 	try
 	{
-		name = "Default";
 		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
@@ -157,11 +149,10 @@ Bureaucrat::Bureaucrat(int grade_given)
 	}
 }
 
-Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
+Bureaucrat::Bureaucrat(int grade_given) : name ("Default")
 {
 	try
 	{
-		name = name_given;
 		grade = 150;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
@@ -177,6 +168,11 @@ Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
 	catch (std::exception &exception)
 	{
 	}
+}
+
+Bureaucrat::Bureaucrat(void) : name ("Default")
+{
+	grade = 42;
 }
 
 Bureaucrat::~Bureaucrat()

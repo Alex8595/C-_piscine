@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Form.hpp"
 #include "Bureaucrat.hpp"
 
 void					Form::beSigned(Bureaucrat &ref)

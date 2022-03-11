@@ -27,6 +27,8 @@ int						Bureaucrat::getGrade() const
 }
 
 
+
+
 /*
 **		Execute
 **		ex_02 NEW function
@@ -42,6 +44,8 @@ void					Bureaucrat::executeForm(const Form &ref)
 		std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
 
 }
+
+
 
 
 /*
@@ -92,6 +96,9 @@ void					Bureaucrat::decrementGrade()
 	}
 }
 
+
+
+
 /*
 **		For Construct in bounds
 */
@@ -106,13 +113,15 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 	std::cout << "Grade Too Low!" << std::endl;					
 };
 
+
+
+
 /*
 **		Op
 */
 
 void					Bureaucrat::operator=(Bureaucrat &ref)
 {
-	this->name = ref.getName();
 	this->grade = ref.getGrade();
 }
 
@@ -122,27 +131,27 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 	return(stream);
 }
 
+
+
+
 /*
 **		C & D
 */
 
-Bureaucrat::Bureaucrat(void)
+Bureaucrat::Bureaucrat(void) : name("Default")
 {
-	name = "Default";
 	grade = 42;
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &ref)
+Bureaucrat::Bureaucrat(Bureaucrat &ref) : name("Default")
 {
-	this->name = ref.getName();
 	this->grade = ref.getGrade();
 }
 
-Bureaucrat::Bureaucrat(int grade_given)
+Bureaucrat::Bureaucrat(int grade_given) : name("Default")
 {
 	try
 	{
-		name = "Default";
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)
@@ -159,11 +168,10 @@ Bureaucrat::Bureaucrat(int grade_given)
 	}
 }
 
-Bureaucrat::Bureaucrat(std::string name_given, int grade_given)
+Bureaucrat::Bureaucrat(std::string name_given, int grade_given) : name(name_given)
 {
 	try
 	{
-		name = name_given;
 		if (grade_given > 150)
 			throw (Bureaucrat::GradeTooLowException());
 		else if (grade_given < 1)

@@ -12,21 +12,20 @@
 
 #ifndef __BUREAUCRAT_HPP_
 # define __BUREAUCRAT_HPP_
-# include <iostream>
 # include "Form.hpp"
 
 class	Bureaucrat
 {
 	private:
-		std::string				name;	
+		const std::string		name;	
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
 		void					signForm(Form &ref);
 
 
-		std::string				getName();
-		int						getGrade();
+		std::string				getName() const;
+		int						getGrade() const;
 		void					incrementGrade();
 		void					decrementGrade();
 

@@ -17,14 +17,15 @@
 class	Bureaucrat
 {
 	private:
-		std::string				name;	
+		const std::string		name;	
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
-		std::string				getName() const;
-		int						getGrade() const;
 		void					incrementGrade();
 		void					decrementGrade();
+
+		std::string				getName() const;
+		int						getGrade() const;
 
 		void					operator=(Bureaucrat &ref);
 
