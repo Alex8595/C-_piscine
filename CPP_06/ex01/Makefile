@@ -5,12 +5,12 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/11 14:57:34 by ahernand          #+#    #+#              #
-#    Updated: 2022/03/11 14:57:35 by ahernand         ###   ########.fr        #
+#    Created: 2022/03/12 17:25:32 by ahernand          #+#    #+#              #
+#    Updated: 2022/03/12 17:25:34 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = Serialization
 
 all : $(NAME)
 
