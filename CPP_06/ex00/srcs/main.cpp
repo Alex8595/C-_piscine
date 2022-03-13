@@ -74,7 +74,7 @@ char	display_char(int i, char c)
 {
 
 	if (i >= 32 && i <= 126)
-		std::cout << c;
+		std::cout << "'" << c << "'";
 	else
 		std::cout << "Non displayable";
 	return (' ');
@@ -301,5 +301,6 @@ int main(int argc, char **argv)
 		return (0);
 	if (is_float(argv[1]))
 		return (0);
+	std::cout << "Humm... Can't convert that: try a char, int, float or double! :)" << std::endl;
 	return (1);
 }

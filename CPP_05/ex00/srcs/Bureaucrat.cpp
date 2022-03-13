@@ -103,7 +103,7 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 **		C & D
 */
 
-Bureaucrat::Bureaucrat(Bureaucrat &ref)
+Bureaucrat::Bureaucrat(Bureaucrat &ref) : name(ref.getName())
 {
 	this->grade = ref.getGrade();
 }

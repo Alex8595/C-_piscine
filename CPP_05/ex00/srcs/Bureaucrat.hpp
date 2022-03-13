@@ -21,6 +21,10 @@ class	Bureaucrat
 		int						grade;	//1 to 150 (ranking like)
 
 	public:
+
+
+
+
 		void					incrementGrade();
 		void					decrementGrade();
 

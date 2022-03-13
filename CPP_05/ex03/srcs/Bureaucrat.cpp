@@ -13,23 +13,6 @@
 #include "Bureaucrat.hpp"
 
 /*
-**		G & S
-*/
-
-std::string				Bureaucrat::getName() const
-{
-	return (name);
-}
-
-int						Bureaucrat::getGrade() const
-{
-	return (grade);
-}
-
-
-
-
-/*
 **		Execute
 **		ex_02 NEW function
 */
@@ -117,6 +100,23 @@ Bureaucrat::GradeTooLowException::GradeTooLowException()
 
 
 /*
+**		G & S
+*/
+
+std::string				Bureaucrat::getName() const
+{
+	return (name);
+}
+
+int						Bureaucrat::getGrade() const
+{
+	return (grade);
+}
+
+
+
+
+/*
 **		Op
 */
 
@@ -138,14 +138,29 @@ std::ostream			&operator<<(std::ostream &stream, Bureaucrat &ref)
 **		C & D
 */
 
-Bureaucrat::Bureaucrat(void) : name("Default")
-{
-	grade = 42;
-}
-
-Bureaucrat::Bureaucrat(Bureaucrat &ref) : name("Default")
+Bureaucrat::Bureaucrat(Bureaucrat &ref) : name(ref.getName())
 {
 	this->grade = ref.getGrade();
+}
+
+Bureaucrat::Bureaucrat(std::string name_given, int grade_given) : name(name_given)
+{
+	try
+	{
+		if (grade_given > 150)
+			throw (Bureaucrat::GradeTooLowException());
+		else if (grade_given < 1)
+		{
+			throw (Bureaucrat::GradeTooHighException());
+		}
+		else
+		{
+			grade = grade_given;
+		}
+	}
+	catch (std::exception &exception)
+	{
+	}
 }
 
 Bureaucrat::Bureaucrat(int grade_given) : name("Default")
@@ -168,24 +183,9 @@ Bureaucrat::Bureaucrat(int grade_given) : name("Default")
 	}
 }
 
-Bureaucrat::Bureaucrat(std::string name_given, int grade_given) : name(name_given)
+Bureaucrat::Bureaucrat(void) : name("Default")
 {
-	try
-	{
-		if (grade_given > 150)
-			throw (Bureaucrat::GradeTooLowException());
-		else if (grade_given < 1)
-		{
-			throw (Bureaucrat::GradeTooHighException());
-		}
-		else
-		{
-			grade = grade_given;
-		}
-	}
-	catch (std::exception &exception)
-	{
-	}
+	grade = 42;
 }
 
 Bureaucrat::~Bureaucrat()

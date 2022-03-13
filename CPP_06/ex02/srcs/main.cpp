@@ -18,11 +18,11 @@
 Base	*generate(void)
 {
 	srand((unsigned int)time(NULL));
-	int v1 = rand() % 3 + 1;
 
-	if (v1 == 1)
+	int ran = rand() % 3 + 1;
+	if (ran == 1)
 		return (new A);
-	if (v1 == 2)
+	if (ran == 2)
 		return (new B);
 	else
 		return (new C);
@@ -30,24 +30,63 @@ Base	*generate(void)
 
 void identify(Base* p)
 {
+	A *a1 = dynamic_cast<A*>(p);
+	B *b1 = dynamic_cast<B*>(p);
+	C *c1 = dynamic_cast<C*>(p);
 
-
-
+	if (a1 != NULL)
+		std::cout << "By pointer:    This is a A type class." << std::endl;
+	else if (b1 != NULL)
+		std::cout << "By pointer:    This is a B type class." << std::endl;
+	else if (c1 != NULL)
+		std::cout << "By pointer:    This is a C type class." << std::endl;
+	else
+		std::cout << "By pointer:    It's not an A, B or C class." << std::endl;
 }
 
 void identify(Base& p)
 {
-
-
-
+	try
+	{
+		A &a1 = dynamic_cast<A&>(p);
+		if (&a1 == &a1)
+			;
+		std::cout << "By reference:  This is a A type class." << std::endl;
+	}
+	catch (std::bad_cast &bc)
+	{
+	}
+	try
+	{
+		B &b1 = dynamic_cast<B&>(p);
+		if (&b1 == &b1)
+			;
+		std::cout << "By reference:  This is a B type class." << std::endl;
+	}
+	catch (std::bad_cast &bc)
+	{
+	}
+	try
+	{
+		C &c1 = dynamic_cast<C&>(p);
+		if (&c1 == &c1)
+			;
+		std::cout << "By reference:  This is a C type class." << std::endl;
+	}
+	catch (std::bad_cast &bc)
+	{
+	}
 	
 }
 
 int main()
 {
+	Base	*_base;
 
+	_base = generate();
+	identify(_base);
+	identify(*(_base));
 
-
-
+	delete _base;
 	return (0);
 }

@@ -25,10 +25,11 @@ class	Bureaucrat
 		void					executeForm(const Form &ref);
 
 
-		std::string				getName() const;
-		int						getGrade() const;
 		void					incrementGrade();
 		void					decrementGrade();
+
+		std::string				getName() const;
+		int						getGrade() const;
 
 		void					operator=(Bureaucrat &ref);
 

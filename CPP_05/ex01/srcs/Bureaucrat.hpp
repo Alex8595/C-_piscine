@@ -24,17 +24,19 @@ class	Bureaucrat
 		void					signForm(Form &ref);
 
 
-		std::string				getName() const;
-		int						getGrade() const;
+
 		void					incrementGrade();
 		void					decrementGrade();
 
+		std::string				getName() const;
+		int						getGrade() const;
+
 		void					operator=(Bureaucrat &ref);
 
-		Bureaucrat();
-		Bureaucrat(int grade_given);
 		Bureaucrat(Bureaucrat &ref);
 		Bureaucrat(std::string name_given, int grade_given);
+		Bureaucrat(int grade_given);
+		Bureaucrat();
 		~Bureaucrat();
 
 

@@ -38,11 +38,17 @@ int main()
 	before.c = 'A';
 	before.str = "It's me, Mario";
 
+
+	std::cout << "Pointer on Data before: " << &before << std::endl;
+
 	raw = serialize(&before);
 
-	std::cout << "Pointer on an uintptr_t: " << raw << std::endl << std::endl;
+	std::cout << "Pointer on an uintptr_t: " << raw << std::endl;
 
 	after = deserialize(raw);
+
+	std::cout << "Pointer on Data before: " << after << std::endl << std::endl;
+
 
 	std::cout << after->i << std::endl;
 	std::cout << after->c << std::endl;

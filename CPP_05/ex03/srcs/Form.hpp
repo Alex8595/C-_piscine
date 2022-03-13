@@ -20,24 +20,25 @@ class Form
 {
 	private:
 		const std::string		name;
+		bool					is_signed;
 		const int				grade_req_sign;
 		const int				grade_req_exec;
-		bool					is_signed;
 
 	public:
 		virtual void			execute(Bureaucrat const &executor) const = 0;
 
-
 		void					beSigned(Bureaucrat &ref);
 
+
 		std::string				getName() const;
+		bool					getIsSigned() const;
 		int						getGradeReqSign() const;
 		int						getGradeReqExec() const;
-		bool					getIsSigned() const;
 
 		void					operator=(Form &ref);
-		Form(std::string g_name, int gr_sign, int gr_exec);
+
 		Form(const Form &ref);
+		Form(std::string g_name, int gr_sign, int gr_exec);
 		Form();
 		virtual ~Form();
 
