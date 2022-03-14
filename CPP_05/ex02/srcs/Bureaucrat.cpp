@@ -19,13 +19,20 @@
 
 void					Bureaucrat::executeForm(const Form &ref)
 {
+	if (ref.getIsSigned() == true)
+	{
 		if (grade <= ref.getGradeReqExec())
 		{
 			std::cout << "Buraucrat " << getName() << ", executes form " << ref.getName() << "." << std::endl;
+			ref.execute(*this);
 		}
 		else
 			std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;
-
+	}
+	else
+	{
+		std::cout << "Buraucrat " << getName() << ", cannot execute " << ref.getName() << " form because it's not signed." << std::endl;
+	}
 }
 
 
@@ -40,8 +47,8 @@ void					Bureaucrat::signForm(Form &ref)
 {
 		if (grade <= ref.getGradeReqSign())
 		{
-			ref.beSigned(*this);
 			std::cout << "Buraucrat " << getName() << ", signs form " << ref.getName() << "." << std::endl;
+			ref.beSigned(*this);
 		}
 		else
 			std::cout << "Buraucrat " << getName() << ", cannot sign " << ref.getName() << " form because Bureaucrat grade is too low." << std::endl;

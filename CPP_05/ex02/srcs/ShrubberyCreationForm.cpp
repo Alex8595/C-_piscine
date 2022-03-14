@@ -28,7 +28,7 @@ void		ShrubberyCreationForm::execute(Bureaucrat const &executor) const
 			throw (Form::NotSignedException());
 		else
 		{
-			std::ofstream outfile(getName() + "_shrubbery");
+			std::ofstream outfile(this->getName() + "_shrubbery");
 
 			outfile << "      |" << std::endl;
 			outfile << "    \\|/|/" << std::endl;

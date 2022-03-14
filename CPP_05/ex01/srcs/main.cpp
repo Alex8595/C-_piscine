@@ -21,6 +21,16 @@ int main(void)
 	Bureaucrat	Paola("Paola", 51);
 
 
+	std::cout << std::endl << std::endl << std::endl << "____________ Too high Form Grade  _____________" << std::endl << std::endl;
+	Form		_2high("Road", 0, 31);
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "____________ Too Low Form Grade  ______________" << std::endl << std::endl;
+	Form		_2low("Road", 151, 31);
+
+
 
 
 	std::cout << std::endl << std::endl << std::endl << "________________ Operator <<  _________________" << std::endl << std::endl;

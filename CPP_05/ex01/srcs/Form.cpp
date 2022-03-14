@@ -126,7 +126,7 @@ int						ft_inbound(int g_grade)
 */
 
 Form::Form(const Form &ref) :
-	name(ref.getName()), grade_req_sign(ref.getGradeReqSign()), grade_req_exec(ref.getGradeReqExec()), is_signed(ref.getIsSigned())
+	name(ref.getName()), is_signed(ref.getIsSigned()), grade_req_sign(ref.getGradeReqSign()), grade_req_exec(ref.getGradeReqExec())
 {
 
 }

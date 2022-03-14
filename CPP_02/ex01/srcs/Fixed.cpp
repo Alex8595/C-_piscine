@@ -21,7 +21,6 @@ const int	Fixed::fractionl_bits = 8;
 float	Fixed::toFloat( void ) const
 {
 	float res;
-
 	res = (float )this->fixed_point / (1 << 8);
 	return (res);
 }

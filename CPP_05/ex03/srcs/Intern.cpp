@@ -44,22 +44,30 @@ Form	*Intern::makeForm(std::string form_name, std::string form_target)
 	return (NULL);
 }
 
+
+
+
 /*
 **		Op
 */
 
 void				Intern::operator=(const Intern &ref)
 {
-
+	if (&ref == &ref)
+		;
 }
-		
+
+
+
+
 /*
 **		Con & Des
 */
 
 Intern::Intern(const Intern &ref)
 {
-
+	if (&ref == &ref)
+		;
 }
 
 Intern::Intern( void )

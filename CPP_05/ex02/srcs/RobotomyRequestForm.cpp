@@ -34,9 +34,9 @@ void				RobotomyRequestForm::execute(Bureaucrat const &executor) const
 			srand((unsigned int)time(NULL));
 			int v1 = rand() % 10 + 1;
 			if (v1 % 2 == 0)
-				std::cout << "The robotomy Worked, have you heard about the iBody Shop?" << std::endl;
+				std::cout << this->getName() << "! The robotomy Worked, have you heard about the iBody Shop?" << std::endl;
 			else
-				std::cout << "The robotomy failed, how about a drink for your last few minutes alive?" << std::endl;
+				std::cout << this->getName() << "! The robotomy failed, how about a drink for your last few minutes alive?" << std::endl;
 
 		}
 	}

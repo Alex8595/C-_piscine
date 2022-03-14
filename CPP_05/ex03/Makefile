@@ -10,13 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME = MoreForms
+NAME = Intern
 
 all : $(NAME)
 
-CXX = c++
+CXX = clang++
 
-CPPFLAGS = -std=c++98 #-Wall -Werror -Wextra
+CPPFLAGS = -std=c++98 -Wall -Werror -Wextra
 
 SRCS =	srcs/Form.cpp					\
 		srcs/Bureaucrat.cpp				\

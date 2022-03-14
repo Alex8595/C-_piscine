@@ -17,8 +17,17 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
+/*
+void	ft_leaks()
+{
+	system("leaks Intern");
+	atexit(ft_leaks);
+}
+*/
+
 int main(void)
 {
+
 	Intern		in;
 	Bureaucrat	Samantha("Samantha", 1);
 
@@ -32,17 +41,31 @@ int main(void)
 	c = in.makeForm("presidential pardon", "Sam");
 	d = in.makeForm("nothing", "Office_building");
 
-	std::cout << std::endl;
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action ShrubberyCreationForm __________" << std::endl << std::endl;
 	Samantha.signForm(*a);
 	(*a).execute(Samantha);
 
-	std::cout << std::endl;
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action RobotomyRequestForm  __________" << std::endl << std::endl;
+
 	Samantha.signForm(*b);
 	(*b).execute(Samantha);
 
-	std::cout << std::endl;
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action PresidentialRequestForm  __________" << std::endl << std::endl;
+
 	Samantha.signForm(*c);
 	(*c).execute(Samantha);
+
+
+
 
 	delete a;
 	delete b;

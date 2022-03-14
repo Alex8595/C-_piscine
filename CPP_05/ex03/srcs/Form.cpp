@@ -31,6 +31,9 @@ void					Form::beSigned(Bureaucrat &ref)
 	}
 }
 
+
+
+
 /*
 **		G & S
 */
@@ -54,6 +57,9 @@ bool					Form::getIsSigned() const
 {
 	return (is_signed);	
 }
+
+
+
 
 /*
 **		For Construct in bounds
@@ -98,6 +104,9 @@ Form::NotSignedException::NotSignedException()
 	std::cout << "Not signed!" << std::endl;					
 }
 
+
+
+
 /*
 **		Operators
 */
@@ -117,9 +126,20 @@ void					Form::operator=(Form &ref)
 	this->is_signed = ref.is_signed;
 }
 
+
+
+
 /*
 **		C & D
 */
+
+
+
+Form::Form(const Form &ref) :
+	name(ref.getName()), is_signed(ref.getIsSigned()), grade_req_sign(ref.getGradeReqSign()), grade_req_exec(ref.getGradeReqExec())
+{
+
+}
 
 Form::Form(std::string g_name, int gr_sign, int gr_exec) : 
 	name(g_name), grade_req_sign(ft_inbound(gr_sign)), grade_req_exec(ft_inbound(gr_exec))
@@ -130,12 +150,6 @@ Form::Form(std::string g_name, int gr_sign, int gr_exec) :
 Form::Form() : name("Default"), grade_req_sign(42), grade_req_exec(21)
 {
 	is_signed = false;
-}
-
-Form::Form(const Form &ref) :
-	name(ref.name), grade_req_sign(ref.grade_req_sign), grade_req_exec(ref.grade_req_exec), is_signed(ref.is_signed)
-{
-
 }
 
 Form::~Form()

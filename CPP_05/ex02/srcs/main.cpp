@@ -17,20 +17,13 @@
 
 int main(void)
 {
-	Bureaucrat              Alok("Alok", 147);
-	Bureaucrat              Samantha("Samantha", 1);
+	Bureaucrat				Alok("Alok", 147);
+	Bureaucrat				Samantha("Samantha", 1);
 
-	ShrubberyCreationForm   Home("Home");
-	RobotomyRequestForm		Homeless_205("HL");
+	ShrubberyCreationForm	Home("Home");
+	RobotomyRequestForm		Homeless_205("Homeless");
 	PresidentialPardonForm	Hawking("Hawkings");
 	
-
-
-
-	std::cout << std::endl << std::endl << std::endl << "_________ Failure of sign bc low lvl __________" << std::endl << std::endl;
-
-	Home.beSigned(Alok);
-	Alok.signForm(Home);
 
 
 
@@ -54,7 +47,9 @@ int main(void)
 	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action ShrubberyCreationForm __________" << std::endl << std::endl;
 
 	Home.beSigned(Samantha);
-	Home.execute(Samantha);
+
+	Samantha.executeForm(Home);
+	//Home.execute(Samantha);
 
 	std::cout << Home << std::endl;
 
@@ -74,7 +69,7 @@ int main(void)
 
 
 
-	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action RobotomyRequestForm  __________" << std::endl << std::endl;
+	std::cout << std::endl << std::endl << std::endl << "_________ Execute Action PresidentialRequestForm  __________" << std::endl << std::endl;
 
 
 	Hawking.beSigned(Samantha);
