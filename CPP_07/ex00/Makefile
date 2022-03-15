@@ -1,0 +1,39 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2022/03/15 17:40:56 by ahernand          #+#    #+#              #
+#    Updated: 2022/03/15 17:40:57 by ahernand         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
+NAME = functions
+
+all : $(NAME)
+
+CXX = clang++
+
+CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
+
+SRCS =	srcs/main.cpp
+
+OBJS =	srcs/main.o
+
+$(OBJS) : $(SRCS)
+
+$(NAME) : $(OBJS)
+	$(CXX) $(CPPFLAGS) $(OBJS) -o $@
+
+
+# - - - - - - - - - - - - - - - - - #
+# - - - - C L E A N I N G - - - - - #
+# - - - - - - - - - - - - - - - - - #
+
+make fclean:
+	@rm -f $(NAME)
+	@rm -f $(OBJS)
+
+re:	fclean all

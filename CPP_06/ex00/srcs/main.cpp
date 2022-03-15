@@ -59,15 +59,18 @@ int	ft_int_e(char *str)
 	a = atoll(str);
 	if (!(a > 2147483647 || a < -2147483648))
 		return (0);
-	std::cout << "char: "	<< "impossible"			<< std::endl;
-	std::cout << "int: "	<< "impossible"			<< std::endl;
-	std::cout << "float: "	<< "impossible"			<< std::endl;
-	std::cout << "double: "	<< "impossible"			<< std::endl;
+	std::cout << "char: "	<< "impossible"				<< std::endl;
+	std::cout << "int: "	<< "impossible"				<< std::endl;
+	std::cout << "float: "	<< "impossible"				<< std::endl;
+	std::cout << "double: "	<< "impossible"				<< std::endl;
 	return (1);
 }
 
+
+
+
 /*
-**
+**		Displays
 */
 
 char	display_char(int i, char c)
@@ -130,10 +133,10 @@ void	ft_char(char *str)
 	f = static_cast<float>(c);
 	d = static_cast<double>(c);
 	
-	std::cout << "char: "	<< display_char(i, c)	<< std::endl;
-	std::cout << "int: "	<< i					<< std::endl;
-	std::cout << "float: "	<< f << "f" 			<< std::endl;
-	std::cout << "double: "	<< d					<< std::endl;
+	std::cout << "char: "	<< display_char(i, c)		<< std::endl;
+	std::cout << "int: "	<< i						<< std::endl;
+	std::cout << "float: "	<< display_float(f)			<< std::endl;
+	std::cout << "double: "	<< display_double(f)		<< std::endl;
 }
 
 int	ft_int(char *str)
@@ -156,8 +159,8 @@ int	ft_int(char *str)
 
 	std::cout << "char: "	<< display_char(i, c)		<< std::endl;
 	std::cout << "int: "	<< i						<< std::endl;
-	std::cout << "float: "	<< f << ".0f" 				<< std::endl;
-	std::cout << "double: "	<< d << ".0"				<< std::endl;
+	std::cout << "float: "	<< display_float(f)			<< std::endl;
+	std::cout << "double: "	<< display_double(f)		<< std::endl;
 	return (0);
 }
 

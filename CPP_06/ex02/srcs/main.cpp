@@ -17,7 +17,7 @@
 
 Base	*generate(void)
 {
-	srand((unsigned int)time(NULL));
+	srand(time( NULL ));
 
 	int ran = rand() % 3 + 1;
 	if (ran == 1)
@@ -49,9 +49,9 @@ void identify(Base& p)
 	try
 	{
 		A &a1 = dynamic_cast<A&>(p);
+		std::cout << "By reference:  This is a A type class." << std::endl;
 		if (&a1 == &a1)
 			;
-		std::cout << "By reference:  This is a A type class." << std::endl;
 	}
 	catch (std::bad_cast &bc)
 	{
@@ -59,9 +59,9 @@ void identify(Base& p)
 	try
 	{
 		B &b1 = dynamic_cast<B&>(p);
+		std::cout << "By reference:  This is a B type class." << std::endl;
 		if (&b1 == &b1)
 			;
-		std::cout << "By reference:  This is a B type class." << std::endl;
 	}
 	catch (std::bad_cast &bc)
 	{
@@ -69,9 +69,9 @@ void identify(Base& p)
 	try
 	{
 		C &c1 = dynamic_cast<C&>(p);
+		std::cout << "By reference:  This is a C type class." << std::endl;
 		if (&c1 == &c1)
 			;
-		std::cout << "By reference:  This is a C type class." << std::endl;
 	}
 	catch (std::bad_cast &bc)
 	{

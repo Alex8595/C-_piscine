@@ -43,8 +43,6 @@ int main()
 
 	raw = serialize(&before);
 
-	std::cout << "Pointer on an uintptr_t: " << raw << std::endl;
-
 	after = deserialize(raw);
 
 	std::cout << "Pointer on Data before: " << after << std::endl << std::endl;
