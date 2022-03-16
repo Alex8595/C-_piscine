@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   ex_class.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 19:39:25 by ahernand          #+#    #+#             */
-/*   Updated: 2022/03/15 19:39:26 by ahernand         ###   ########.fr       */
+/*   Created: 2022/03/16 17:59:59 by ahernand          #+#    #+#             */
+/*   Updated: 2022/03/16 18:00:00 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__ITER_HPP__
-# define __ITER_HPP__
-# include <iostream>
+#include <iostream>
 
-template < typename T >
-void iter( T *ptr , int lenght, void fton(const T&))
+class example
 {
-	for	(int i = 0; i < lenght; i++)
-		fton(ptr[i]);
-}
+	private:
+		std::string		name;
 
-#endif
+	public:
+		std::string		get_name() const;
+		void			operator=(const example &given_instance);
+
+		example(const example &given_instance);
+		example(std::string g_name);
+		example();
+		~example();
+};
+
+std::ostream &operator<<(std::ostream &stream, example const &object);

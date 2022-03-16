@@ -1,24 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   Array.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/15 19:39:25 by ahernand          #+#    #+#             */
-/*   Updated: 2022/03/15 19:39:26 by ahernand         ###   ########.fr       */
+/*   Created: 2022/03/16 19:29:22 by ahernand          #+#    #+#             */
+/*   Updated: 2022/03/16 19:30:20 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef	__ITER_HPP__
-# define __ITER_HPP__
+#ifndef __ARRAY_HPP__
+# define __ARRAY_HPP__
 # include <iostream>
 
-template < typename T >
-void iter( T *ptr , int lenght, void fton(const T&))
+template <class T>
+class	Array
 {
-	for	(int i = 0; i < lenght; i++)
-		fton(ptr[i]);
-}
+
+
+
+
+};
+
+template <class T>
+class mypair
+{
+	T values [2];
+	
+	public:
+		mypair (T first, T second)
+    	{
+			values[0] = first;
+			values[1] = second;
+		}
+};
 
 #endif
