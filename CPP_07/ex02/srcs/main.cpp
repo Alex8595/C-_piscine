@@ -12,21 +12,48 @@
 
 #include "Array.hpp"
 
-int	main()
-{
-	Array	
-	
-	return (0);
-}
+#define MAX_VAL 750
 
 /*
+void	ft_leaks()
+{
+	atexit(ft_leaks);
+	system("leaks Array");
+}
+*/
 
-#include <iostream>
-#include <Array.hpp>
-
-#define MAX_VAL 750
 int main(int, char**)
 {
+
+    std::cout << std::endl << std::endl << std::endl << "_________ Empty Array __________" << std::endl << std::endl;
+
+	Array<std::string> empty;
+
+	for (int i = 0; i < empty.size(); i++)
+        std::cout << "Nunca pasará por aquí" << std::endl;
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ String Array __________" << std::endl << std::endl;
+
+	Array<std::string> asd(5);
+
+	for (int i = 0; i < asd.size(); i++)
+	{
+		asd[i] = "Pax";
+	}
+
+	for (int i = 0; i < asd.size(); i++)
+	{
+		std::cout << asd[i] << std::endl;
+	}
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "__________ Given main ___________" << std::endl << std::endl;
+
     Array<int> numbers(MAX_VAL);
     int* mirror = new int[MAX_VAL];
     srand(time(NULL));
@@ -74,4 +101,3 @@ int main(int, char**)
     delete [] mirror;//
     return 0;
 }
-*/

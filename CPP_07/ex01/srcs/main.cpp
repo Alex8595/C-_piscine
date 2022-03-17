@@ -11,10 +11,9 @@
 /* ************************************************************************** */
 
 #include "iter.hpp"
-#include "example.hpp"
 
 template < typename T>
-void print(const T &element)
+void function(const T &element)
 {
 	std::cout << element << std::endl;
 }
@@ -24,12 +23,12 @@ int main()
 	int				arr1[6] = {1, 2, 3, 4, 5, 42};
 	std::string		arr2[2] = {"Hello", "there"};
 	char			arr3[4] = {'H', 'o', 'l', 'a'};
-	example			arr4[2];
+	//example			arr4[2];
 	
-	iter(arr1, 6.0f, print);
-	iter(arr2, 2, print);
-	iter(arr3, 4, print);
-	iter(arr4, 2, print);
+	iter(arr1, 6.0f, function);
+	iter(arr2, 2, function);
+	iter(arr3, 4, function);
+	//iter(arr4, 2, function);
 	
 	return (0);
 }

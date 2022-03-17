@@ -18,11 +18,9 @@ CXX = clang++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/example.cpp	\
-		srcs/main.cpp
+SRCS =	srcs/main.cpp
 
-OBJS =	srcs/example.o		\
-		srcs/main.o
+OBJS =	srcs/main.o
 
 $(OBJS) : $(SRCS)
 
