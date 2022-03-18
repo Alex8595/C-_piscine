@@ -23,33 +23,9 @@ class	Array
 
 	public:
 
-		/*
-		**				M_FUNCTIONS
-		*/
-
 		long long		size() const
 		{
 			return (_size);
-		}
-
-
-
-
-		/*
-		**				Operators
-		*/
-
-		void			operator=(const Array &ref)
-		{
-			if (_size != 0)
-				delete []arr;
-
-			_size = ref.size();
-
-			arr = new T[ref.size()];
-
-			for (long long i; i < ref.size(); i++)
-				arr[i] = ref[i];
 		}
 
 		T				&operator[](const int	&idx)
@@ -68,13 +44,19 @@ class	Array
 				throw (std::out_of_range( "Out of bonds index." ));
 		}
 
+		void			operator=(const Array &ref)
+		{
+			if (_size != 0)
+				delete []arr;
 
+			_size = ref.size();
 
+			arr = new T[ref.size()];
 
-		/*
-		**				C & D
-		*/
-
+			for (long long i; i < ref.size(); i++)
+				arr[i] = ref[i];
+		}
+		
 		Array(const Array &ref)
 		{
 			_size = ref.size();
@@ -103,7 +85,6 @@ class	Array
 		{
 			delete []arr;
 		}
-
 };
 
 #endif

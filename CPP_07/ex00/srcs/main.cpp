@@ -14,6 +14,15 @@
 
 int main( void )
 {
+	int i = 42;
+	int j = 21;
+
+	::swap( i, j );
+	std::cout << "i = " << i << ", j = " << j << std::endl;
+	std::cout << "min( i j ) = " << ::min( i, j ) << std::endl;
+	std::cout << "max( i, j ) = " << ::max( i, j ) << std::endl;
+	std::cout << std::endl;
+
 	float a = 2;
 	float b = 3;
 
