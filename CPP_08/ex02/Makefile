@@ -5,21 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: ahernand <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/03/18 19:57:16 by ahernand          #+#    #+#              #
-#    Updated: 2022/03/18 19:57:17 by ahernand         ###   ########.fr        #
+#    Created: 2022/03/22 19:47:09 by ahernand          #+#    #+#              #
+#    Updated: 2022/03/22 19:47:10 by ahernand         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Span
+NAME = mutantstack
 
 CXX = clang++
 
 CPPFLAGS = -std=c++98 -Wall -Wextra -Werror
 
-SRCS =	srcs/Span.cpp	\
+SRCS =	srcs/mutantstack.cpp	\
 		srcs/main.cpp
 
-OBJS =	srcs/Span.o		\
+OBJS =	srcs/mutantstack.o		\
 		srcs/main.o
 
 

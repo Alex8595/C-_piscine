@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   easyfind.hpp                                       :+:      :+:    :+:   */
+/*   mutantstack.hpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ahernand <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/21 15:05:18 by ahernand          #+#    #+#             */
-/*   Updated: 2022/03/21 17:01:30 by ahernand         ###   ########.fr       */
+/*   Created: 2022/03/22 19:47:34 by ahernand          #+#    #+#             */
+/*   Updated: 2022/03/22 19:47:35 by ahernand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef __EASYFIND_HPP__
-# define __EASYFIND_HPP__
+#ifndef __MUTANTSTACK_HPP__
+# define __MUTANTSTACK_HPP__
 # include <iostream>
-# include <list>
-# include <map>
-# include <vector>
 
-template<typename T>
-typename T::iterator easyfind(T conteiner, int value)
+
+class MutantStack
 {
-	typename T::iterator		it;
-	typename T::iterator		ite;
+	private:
+	
+	public:
+		MutantStack();
+		~MutantStack();
+};
 
-	it = conteiner.begin();
-	ite = conteiner.end();
-	while (it != ite)
-	{
-		if (*it == value)
-			return (it);
-		it++;
-	}
-	throw (std::runtime_error("Error: Value is not in conteiner."));
-}
 #endif
