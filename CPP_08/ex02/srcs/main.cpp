@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "mutantstack.h"
+#include "mutantstack.hpp"
 
 int main()
 {
@@ -22,7 +22,7 @@ int main()
 	std::cout << mstack.top() << std::endl;
 	
 	mstack.pop();
-	std::cout << mstack.size() << std::endl;
+	std::cout << mstack.size() << std::endl << std::endl;
 	
 	mstack.push(3);
 	mstack.push(5);
@@ -41,7 +41,31 @@ int main()
 		std::cout << *it << std::endl;
 		++it;
 	}
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ Copy test __________" << std::endl << std::endl;
 	
 	std::stack<int> s(mstack);
+	while (!(s.empty()))
+	{
+		std::cout << s.top() << std::endl;
+		s.pop();
+	}
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________ Operator = _________" << std::endl << std::endl;
+	
+	std::stack<int> sb;
+
+	sb = mstack;
+	while (!(sb.empty()))
+	{
+		std::cout << sb.top() << std::endl;
+		sb.pop();
+	}
 	return 0;
 }

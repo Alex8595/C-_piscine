@@ -86,7 +86,7 @@ int		Span::longestSpan()
 void	Span::addNumber(int g_n)
 {
 	
-	if (n_stored == n_total)
+	if (n_stored >= n_total)
 		throw (std::runtime_error("Error: Can't add more numbers, filled all the N spots."));
 	else
 		list.push_back(g_n);

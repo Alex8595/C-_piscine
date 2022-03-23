@@ -70,7 +70,8 @@ int main()
 
 	Span sp2 = Span(1000000);
 
-	srand(time( NULL ));
+   srand((unsigned int)time(NULL));
+
 	for (int i = 0; i < 1000000; i++)
 	{
 		ran = rand() % 1000000;
@@ -100,7 +101,7 @@ int main()
 
 	std::cout << std::endl << std::endl << std::endl << "_________ Iterator range Add number __________" << std::endl << std::endl;
 
-	Span sp3 = Span(50);
+	Span sp3 = Span(5);
 	std::vector<int>		v(5, 0);
 
 	v[0] = 5;
