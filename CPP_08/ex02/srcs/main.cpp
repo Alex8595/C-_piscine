@@ -45,7 +45,7 @@ int main()
 
 
 
-	std::cout << std::endl << std::endl << std::endl << "_________ Copy test __________" << std::endl << std::endl;
+	std::cout << std::endl << std::endl << std::endl << "_________ Original Stack  Copy test __________" << std::endl << std::endl;
 	
 	std::stack<int> s(mstack);
 	while (!(s.empty()))
@@ -57,7 +57,7 @@ int main()
 
 
 
-	std::cout << std::endl << std::endl << std::endl << "_________ Operator = _________" << std::endl << std::endl;
+	std::cout << std::endl << std::endl << std::endl << "_________ Original Stack Operator = _________" << std::endl << std::endl;
 	
 	std::stack<int> sb;
 
@@ -67,5 +67,40 @@ int main()
 		std::cout << sb.top() << std::endl;
 		sb.pop();
 	}
+
+
+
+
+
+
+
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________   Copy test __________" << std::endl << std::endl;
+	
+	MutantStack<int> mcons(mstack);
+
+	while (!(mcons.empty()))
+	{
+		std::cout << mcons.top() << std::endl;
+		mcons.pop();
+	}
+
+
+
+
+	std::cout << std::endl << std::endl << std::endl << "_________  Operator = _________" << std::endl << std::endl;
+	
+	MutantStack<int> mcopy;
+
+	mcopy = mstack;
+	while (!(mcopy.empty()))
+	{
+		std::cout << mcopy.top() << std::endl;
+		mcopy.pop();
+	}
+
 	return 0;
 }

@@ -19,9 +19,9 @@
 class Span
 {
 	private:
-		std::list<int>		list;
 		unsigned int		n_stored;
 		unsigned int		n_total;
+		std::list<int>		list;
 
 	public:
 		int		shortestSpan();

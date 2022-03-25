@@ -31,6 +31,12 @@ int main()
 	}
 
 
+
+
+
+
+
+
 	std::cout << std::endl << std::endl << std::endl << "_________ Span not enough __________" << std::endl << std::endl;
 
 	try
@@ -49,6 +55,10 @@ int main()
 
 
 
+
+
+
+
 	std::cout << std::endl << std::endl << std::endl << "_________ Span sucess __________" << std::endl << std::endl;
 
 	Span sp1 = Span(10);
@@ -62,25 +72,34 @@ int main()
 		sp1.addNumber(ran);
 	}
 
+
 	std::cout << std::endl << "Result : "<< sp1.shortestSpan() << std::endl;
 	std::cout << std::endl << "Result : "<< sp1.longestSpan() << std::endl;
 
 
+
+
+
+
+
+
 	std::cout << std::endl << std::endl << std::endl << "_________ Huge Span sucess __________" << std::endl << std::endl;
 
-	Span sp2 = Span(1000000);
+	Span sp2 = Span(100000);
 
-   srand((unsigned int)time(NULL));
-
-	for (int i = 0; i < 1000000; i++)
+	for (int i = 0; i < 100000; i++)
 	{
 		ran = rand() % 1000000;
-
 		sp2.addNumber(ran);
 	}
 
 	std::cout << std::endl << "Result : "<< sp2.shortestSpan() << std::endl;
 	std::cout << std::endl << "Result : "<< sp2.longestSpan() << std::endl;
+
+
+
+
+
 
 
 
@@ -95,6 +114,10 @@ int main()
 	sp.addNumber(11);
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
+
+
+
+
 
 
 
@@ -117,6 +140,7 @@ int main()
 
 	std::cout << std::endl << "Result : "<< sp3.shortestSpan() << std::endl;
 	std::cout << std::endl << "Result : "<< sp3.longestSpan() << std::endl;
+
 
 	return (0);
 }

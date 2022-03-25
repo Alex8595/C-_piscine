@@ -13,6 +13,7 @@
 #ifndef __EASYFIND_HPP__
 # define __EASYFIND_HPP__
 # include <iostream>
+# include <algorithm>
 # include <list>
 # include <map>
 # include <vector>
@@ -22,15 +23,14 @@ typename T::iterator easyfind(T conteiner, int value)
 {
 	typename T::iterator		it;
 	typename T::iterator		ite;
+	typename T::iterator		to_find;
 
 	it = conteiner.begin();
 	ite = conteiner.end();
-	while (it != ite)
-	{
-		if (*it == value)
-			return (it);
-		it++;
-	}
+	
+	to_find = std::find(it, ite, value);
+	if (to_find != ite)
+			return (to_find);
 	throw (std::runtime_error("Error: Value is not in conteiner."));
 }
 #endif

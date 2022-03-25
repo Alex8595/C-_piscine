@@ -18,11 +18,14 @@
 
 int		Span::shortestSpan()
 {
-	int	span;
-	int	diff;
-
 	if (n_stored < 2)
 		throw (std::runtime_error("Error: Not enough values to run shortestSpan."));
+
+	int	span;
+	int	diff;
+	
+	this->list.sort();
+
 	std::list<int>::const_iterator		ita = list.begin();
 	std::list<int>::const_iterator		itb = list.begin();
 	std::list<int>::const_iterator		ite = list.end();
@@ -48,32 +51,14 @@ int		Span::shortestSpan()
 
 int		Span::longestSpan()
 {
-	int	span;
-	int	diff;
-
 	if (n_stored < 2)
 		throw (std::runtime_error("Error: Not enough values to run longestSpan."));
-	std::list<int>::const_iterator		ita = list.begin();
-	std::list<int>::const_iterator		itb = list.begin();
+
+	list.sort();
+	std::list<int>::const_iterator		it = list.begin();
 	std::list<int>::const_iterator		ite = list.end();
 
-	itb++;
-	span = *ita - *itb;
-	if (span < 0)
-			span *= -1;
-	ita++;
-	itb++;
-	while (itb != ite)
-	{
-		diff = *ita - *itb;
-		if (diff < 0)
-			diff *= -1;
-		if (diff > span)
-			span = diff;
-		ita++;
-		itb++;
-	}
-	return (span);
+	return (*(--ite) - *it);
 }
 
 
@@ -112,12 +97,15 @@ int		Span::getNTotal() const
 
 
 
+
 /*
 **		Operators
 */
 
 Span	&Span::operator=(const Span &ref)
 {
+	list.clear();
+
 	n_total = ref.getNTotal();
 	n_stored = ref.getNStored();
 
